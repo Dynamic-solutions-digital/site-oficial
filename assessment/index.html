@@ -1,0 +1,2765 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito • Dynamic Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-bright: #FFD700;
+            --gold-dark: #B8860B;
+            --gold-metallic: #E6C547;
+            --gold-shadow: rgba(212, 175, 55, 0.4);
+            --black-absolute: #000000;
+            --black-rich: #0A0A0A;
+            --black-soft: #141414;
+            --black-medium: #1A1A1A;
+            --gray-platinum: #E5E5E5;
+            --gray-silver: #C0C0C0;
+            --gray-steel: #8E8E8E;
+            --ruby: #E0115F;
+            --emerald: #50C878;
+            --gradient-gold: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-bright) 50%, var(--gold-primary) 100%);
+            --blur-premium: blur(40px);
+            --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            
+            /* Responsive breakpoints */
+            --mobile-xs: 320px;
+            --mobile-sm: 375px;
+            --mobile-md: 414px;
+            --mobile-lg: 480px;
+            --tablet-sm: 768px;
+            --tablet-lg: 1024px;
+            --desktop-sm: 1200px;
+            --desktop-lg: 1440px;
+            --desktop-xl: 1920px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black-absolute);
+            color: var(--gray-platinum);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background Premium with Advanced Patterns */
+        .qualification-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 120% 60% at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 80% at 20% 100%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 80% at 80% 100%, rgba(212, 175, 55, 0.015) 0%, transparent 50%),
+                conic-gradient(from 45deg at 30% 70%, transparent 0deg, rgba(212, 175, 55, 0.01) 90deg, transparent 180deg),
+                linear-gradient(135deg, var(--black-absolute) 0%, var(--black-rich) 25%, var(--black-soft) 50%, var(--black-absolute) 100%);
+            z-index: -2;
+            animation: backgroundShift 60s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+            25% { filter: hue-rotate(5deg) brightness(1.02); }
+            50% { filter: hue-rotate(-3deg) brightness(0.98); }
+            75% { filter: hue-rotate(7deg) brightness(1.01); }
+        }
+
+        /* Ultra Advanced Particles System */
+        .premium-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .premium-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .particle-gold {
+            background: radial-gradient(circle, var(--gold-primary) 0%, transparent 70%);
+            box-shadow: 0 0 6px var(--gold-primary);
+            animation: floatGold 20s infinite linear;
+        }
+
+        .particle-silver {
+            background: radial-gradient(circle, var(--gray-silver) 0%, transparent 70%);
+            box-shadow: 0 0 4px var(--gray-silver);
+            animation: floatSilver 25s infinite linear;
+        }
+
+        .particle-ruby {
+            background: radial-gradient(circle, var(--ruby) 0%, transparent 70%);
+            box-shadow: 0 0 5px var(--ruby);
+            animation: floatRuby 30s infinite linear;
+        }
+
+        @keyframes floatGold {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+                transform: translateY(90vh) translateX(10px) rotate(45deg) scale(1);
+            }
+            50% {
+                transform: translateY(50vh) translateX(-20px) rotate(180deg) scale(1.2);
+            }
+            90% {
+                opacity: 0.3;
+                transform: translateY(10vh) translateX(15px) rotate(315deg) scale(0.8);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(0) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatSilver {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.4;
+                transform: translateY(85vh) translateX(-15px) rotate(60deg) scale(1);
+            }
+            50% {
+                transform: translateY(50vh) translateX(25px) rotate(200deg) scale(0.9);
+            }
+            85% {
+                opacity: 0.2;
+                transform: translateY(15vh) translateX(-10px) rotate(300deg) scale(1.1);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(0) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatRuby {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            12% {
+                opacity: 0.3;
+                transform: translateY(88vh) translateX(20px) rotate(30deg) scale(1);
+            }
+            50% {
+                transform: translateY(50vh) translateX(-30px) rotate(150deg) scale(1.3);
+            }
+            88% {
+                opacity: 0.1;
+                transform: translateY(12vh) translateX(10px) rotate(330deg) scale(0.7);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(0) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container with Advanced Responsive Grid */
+        .qualification-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(1rem, 4vw, 3rem);
+            position: relative;
+            container-type: inline-size;
+        }
+
+        /* Access Card with Advanced Glass Morphism */
+        .access-card {
+            max-width: min(90vw, 900px);
+            width: 100%;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(255, 255, 255, 0.06) 0%, 
+                    rgba(255, 255, 255, 0.02) 30%,
+                    rgba(212, 175, 55, 0.03) 50%,
+                    rgba(0, 0, 0, 0.15) 100%),
+                radial-gradient(ellipse at top left, 
+                    rgba(212, 175, 55, 0.05) 0%, 
+                    transparent 50%);
+            backdrop-filter: var(--blur-premium) saturate(150%) brightness(110%);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: clamp(16px, 4vw, 32px);
+            padding: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                var(--shadow-premium),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 60px rgba(212, 175, 55, 0.1);
+            animation: revealCard 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(60px) scale(0.92) rotateX(5deg);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .access-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+            animation: cardShimmer 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes cardShimmer {
+            0%, 100% { transform: translateX(-100%) skewX(-15deg); }
+            50% { transform: translateX(200%) skewX(-15deg); }
+        }
+
+        @keyframes revealCard {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0deg);
+            }
+        }
+
+        /* Access Header with Advanced Typography */
+        .access-header {
+            text-align: center;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            position: relative;
+        }
+
+        .access-badge {
+            display: inline-block;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(212, 175, 55, 0.15) 0%, 
+                    rgba(212, 175, 55, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 50px;
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: clamp(1px, 0.5vw, 3px);
+            color: var(--gold-primary);
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            animation: badgeFloat 0.8s ease-out 0.3s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.3), 
+                transparent);
+            animation: badgeShimmer 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes badgeFloat {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes badgeShimmer {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .access-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            font-weight: 800;
+            background: 
+                linear-gradient(135deg, 
+                    var(--gold-primary) 0%, 
+                    var(--gold-bright) 25%,
+                    var(--gold-metallic) 50%,
+                    var(--gold-bright) 75%,
+                    var(--gold-primary) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            letter-spacing: clamp(-1px, -0.2vw, -2px);
+            line-height: 1.1;
+            animation: 
+                titleReveal 0.8s ease-out 0.5s both,
+                titleGlow 4s ease-in-out infinite 2s;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                background-position: 0% 50%;
+                text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            }
+            50% { 
+                background-position: 100% 50%;
+                text-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+            }
+        }
+
+
+        .access-subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: var(--gray-silver);
+            max-width: 700px;
+            margin: 0 auto clamp(1.5rem, 4vw, 2rem);
+            font-weight: 300;
+            line-height: 1.6;
+            animation: subtitleSlide 0.8s ease-out 0.7s both;
+            position: relative;
+        }
+
+        @keyframes subtitleSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(3px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        /* Revelation and Secret Preview Styles */
+        .revelation-intro {
+            color: var(--ruby);
+            font-weight: 700;
+            font-size: 1.05em;
+            text-shadow: 0 0 10px rgba(224, 17, 95, 0.3);
+        }
+
+        .emphasis-gold {
+            color: var(--gold-bright);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .secret-preview {
+            margin-top: clamp(1.5rem, 4vw, 2.5rem);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            background: linear-gradient(135deg,
+                rgba(212, 175, 55, 0.08) 0%,
+                rgba(0, 0, 0, 0.9) 50%,
+                rgba(212, 175, 55, 0.08) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            position: relative;
+            text-align: center;
+        }
+
+        .preview-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-bright) 100%);
+            color: var(--black-absolute);
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+            animation: badgeGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeGlow {
+            0%, 100% { 
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
+        .preview-text {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .emphasis-secret {
+            color: var(--emerald);
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(80, 200, 120, 0.4);
+        }
+
+        .emphasis-proprietary {
+            color: var(--gold-bright);
+            font-weight: 800;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-metallic) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .emphasis-civilization {
+            color: var(--emerald);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(80, 200, 120, 0.3);
+            background: linear-gradient(135deg, var(--emerald) 0%, #40E0D0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.05em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .secret-preview {
+                margin-top: 1.5rem;
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Advanced Responsive Grid for Metrics */
+        .exclusivity-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+            margin: clamp(2rem, 5vw, 3rem) 0;
+        }
+
+        .metric-exclusive {
+            text-align: center;
+            padding: clamp(1rem, 3vw, 1.5rem);
+            background: 
+                linear-gradient(135deg, 
+                    rgba(0, 0, 0, 0.4) 0%, 
+                    rgba(212, 175, 55, 0.02) 50%,
+                    rgba(0, 0, 0, 0.3) 100%);
+            border: 1px solid var(--black-medium);
+            border-radius: clamp(12px, 3vw, 16px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: metricRise 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-exclusive::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                transparent 0%, 
+                rgba(212, 175, 55, 0.1) 50%, 
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .metric-exclusive:nth-child(1) { animation-delay: 0.9s; }
+        .metric-exclusive:nth-child(2) { animation-delay: 1.1s; }
+        .metric-exclusive:nth-child(3) { animation-delay: 1.3s; }
+        .metric-exclusive:nth-child(4) { animation-delay: 1.5s; }
+
+        .metric-exclusive:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(212, 175, 55, 0.2),
+                0 0 60px rgba(212, 175, 55, 0.1);
+        }
+
+        .metric-exclusive:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes metricRise {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .metric-value-exclusive {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
+            font-weight: 800;
+            color: var(--gold-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            animation: valueCount 2s ease-out 2s both;
+        }
+
+        @keyframes valueCount {
+            from { 
+                transform: scale(1.2);
+                filter: blur(2px);
+            }
+            to { 
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .metric-label-exclusive {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gray-steel);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* Timeline with Ultra Modern Design */
+        .qualification-timeline {
+            margin: clamp(3rem, 6vw, 4rem) 0;
+            position: relative;
+            animation: timelineSlide 0.8s ease-out 1.7s both;
+        }
+
+        @keyframes timelineSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, 
+                rgba(192, 192, 192, 0.95) 0%, 
+                rgba(169, 169, 169, 0.8) 50%, 
+                rgba(192, 192, 192, 0.95) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .timeline-subtitle {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--gray-steel);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .timeline-architecture {
+            position: relative;
+            max-width: min(90vw, 800px);
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 2rem) 0;
+        }
+
+        .timeline-spine {
+            position: absolute;
+            left: clamp(20px, 5vw, 40px);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                transparent 0%,
+                rgba(192, 192, 192, 0.3) 10%,
+                rgba(192, 192, 192, 0.6) 50%,
+                rgba(192, 192, 192, 0.3) 90%,
+                transparent 100%);
+            z-index: 1;
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            padding-left: clamp(3rem, 8vw, 5rem);
+            opacity: 0;
+            animation: nodeReveal 0.8s ease-out forwards;
+        }
+
+        .timeline-node:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-node:nth-child(3) { animation-delay: 0.4s; }
+        .timeline-node:nth-child(4) { animation-delay: 0.6s; }
+        .timeline-node:nth-child(5) { animation-delay: 0.8s; }
+        .timeline-node:nth-child(6) { animation-delay: 1.0s; }
+
+        @keyframes nodeReveal {
+            from {
+                opacity: 0;
+                transform: translateX(-30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        .node-marker {
+            position: absolute;
+            left: clamp(4px, 2vw, 24px);
+            top: 1rem;
+            width: clamp(24px, 6vw, 32px);
+            height: clamp(24px, 6vw, 32px);
+            z-index: 3;
+        }
+
+        .marker-core {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(192, 192, 192, 0.9) 0%, 
+                rgba(169, 169, 169, 0.8) 50%, 
+                rgba(192, 192, 192, 0.9) 100%);
+            border-radius: 50%;
+            border: 3px solid var(--black-absolute);
+            box-shadow: 
+                0 8px 16px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            animation: markerGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes markerGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 8px 16px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                    0 0 20px rgba(192, 192, 192, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 8px 16px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                    0 0 30px rgba(192, 192, 192, 0.6);
+            }
+        }
+
+        .marker-pulse {
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border: 1px solid rgba(192, 192, 192, 0.3);
+            border-radius: 50%;
+            animation: markerPulse 3s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes markerPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.4);
+                opacity: 0.2;
+            }
+        }
+
+        .node-content {
+            background: linear-gradient(135deg, 
+                rgba(192, 192, 192, 0.08) 0%, 
+                rgba(0, 0, 0, 0.4) 100%);
+            border: 1px solid rgba(192, 192, 192, 0.25);
+            border-radius: clamp(12px, 3vw, 16px);
+            padding: clamp(1rem, 3vw, 1.5rem);
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+        }
+
+        .node-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(192, 192, 192, 0.15), 
+                transparent);
+            transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-node:hover .node-content::before {
+            left: 100%;
+        }
+
+        .timeline-node:hover .node-content {
+            border-color: rgba(192, 192, 192, 0.5);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.3),
+                0 0 30px rgba(192, 192, 192, 0.1);
+        }
+
+        .node-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            font-weight: 700;
+            color: rgba(192, 192, 192, 0.9);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .node-description {
+            color: var(--gray-silver);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .emphasis-platinum {
+            color: rgba(192, 192, 192, 0.95);
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(192, 192, 192, 0.2);
+        }
+
+        /* CTA Ultra Premium com Animações Sofisticadas */
+        .cta-premium {
+            text-align: center;
+            margin-top: clamp(3rem, 8vw, 5rem);
+            animation: ctaEntrance 0.8s ease-out 2.3s both;
+            position: relative;
+        }
+
+        @keyframes ctaEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .cta-mystique {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.12) 0%,
+                rgba(255, 215, 0, 0.08) 25%,
+                rgba(0, 0, 0, 0.7) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: clamp(16px, 4vw, 24px);
+            padding: clamp(2rem, 5vw, 3rem);
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-mystique::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.2), 
+                transparent);
+            animation: mystiqueSweep 6s ease-in-out infinite;
+        }
+
+        @keyframes mystiqueSweep {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .cta-mystique::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--gold-primary) 50%, 
+                transparent 100%);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { 
+                background-position: -200% center;
+                opacity: 0.6;
+            }
+            50% { 
+                background-position: 200% center;
+                opacity: 1;
+            }
+        }
+
+        .cta-revelation {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            color: var(--gray-platinum);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            position: relative;
+        }
+
+        .cta-revelation-emphasis {
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: clamp(1.2rem, 3.8vw, 1.4rem);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-revelation-statement {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            color: var(--gray-silver);
+            line-height: 1.5;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+
+        .cta-architecture {
+            position: relative;
+            display: inline-block;
+            margin: clamp(1.5rem, 4vw, 2rem) 0;
+        }
+
+        .cta-framework {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: clamp(40px, 10vw, 80px);
+            animation: frameworkPulse 5s ease-in-out infinite;
+        }
+
+        @keyframes frameworkPulse {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.4;
+                border-color: rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                transform: scale(1.15) rotate(2deg);
+                opacity: 0.8;
+                border-color: rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: clamp(1rem, 3vw, 1.5rem);
+            background: linear-gradient(135deg, 
+                var(--gold-primary) 0%, 
+                var(--gold-bright) 25%,
+                var(--gold-metallic) 50%,
+                var(--gold-bright) 75%,
+                var(--gold-primary) 100%);
+            background-size: 300% 300%;
+            color: var(--black-absolute);
+            border: none;
+            padding: clamp(1.2rem, 4vw, 2rem) clamp(2.5rem, 8vw, 4.5rem);
+            border-radius: clamp(35px, 10vw, 70px);
+            font-size: clamp(1rem, 3.5vw, 1.4rem);
+            font-weight: 900;
+            text-decoration: none;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 
+                0 20px 40px rgba(212, 175, 55, 0.5),
+                0 8px 16px rgba(0, 0, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(139, 105, 20, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: clamp(1px, 0.5vw, 2px);
+            animation: buttonFloat 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes buttonFloat {
+            0%, 100% {
+                transform: translateY(0) scale(1) rotateX(0deg);
+                background-position: 0% 50%;
+            }
+            33% {
+                transform: translateY(-6px) scale(1.03) rotateX(2deg);
+                background-position: 50% 50%;
+            }
+            66% {
+                transform: translateY(-2px) scale(1.01) rotateX(-1deg);
+                background-position: 100% 50%;
+            }
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.5), 
+                transparent);
+            transition: left 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, 
+                var(--gold-primary) 0%, 
+                var(--gold-bright) 50%, 
+                var(--gold-primary) 100%);
+            border-radius: inherit;
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover::after {
+            opacity: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-15px) scale(1.08) rotateX(5deg);
+            background-position: 100% 50%;
+            box-shadow: 
+                0 35px 70px rgba(212, 175, 55, 0.7),
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                inset 0 3px 0 rgba(255, 255, 255, 0.6),
+                inset 0 -3px 0 rgba(139, 105, 20, 0.6),
+                0 0 80px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.2) saturate(1.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(-10px) scale(1.05) rotateX(2deg);
+            transition: all 0.1s ease;
+        }
+
+        .cta-icon {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            animation: iconOrbit 4s ease-in-out infinite;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes iconOrbit {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg); 
+            }
+            25% { 
+                transform: scale(1.1) rotate(90deg); 
+            }
+            50% { 
+                transform: scale(1.2) rotate(180deg); 
+            }
+            75% { 
+                transform: scale(1.1) rotate(270deg); 
+            }
+        }
+
+        .cta-urgency {
+            margin-top: clamp(1.5rem, 4vw, 2rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--ruby);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(224, 17, 95, 0.08) 0%, 
+                    rgba(224, 17, 95, 0.03) 100%);
+            border: 1px solid rgba(224, 17, 95, 0.3);
+            border-radius: 50px;
+            padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: urgencyPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+            0%, 100% { 
+                border-color: rgba(224, 17, 95, 0.3);
+                box-shadow: 0 0 20px rgba(224, 17, 95, 0.2);
+            }
+            50% { 
+                border-color: rgba(224, 17, 95, 0.6);
+                box-shadow: 0 0 40px rgba(224, 17, 95, 0.4);
+            }
+        }
+
+        .urgency-icon {
+            animation: urgencyBlink 2s ease-in-out infinite;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        @keyframes urgencyBlink {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1) rotate(0deg); 
+            }
+            50% { 
+                opacity: 0.3; 
+                transform: scale(1.3) rotate(180deg); 
+            }
+        }
+
+        /* Advanced Responsive Breakpoints */
+        @media (max-width: 480px) {
+            .qualification-container {
+                padding: 1rem;
+            }
+
+            .access-card {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .exclusivity-metrics {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-spine {
+                left: 15px;
+            }
+
+            .timeline-node {
+                padding-left: 2.5rem;
+            }
+
+            .node-marker {
+                left: 2px;
+                width: 20px;
+                height: 20px;
+            }
+
+            .cta-button {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .transformation-matrix {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .vector-line {
+                width: 60px;
+                height: 2px;
+                background: linear-gradient(90deg, 
+                    var(--gold-primary) 0%, 
+                    var(--gold-bright) 50%, 
+                    var(--gold-primary) 100%);
+            }
+
+            .vector-progression {
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .access-card {
+                max-width: 85vw;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .access-card {
+                max-width: 900px;
+            }
+        }
+
+        /* High DPI Display Optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .access-card {
+                backdrop-filter: var(--blur-premium) saturate(180%) brightness(115%);
+            }
+
+            .cta-button {
+                filter: contrast(1.1) saturate(1.1);
+            }
+        }
+
+        /* Dark Mode Enhancements */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --gray-platinum: #F5F5F5;
+                --gray-silver: #D0D0D0;
+            }
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Container Queries for Ultra Responsive Design */
+        @container (max-width: 600px) {
+            .exclusivity-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @container (min-width: 601px) and (max-width: 900px) {
+            .exclusivity-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @container (min-width: 901px) {
+            .exclusivity-metrics {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .premium-particles,
+            .qualification-bg {
+                display: none;
+            }
+
+            .access-card {
+                background: white;
+                color: black;
+                box-shadow: none;
+                border: 2px solid #333;
+            }
+        }
+
+        /* Seções Adiccionais que estavam no código original */
+        
+        /* Revelation Chamber Ultra Premium */
+        .revelation-chamber {
+            margin: clamp(3rem, 6vw, 5rem) 0;
+            position: relative;
+            animation: slideInRight 0.8s ease-out 1.9s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .chamber-architecture {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.08) 0%,
+                rgba(255, 215, 0, 0.05) 25%,
+                rgba(0, 0, 0, 0.7) 100%);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: clamp(16px, 4vw, 32px);
+            padding: clamp(2rem, 5vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chamber-architecture::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--gold-primary) 50%, 
+                transparent 100%);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        .revelation-core {
+            text-align: center;
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+        }
+
+        .core-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, 
+                var(--gold-primary) 0%, 
+                var(--gold-bright) 50%, 
+                var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .core-essence {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .essence-subtitle {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .essence-description {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--gray-silver);
+            line-height: 1.6;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .transformation-matrix {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: clamp(1rem, 3vw, 2rem);
+            align-items: center;
+            margin: clamp(2rem, 5vw, 3rem) 0;
+            position: relative;
+        }
+
+        .matrix-dimension {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: clamp(12px, 3vw, 20px);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-dimension::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.1), 
+                transparent);
+            transition: left 0.8s ease;
+        }
+
+        .matrix-dimension:hover::before {
+            left: 100%;
+        }
+
+        .dimension-header {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            color: var(--gray-steel);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .dimension-metric {
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-symbol {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            color: var(--gold-primary);
+            line-height: 1;
+            margin: 0.5rem 0;
+        }
+
+        .metric-descriptor {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gray-steel);
+            font-weight: 500;
+        }
+
+        .dimension-analysis {
+            text-align: left;
+        }
+
+        .analysis-point {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gray-silver);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .transformation-vector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .vector-line {
+            width: 2px;
+            height: clamp(40px, 10vw, 60px);
+            background: linear-gradient(180deg, 
+                var(--gold-primary) 0%, 
+                var(--gold-bright) 50%, 
+                var(--gold-primary) 100%);
+            position: relative;
+        }
+
+        .vector-line::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: radial-gradient(circle, 
+                rgba(212, 175, 55, 0.3) 0%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: vectorPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes vectorPulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.5); opacity: 0.3; }
+        }
+
+        .vector-progression {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .progression-node {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            color: var(--gold-primary);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .progression-arrow {
+            color: var(--gold-primary);
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        .vector-timeline {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            color: var(--gray-steel);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .revelation-insight {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: clamp(12px, 3vw, 16px);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            margin: clamp(2rem, 5vw, 3rem) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .insight-marker {
+            color: var(--gold-primary);
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            margin-top: 0.2rem;
+        }
+
+        .insight-text {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            color: var(--gray-silver);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .insight-emphasis {
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: clamp(1.05rem, 3.2vw, 1.15rem);
+        }
+
+        .paradigm-shift {
+            text-align: center;
+            margin-top: clamp(1.5rem, 4vw, 2rem);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: clamp(12px, 3vw, 16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .shift-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            font-weight: 600;
+            color: var(--gray-platinum);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .shift-emphasis {
+            color: var(--gold-primary);
+            font-weight: 800;
+            font-size: clamp(1.2rem, 3.8vw, 1.4rem);
+        }
+
+        /* Intelligence Gateway Ultra Premium */
+        .intelligence-gateway {
+            margin: clamp(3rem, 6vw, 5rem) 0;
+            animation: scaleIn 0.8s ease-out 2.1s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .gateway-notice {
+            background: linear-gradient(135deg, 
+                rgba(80, 200, 120, 0.08) 0%, 
+                rgba(0, 0, 0, 0.6) 100%);
+            border: 2px solid rgba(80, 200, 120, 0.3);
+            border-radius: clamp(12px, 3vw, 20px);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            display: flex;
+            align-items: center;
+            gap: clamp(1rem, 3vw, 1.5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gateway-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--emerald), 
+                transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .notice-seal {
+            width: clamp(40px, 10vw, 60px);
+            height: clamp(40px, 10vw, 60px);
+            background: linear-gradient(135deg, 
+                var(--emerald) 0%, 
+                rgba(80, 200, 120, 0.8) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            color: var(--black-absolute);
+            font-weight: 800;
+            box-shadow: 
+                0 8px 16px rgba(80, 200, 120, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+        }
+
+        .notice-header {
+            flex: 1;
+        }
+
+        .notice-classification {
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            color: var(--emerald);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .notice-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            font-weight: 700;
+            color: var(--emerald);
+            letter-spacing: 0.5px;
+        }
+
+        .gateway-architecture {
+            background: linear-gradient(135deg, 
+                rgba(80, 200, 120, 0.05) 0%, 
+                rgba(0, 0, 0, 0.5) 100%);
+            border: 1px solid rgba(80, 200, 120, 0.2);
+            border-radius: clamp(16px, 4vw, 24px);
+            padding: clamp(2rem, 5vw, 3rem);
+            position: relative;
+        }
+
+        .architecture-briefing {
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+        }
+
+        .briefing-statement {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            color: var(--gray-silver);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .briefing-revelation {
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+            color: var(--gray-steel);
+            line-height: 1.6;
+            font-style: italic;
+            padding: clamp(1rem, 3vw, 1.5rem);
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--emerald);
+            border-radius: 0 12px 12px 0;
+        }
+
+        .capabilities-matrix {
+            margin: clamp(2rem, 5vw, 3rem) 0;
+        }
+
+        .matrix-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            font-weight: 700;
+            color: var(--emerald);
+            text-align: center;
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            letter-spacing: 1px;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+            gap: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        .capability-node {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(80, 200, 120, 0.2);
+            border-radius: clamp(12px, 3vw, 16px);
+            padding: clamp(1rem, 3vw, 1.5rem);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-node::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(80, 200, 120, 0.1), 
+                transparent);
+            transition: left 0.6s ease;
+        }
+
+        .capability-node:hover::before {
+            left: 100%;
+        }
+
+        .capability-node:hover {
+            border-color: var(--emerald);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(80, 200, 120, 0.2);
+        }
+
+        .node-symbol {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            color: var(--emerald);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .node-label {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gray-silver);
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .gateway-warning {
+            background: rgba(80, 200, 120, 0.05);
+            border: 1px solid rgba(80, 200, 120, 0.3);
+            border-radius: clamp(12px, 3vw, 16px);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-top: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .warning-indicator {
+            color: var(--emerald);
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+            margin-top: 0.2rem;
+        }
+
+        .warning-content {
+            flex: 1;
+        }
+
+        .warning-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            font-weight: 700;
+            color: var(--emerald);
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-text {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--gray-silver);
+            line-height: 1.5;
+        }
+
+        /* Disclaimer Premium */
+        .disclaimer {
+            margin-top: clamp(2rem, 5vw, 3rem);
+            padding: clamp(1.5rem, 4vw, 2rem);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--black-medium);
+            border-radius: clamp(12px, 3vw, 16px);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 2.5s both;
+        }
+
+        .disclaimer-text {
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            color: var(--gray-steel);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .disclaimer-emphasis {
+            color: var(--gold-primary);
+            font-weight: 600;
+        }
+
+        /* Força visual para desktop e tablet */
+        @media (min-width: 769px) {
+            /* JavaScript fará as substituições */
+            .assessment-premium-override {
+                font-family: 'Playfair Display', serif !important;
+                color: var(--gold-primary) !important;
+                font-weight: 600 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="qualification-bg"></div>
+    <div class="premium-particles" id="premiumParticles"></div>
+
+    <main class="qualification-container">
+        <div class="access-card">
+            <header class="access-header">
+                <div class="access-badge">Classificação: Ultra-Restrito</div>
+                <h1 class="access-title">Assessment Estratégico C-Level: Identificação de Vazamentos Patrimoniais Ocultos</h1>
+                <div class="access-subtitle" style="margin-bottom: clamp(2rem, 5vw, 3rem);">
+                    <p style="color: var(--gold-primary); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1em;">
+                        Filosofia de Seleção Ética
+                    </p>
+                    <p style="margin-bottom: 2rem; color: var(--gray-platinum);">
+                        Sistemas mal implementados podem eliminar empregos sem gerar valor civilizacional. Operacionalizamos 
+                        inteligência exclusiva apenas para líderes comprometidos em <span style="color: var(--gold-primary); font-weight: 600;">elevar capacidades humanas</span>, 
+                        não substituí-las. Cada projeto gera em média <span style="color: var(--gold-primary); font-weight: 600;">12 novos empregos de alto valor agregado</span>.
+                    </p>
+                </div>
+                
+                <p class="access-subtitle">
+                    <span class="revelation-intro">Revelação exclusiva para CEOs de organizações R$2M+:</span>
+                    Em <span class="emphasis-gold">47 minutos de análise</span>, descobrimos onde organizações perdem entre 
+                    <span class="emphasis-gold">R$8M-R$47M anuais</span> em eficiência oculta. 
+                    A <span class="emphasis-proprietary">metodologia proprietária Dynamic Solutions</span> já identificou e operacionalizou 
+                    <span class="emphasis-gold">R$ 73.2M em valor oculto</span> para organizações que descobriram 
+                    onde seu potencial estava sendo silenciosamente desperdiçado.
+                </p>
+                
+                <div class="secret-preview">
+                    <div class="preview-badge">AVISO DE OPORTUNIDADE</div>
+                    <p class="preview-text">
+                        Se este <span class="emphasis-secret">assessment estratégico complimentar</span> já identifica 
+                        <span class="emphasis-gold">R$ 73.000+ em perdas mensais ocultas</span> na maioria das empresas analisadas, 
+                        imagine o valor da <span class="emphasis-proprietary">metodologia completa Dynamic Solutions</span> 
+                        - o mesmo protocolo que recuperou <span class="emphasis-gold">R$ 4.7M para uma metalúrgica em Minas</span> 
+                        e <span class="emphasis-gold">R$ 12.3M para um grupo atacadista em São Paulo</span> 
+                        identificando vazamentos que seus auditores jamais encontrariam.
+                    </p>
+                </div>
+            </header>
+
+
+            <div class="exclusivity-metrics">
+                <div class="metric-exclusive">
+                    <span class="metric-value-exclusive">R$ 2M+</span>
+                    <span class="metric-label-exclusive">Faturamento Mínimo Anual</span>
+                </div>
+                <div class="metric-exclusive">
+                    <span class="metric-value-exclusive">91%</span>
+                    <span class="metric-label-exclusive">Taxa de Rejeição</span>
+                </div>
+                <div class="metric-exclusive">
+                    <span class="metric-value-exclusive">Ago/2025</span>
+                    <span class="metric-label-exclusive">Próximas Vagas</span>
+                </div>
+            </div>
+
+
+            <section class="qualification-timeline">
+                <div class="timeline-header">
+                    <h2 class="timeline-title">Matriz de Qualificação Executiva</h2>
+                    <div class="timeline-subtitle">Avaliação para metodologias de IA proprietária e transformação estrutural</div>
+                </div>
+                
+                <div class="timeline-architecture">
+                    <div class="timeline-spine"></div>
+                    
+                    <div class="timeline-node" data-node="1">
+                        <div class="node-marker">
+                            <div class="marker-core"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-title">Critério de Escala</div>
+                            <div class="node-description">
+                                Organizações com faturamento <span class="emphasis-platinum">inferior a R$ 2M anuais</span> 
+                                ainda não desenvolveram a complexidade operacional necessária para justificar 
+                                arquiteturas de inteligência proprietária.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node" data-node="2">
+                        <div class="node-marker">
+                            <div class="marker-core"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-title">Critério de Autoridade</div>
+                            <div class="node-description">
+                                Metodologias de transformação estrutural exigem decisões executivas. 
+                                <span class="emphasis-platinum">Fundadores, CEOs ou sócios majoritários</span> 
+                                possuem a autonomia necessária para implementação.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node" data-node="3">
+                        <div class="node-marker">
+                            <div class="marker-core"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-title">Critério de Investimento</div>
+                            <div class="node-description">
+                                Arquiteturas de excelência possuem valor específico. 
+                                Orçamentos <span class="emphasis-platinum">abaixo de R$ 50.000</span> 
+                                direcionam para commodities, não para metodologias proprietárias.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node" data-node="4">
+                        <div class="node-marker">
+                            <div class="marker-core"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-title">Critério de Maturidade</div>
+                            <div class="node-description">
+                                Empresas que <span class="emphasis-platinum">"testaram diversas IAs genéricas"</span> 
+                                sem resultados necessitam de arquiteturas proprietárias, 
+                                não ferramentas commoditizadas.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node" data-node="5">
+                        <div class="node-marker">
+                            <div class="marker-core"></div>
+                            <div class="marker-pulse"></div>
+                        </div>
+                        <div class="node-content">
+                            <div class="node-title">Critério de Temporalidade</div>
+                            <div class="node-description">
+                                Expectativas de resultados em 30 dias demonstram incompreensão 
+                                sobre a natureza de <span class="emphasis-platinum">superinteligências proprietárias</span>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="revelation-chamber">
+                <div class="chamber-architecture">
+                    <div class="revelation-core">
+                        <div class="core-title">Caso de Estudo: R$ 47.3M Recuperados em 14 Meses</div>
+                        <div class="core-essence">
+                            <div class="essence-subtitle">Distribuidora Regional - Setor Alimentício</div>
+                            <div class="essence-description">
+                                <span class="emphasis-gold">CEO frustrado após 3 anos tentando "ferramentas de IA"</span> 
+                                sem resultados tangíveis. Nossa análise revelou que <span class="emphasis-proprietary">73% da capacidade operacional</span> 
+                                estava sendo consumida por 17 processos invisíveis que nenhuma auditoria tradicional identificaria. 
+                                <span class="emphasis-gold">Resultado: R$ 8.2M → R$ 47.3M anuais</span> através da operacionalização sistemática 
+                                de inteligências proprietárias e eliminação de vazamentos ocultos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transformation-matrix">
+                        <div class="matrix-dimension">
+                            <div class="dimension-header">Estado Inicial</div>
+                            <div class="dimension-metric">
+                                <div class="metric-symbol">R$</div>
+                                <div class="metric-number">8M</div>
+                                <div class="metric-descriptor">Faturamento Anual</div>
+                            </div>
+                            <div class="dimension-analysis">
+                                <div class="analysis-point">◦ 73% capacidade desperdiçada</div>
+                                <div class="analysis-point">◦ Processos invisíveis críticos</div>
+                                <div class="analysis-point">◦ Arquitetura operacional limitada</div>
+                            </div>
+                        </div>
+
+                        <div class="transformation-vector">
+                            <div class="vector-line"></div>
+                            <div class="vector-progression">
+                                <div class="progression-node">Diagnóstico</div>
+                                <div class="progression-arrow">→</div>
+                                <div class="progression-node">Arquitetura</div>
+                                <div class="progression-arrow">→</div>
+                                <div class="progression-node">Implementação</div>
+                            </div>
+                            <div class="vector-timeline">14 meses de transformação</div>
+                        </div>
+
+                        <div class="matrix-dimension">
+                            <div class="dimension-header">Estado Transformado</div>
+                            <div class="dimension-metric">
+                                <div class="metric-symbol">R$</div>
+                                <div class="metric-number">47M</div>
+                                <div class="metric-descriptor">Faturamento Anual</div>
+                            </div>
+                            <div class="dimension-analysis">
+                                <div class="analysis-point">◦ 94% capacidade otimizada</div>
+                                <div class="analysis-point">◦ Arquitetura inteligente autônoma</div>
+                                <div class="analysis-point">◦ Crescimento exponencial sustentável</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="revelation-insight">
+                        <div class="insight-marker">◊</div>
+                        <div class="insight-text">
+                            <span class="insight-emphasis">Descoberta crítica:</span> Os mesmos 17 tipos de vazamentos invisíveis 
+                            foram identificados em <span class="insight-emphasis">outras 23 empresas brasileiras</span> 
+                            com faturamento R$2M-R$200M+. <span class="emphasis-gold">Em média, cada organização estava perdendo 
+                            R$ 847.000 anuais</span> através de ineficiências que seus próprios diretores financeiros 
+                            não conseguiam detectar. <span class="emphasis-proprietary">A diferença é que apenas 3% descobriu isso a tempo.</span>
+                        </div>
+                    </div>
+
+                    <div class="paradigm-shift">
+                        <div class="shift-statement">
+                            A questão não é <span class="shift-emphasis">"se"</span> sua empresa possui esses vazamentos - 
+                            <span class="emphasis-gold">estatisticamente, você está perdendo R$ 70.000+ mensais</span> neste exato momento. 
+                            A questão é <span class="shift-emphasis">"quando"</span> você descobrirá onde estão consumindo seu patrimônio 
+                            e <span class="shift-emphasis">"quanto"</span> sua empresa ainda vai perder antes de identificá-los. 
+                            <span class="emphasis-proprietary">Cada mês de atraso custa, em média, R$ 847.000 em oportunidades perdidas.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="intelligence-gateway">
+                <div class="gateway-notice">
+                    <div class="notice-seal">◊</div>
+                    <div class="notice-header">
+                        <div class="notice-classification">Acesso Controlado</div>
+                        <div class="notice-title">Interface de Qualificação Avançada</div>
+                    </div>
+                </div>
+
+                <div class="gateway-architecture">
+                    <div class="architecture-briefing">
+                        <div class="briefing-statement">
+                            Esta interface executa uma versão demonstrativa da <span class="emphasis-proprietary">Dynamic Solutions Neural Architecture</span> 
+                            - a metodologia que identificou <span class="emphasis-gold">R$ 73.2M em valor recuperável</span> nos últimos 18 meses. 
+                            <span class="emphasis-proprietary">Atenção: Este assessment executivo complimentar revelará perdas mensais superiores a R$ 50.000</span> 
+                            na maioria das empresas R$2M+ que a utilizam.
+                        </div>
+                        
+                        <div class="briefing-revelation">
+                            <span class="emphasis-gold">Aviso importante:</span> Se você descobrir que sua empresa está perdendo 
+                            R$ 70.000+ mensais através deste assessment de elegibilidade, não ignore. Cada dia de atraso representa 
+                            <span class="emphasis-proprietary">R$ 2.300 em perdas adicionais</span> enquanto organizações concorrentes já estão operacionalizando metodologias similares.
+                        </div>
+                    </div>
+
+                    <div class="capabilities-matrix">
+                        <div class="matrix-title">Capacidades da Interface</div>
+                        <div class="capabilities-grid">
+                            <div class="capability-node">
+                                <div class="node-symbol">◈</div>
+                                <div class="node-label">Análise Multicamadas</div>
+                            </div>
+                            <div class="capability-node">
+                                <div class="node-symbol">◊</div>
+                                <div class="node-label">Mapeamento Comportamental</div>
+                            </div>
+                            <div class="capability-node">
+                                <div class="node-symbol">⬟</div>
+                                <div class="node-label">Detecção de Padrões</div>
+                            </div>
+                            <div class="capability-node">
+                                <div class="node-symbol">◉</div>
+                                <div class="node-label">Processamento Contextual</div>
+                            </div>
+                            <div class="capability-node">
+                                <div class="node-symbol">⟡</div>
+                                <div class="node-label">Arquitetura Preditiva</div>
+                            </div>
+                            <div class="capability-node">
+                                <div class="node-symbol">◎</div>
+                                <div class="node-label">Inteligência Adaptativa</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gateway-warning">
+                        <div class="warning-indicator">⚠</div>
+                        <div class="warning-content">
+                            <div class="warning-title">Protocolo de Elegibilidade</div>
+                            <div class="warning-text">
+                                Esta interface conduzirá uma análise estratégica para determinar 
+                                compatibilidade organizacional com nossa metodologia proprietária. 
+                                O processo avalia adequação mútua, não comercialização.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cta-premium">
+                <div class="cta-mystique">
+                    <p class="cta-revelation">
+                        <span class="cta-revelation-emphasis">Última oportunidade antes do reajuste:</span> 
+                        Este assessment estratégico complimentar utiliza a mesma metodologia que recuperou <span class="emphasis-gold">R$ 73.2M</span> 
+                        para organizações brasileiras nos últimos 18 meses. <span class="emphasis-proprietary">A partir de Q4/2025, 
+                        este nível de assessment será exclusivo do programa executivo completo.</span>
+                    </p>
+                    <p class="cta-revelation-statement">
+                        Se você descobrir que está perdendo <span class="emphasis-gold">R$ 70.000+ mensais</span> através deste assessment executivo, 
+                        considere que a <span class="cta-revelation-emphasis">metodologia completa já pagou por si mesma</span> 
+                        no primeiro mês para 23 das 24 empresas que a implementaram.
+                    </p>
+                </div>
+
+                <div class="truth-chamber" style="margin: clamp(2rem, 5vw, 3rem) 0; background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0.9) 100%); border: 1px solid rgba(212, 175, 55, 0.2);">
+                    <p style="color: var(--gold-primary); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; text-align: center;">
+                        Critério de Exclusividade Global
+                    </p>
+                    <p style="color: var(--gray-platinum); line-height: 1.6; text-align: center; font-size: 1rem;">
+                        Apenas <span style="color: var(--gold-primary); font-weight: 600;">0,3%</span> dos profissionais globais dominam metodologias de 
+                        operacionalização de inteligência proprietária. Nossa seleção não é sobre orçamento - é sobre 
+                        <span style="color: var(--gold-primary); font-weight: 600;">visão de futuro</span> e capacidade de implementação que gera 
+                        impacto civilizacional através da elevação de capacidades humanas.
+                    </p>
+                </div>
+
+                <div class="cta-architecture">
+                    <div class="cta-framework"></div>
+                    <a href="https://wa.me/5532999735469?text=Olá!%20Vim%20da%20página%20de%20qualificação%20exclusiva.%20Minha%20empresa%20atende%20aos%20critérios%20estabelecidos%20(faturamento%20R%24%202M%2B%2C%20decisor%20final%2C%20orçamento%20adequado)%20e%20quero%20acessar%20a%20interface%20de%20qualificação%20avançada%20com%20a%20especialista%20digital.%20Preciso%20descobrir%20onde%20estamos%20perdendo%20produtividade%20e%20avaliar%20nossa%20elegibilidade%20para%20as%20arquiteturas%20de%20inteligência%20proprietárias." 
+                       class="cta-button" target="_blank" rel="noopener noreferrer">
+                        <span class="cta-icon">◊</span>
+                        <span>Solicitar Acesso ao Assessment Executivo</span>
+                    </a>
+                </div>
+
+                <div class="cta-urgency">
+                    <span class="urgency-icon">◉</span>
+                    <span>Capacidade limitada • 3 organizações • Q3/2025</span>
+                </div>
+            </div>
+
+            <div class="disclaimer">
+                <p class="disclaimer-text">
+                    <span class="disclaimer-emphasis">Protocolo de Avaliação:</span> Nossa especialista digital executará 
+                    análise estratégica para determinar compatibilidade organizacional com metodologias proprietárias. 
+                    Este processo avalia <span class="disclaimer-emphasis">adequação mútua</span> através de critérios técnicos específicos. 
+                    Organizações que não atendem aos parâmetros estabelecidos receberão direcionamento para alternativas 
+                    mais apropriadas ao seu estágio de desenvolvimento atual.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Sistema Ultra Avançado de Partículas com IA
+        class UltraParticleSystem {
+            constructor() {
+                this.container = document.getElementById('premiumParticles');
+                this.particles = [];
+                this.particleTypes = [
+                    { class: 'particle-gold', count: 20, size: [1, 3], speed: [15, 25] },
+                    { class: 'particle-silver', count: 15, size: [1, 2], speed: [20, 30] },
+                    { class: 'particle-ruby', count: 8, size: [1, 2], speed: [25, 35] }
+                ];
+                this.init();
+            }
+
+            init() {
+                this.createParticles();
+                this.startInteractiveEffects();
+                this.startPerformanceMonitoring();
+            }
+
+            createParticles() {
+                this.particleTypes.forEach(type => {
+                    for (let i = 0; i < type.count; i++) {
+                        const particle = this.createParticle(type);
+                        this.container.appendChild(particle);
+                        this.particles.push({
+                            element: particle,
+                            type: type,
+                            x: Math.random() * window.innerWidth,
+                            y: window.innerHeight + Math.random() * 100,
+                            speedX: (Math.random() - 0.5) * 2,
+                            speedY: -(Math.random() * (type.speed[1] - type.speed[0]) + type.speed[0]),
+                            rotation: Math.random() * 360,
+                            rotationSpeed: (Math.random() - 0.5) * 4,
+                            scale: Math.random() * 0.5 + 0.5,
+                            opacity: Math.random() * 0.6 + 0.2
+                        });
+                    }
+                });
+            }
+
+            createParticle(type) {
+                const particle = document.createElement('div');
+                particle.className = `premium-particle ${type.class}`;
+                
+                const size = Math.random() * (type.size[1] - type.size[0]) + type.size[0];
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.position = 'absolute';
+                particle.style.pointerEvents = 'none';
+                
+                return particle;
+            }
+
+            startInteractiveEffects() {
+                let mouseX = 0, mouseY = 0;
+                
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    
+                    this.particles.forEach(particle => {
+                        const dx = mouseX - particle.x;
+                        const dy = mouseY - particle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            const force = (150 - distance) / 150;
+                            particle.speedX += (dx / distance) * force * 0.1;
+                            particle.speedY += (dy / distance) * force * 0.1;
+                        }
+                    });
+                });
+
+                // Animação ultra suave com requestAnimationFrame
+                const animate = () => {
+                    this.updateParticles();
+                    requestAnimationFrame(animate);
+                };
+                animate();
+            }
+
+            updateParticles() {
+                this.particles.forEach(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+                    particle.rotation += particle.rotationSpeed;
+
+                    // Reset se sair da tela
+                    if (particle.y < -50) {
+                        particle.y = window.innerHeight + 50;
+                        particle.x = Math.random() * window.innerWidth;
+                    }
+
+                    if (particle.x < -50) particle.x = window.innerWidth + 50;
+                    if (particle.x > window.innerWidth + 50) particle.x = -50;
+
+                    // Aplicar transformações
+                    particle.element.style.transform = `
+                        translateX(${particle.x}px) 
+                        translateY(${particle.y}px) 
+                        rotate(${particle.rotation}deg) 
+                        scale(${particle.scale})
+                    `;
+                    particle.element.style.opacity = particle.opacity;
+                });
+            }
+
+            startPerformanceMonitoring() {
+                // Reduz partículas se performance estiver baixa
+                let lastTime = performance.now();
+                const checkPerformance = () => {
+                    const currentTime = performance.now();
+                    const deltaTime = currentTime - lastTime;
+                    
+                    if (deltaTime > 20) { // < 50 FPS
+                        this.optimizeParticles();
+                    }
+                    
+                    lastTime = currentTime;
+                    setTimeout(checkPerformance, 1000);
+                };
+                checkPerformance();
+            }
+
+            optimizeParticles() {
+                if (this.particles.length > 20) {
+                    const particleToRemove = this.particles.pop();
+                    particleToRemove.element.remove();
+                }
+            }
+        }
+
+        // Sistema de Animações Inteligentes
+        class IntelligentAnimationSystem {
+            constructor() {
+                this.observedElements = new Map();
+                this.init();
+            }
+
+            init() {
+                this.setupIntersectionObserver();
+                this.setupAdvancedInteractions();
+                this.setupResponsiveAnimations();
+            }
+
+            setupIntersectionObserver() {
+                const options = {
+                    threshold: [0, 0.25, 0.5, 0.75, 1],
+                    rootMargin: '-10% 0px -10% 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const element = entry.target;
+                        const ratio = entry.intersectionRatio;
+
+                        if (ratio > 0.5) {
+                            this.activateElement(element);
+                        } else {
+                            this.deactivateElement(element);
+                        }
+                    });
+                }, options);
+
+                // Observar elementos chave
+                document.querySelectorAll('.metric-exclusive, .timeline-node, .capability-node').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            activateElement(element) {
+                element.style.transform = 'translateY(0) scale(1)';
+                element.style.opacity = '1';
+                element.style.filter = 'blur(0)';
+                
+                if (element.classList.contains('metric-exclusive')) {
+                    this.animateCounter(element);
+                }
+            }
+
+            deactivateElement(element) {
+                // Sutil fade out para elementos que saem da view
+                element.style.opacity = '0.7';
+            }
+
+            animateCounter(element) {
+                const valueElement = element.querySelector('.metric-value-exclusive');
+                if (valueElement && !valueElement.dataset.animated) {
+                    const text = valueElement.textContent;
+                    const numbers = text.match(/\d+/g);
+                    
+                    if (numbers) {
+                        const targetValue = parseInt(numbers[0]);
+                        let currentValue = 0;
+                        const increment = targetValue / 60; // 1 segundo a 60fps
+                        
+                        const animate = () => {
+                            currentValue += increment;
+                            if (currentValue < targetValue) {
+                                valueElement.textContent = text.replace(/\d+/, Math.floor(currentValue));
+                                requestAnimationFrame(animate);
+                            } else {
+                                valueElement.textContent = text;
+                                valueElement.dataset.animated = 'true';
+                            }
+                        };
+                        animate();
+                    }
+                }
+            }
+
+            setupAdvancedInteractions() {
+                // Hover 3D para cards
+                document.querySelectorAll('.metric-exclusive, .capability-node, .timeline-node').forEach(card => {
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = (y - centerY) / centerY * 10;
+                        const rotateY = (centerX - x) / centerX * 10;
+                        
+                        card.style.transform = `
+                            perspective(1000px) 
+                            rotateX(${rotateX}deg) 
+                            rotateY(${rotateY}deg) 
+                            translateZ(20px)
+                            scale3d(1.05, 1.05, 1.05)
+                        `;
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale3d(1, 1, 1)';
+                    });
+                });
+
+                // Efeito magnético no CTA
+                const ctaButton = document.querySelector('.cta-button');
+                if (ctaButton) {
+                    ctaButton.addEventListener('mousemove', (e) => {
+                        const rect = ctaButton.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        
+                        const distance = Math.sqrt(x * x + y * y);
+                        const maxDistance = 100;
+                        
+                        if (distance < maxDistance) {
+                            const force = (maxDistance - distance) / maxDistance;
+                            ctaButton.style.transform = `
+                                translateX(${x * force * 0.1}px) 
+                                translateY(${y * force * 0.1}px) 
+                                scale(${1 + force * 0.05})
+                                rotateX(${-y * force * 0.1}deg)
+                                rotateY(${x * force * 0.1}deg)
+                            `;
+                        }
+                    });
+
+                    ctaButton.addEventListener('mouseleave', () => {
+                        ctaButton.style.transform = 'translateX(0) translateY(0) scale(1) rotateX(0) rotateY(0)';
+                    });
+                }
+            }
+
+            setupResponsiveAnimations() {
+                // Ajusta animações baseado na performance do dispositivo
+                const isHighPerformance = window.navigator.hardwareConcurrency > 4;
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+                if (!isHighPerformance || prefersReducedMotion) {
+                    document.documentElement.style.setProperty('--animation-scale', '0.5');
+                    document.querySelectorAll('.premium-particle').forEach(p => {
+                        p.style.animationDuration = '40s';
+                    });
+                }
+            }
+        }
+
+        // Sistema de Otimização de Performance
+        class PerformanceOptimizer {
+            constructor() {
+                this.isVisible = true;
+                this.init();
+            }
+
+            init() {
+                this.setupVisibilityAPI();
+                this.setupResourceOptimization();
+                this.setupLazyLoading();
+            }
+
+            setupVisibilityAPI() {
+                document.addEventListener('visibilitychange', () => {
+                    this.isVisible = !document.hidden;
+                    
+                    if (!this.isVisible) {
+                        // Pausa animações quando tab não está visível
+                        document.querySelectorAll('.premium-particle').forEach(p => {
+                            p.style.animationPlayState = 'paused';
+                        });
+                    } else {
+                        document.querySelectorAll('.premium-particle').forEach(p => {
+                            p.style.animationPlayState = 'running';
+                        });
+                    }
+                });
+            }
+
+            setupResourceOptimization() {
+                // Otimiza baseado na conexão
+                if ('connection' in navigator) {
+                    const connection = navigator.connection;
+                    
+                    if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+                        document.querySelector('.premium-particles').style.display = 'none';
+                    }
+                }
+            }
+
+            setupLazyLoading() {
+                // Carrega animações apenas quando necessário
+                const lazyElements = document.querySelectorAll('[data-lazy-animate]');
+                
+                const lazyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-loaded');
+                            lazyObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                lazyElements.forEach(el => lazyObserver.observe(el));
+            }
+        }
+
+        // Inicialização do Sistema Completo
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verifica suporte a tecnologias modernas
+            const supportsModernFeatures = 
+                'IntersectionObserver' in window &&
+                'requestAnimationFrame' in window &&
+                CSS.supports('backdrop-filter', 'blur(10px)');
+
+            if (supportsModernFeatures) {
+                new UltraParticleSystem();
+                new IntelligentAnimationSystem();
+                new PerformanceOptimizer();
+            } else {
+                // Fallback para navegadores mais antigos
+                document.body.classList.add('legacy-browser');
+            }
+
+            // Otimizações adicionais
+            setupSmoothScrolling();
+            setupPreloadOptimization();
+            setupAccessibilityEnhancements();
+        });
+
+        // Smooth Scrolling Inteligente
+        function setupSmoothScrolling() {
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+            // Otimiza scroll performance
+            let ticking = false;
+            
+            function updateScrollPosition() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                
+                document.querySelector('.qualification-bg').style.transform = `translateY(${rate}px)`;
+                ticking = false;
+            }
+
+            document.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollPosition);
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Preload de Recursos Críticos
+        function setupPreloadOptimization() {
+            // Preload de fontes
+            const fontUrls = [
+                'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap',
+                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
+            ];
+
+            fontUrls.forEach(url => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'style';
+                link.href = url;
+                document.head.appendChild(link);
+            });
+        }
+
+        // Melhorias de Acessibilidade
+        function setupAccessibilityEnhancements() {
+            // Focus trap para elementos interativos
+            const focusableElements = document.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+            
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', () => {
+                    element.style.outline = '2px solid var(--gold-primary)';
+                    element.style.outlineOffset = '4px';
+                });
+
+                element.addEventListener('blur', () => {
+                    element.style.outline = 'none';
+                });
+            });
+
+            // Navegação por teclado melhorada
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            });
+
+            // Redução de movimento se preferido
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    *, *::before, *::after {
+                        animation-duration: 0.01ms !important;
+                        animation-iteration-count: 1 !important;
+                        transition-duration: 0.01ms !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+
+        // Sistema de Analytics Avançado
+        function trackAdvancedInteractions() {
+            // Track scroll depth
+            let maxScroll = 0;
+            document.addEventListener('scroll', () => {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll % 25 === 0) {
+                        console.log(`Scroll depth: ${maxScroll}%`);
+                    }
+                }
+            });
+
+            // Track element visibility
+            const visibilityObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log(`Element visible: ${entry.target.className}`);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.metric-exclusive, .cta-button').forEach(el => {
+                visibilityObserver.observe(el);
+            });
+        }
+
+        // Ativar analytics
+        trackAdvancedInteractions();
+        
+        // REFORMULAÇÃO COMPLETA - VENDA INVISÍVEL ESTILO STEVE JOBS
+        function applyJobsStyleCopy() {
+            if (window.innerWidth > 768) {
+                
+                // NOVO TÍTULO PRINCIPAL - Impacto intelectual sem arrogância
+                const accessTitle = document.querySelector('.access-title');
+                if (accessTitle) {
+                    accessTitle.innerHTML = 'Arquitetura de Inteligência Proprietária: Quando a Tecnologia Encontra a Visão Estratégica';
+                }
+                
+                // NOVA CLASSIFICAÇÃO - Exclusividade inteligente
+                const accessBadge = document.querySelector('.access-badge');
+                if (accessBadge) {
+                    accessBadge.innerHTML = 'Classificação: Restrito • Apenas Visionários';
+                }
+                
+                // FILOSOFIA DE SELEÇÃO - Ego intelectual sutil
+                const accessSubtitle = document.querySelector('.access-subtitle');
+                if (accessSubtitle) {
+                    accessSubtitle.innerHTML = `
+                        <p style="color: var(--gold-primary); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1em;">
+                            Filosofia de Colaboração Seletiva
+                        </p>
+                        <p style="line-height: 1.6; color: var(--gray-platinum); margin-bottom: 1rem;">
+                            Acreditamos que <span style="color: var(--gold-primary); font-weight: 600;">organizações extraordinárias merecem soluções extraordinárias</span>. 
+                            Não criamos apenas sistemas - operacionalizamos visões que outros consideram impossíveis.
+                        </p>
+                        <p style="line-height: 1.6; color: var(--gray-platinum); margin-bottom: 2rem;">
+                            A <span style="color: var(--gold-primary);">metodologia proprietária Dynamic Solutions</span> já transformou 
+                            <span style="color: var(--gold-primary); font-weight: 600;">R$ 73.2M em potencial oculto</span> em realidade mensurável 
+                            para líderes que compreendem que <span style="color: var(--gold-primary);">inovação real acontece nos detalhes que outros ignoram</span>.
+                        </p>
+                    `;
+                }
+                
+                // PREVIEW COM VENDA INVISÍVEL JOBS-STYLE
+                const previewBadge = document.querySelector('.preview-badge');
+                if (previewBadge) {
+                    previewBadge.innerHTML = 'DEMONSTRAÇÃO DE CAPACIDADE INTELECTUAL';
+                }
+                
+                const previewText = document.querySelector('.preview-text');
+                if (previewText) {
+                    previewText.innerHTML = `
+                        Imagine se pudéssemos <span class="emphasis-gold">identificar R$ 73.000+ em oportunidades ocultas</span> 
+                        em sua organização usando apenas <span class="emphasis-proprietary">12 minutos de nossa metodologia proprietária</span>. 
+                        Não porque queremos impressionar você, mas porque acreditamos que 
+                        <span style="color: var(--gold-primary); font-weight: 600;">mentes brilhantes merecem ferramentas à altura de sua visão</span>.<br><br>
+                        
+                        Se isso despertar sua curiosidade sobre os outros <span class="emphasis-gold">97% da metodologia</span> 
+                        que recuperou <span class="emphasis-gold">R$ 4.7M para uma metalúrgica visionária</span> e 
+                        <span class="emphasis-gold">R$ 12.3M para um grupo atacadista estratégico</span>, 
+                        então talvez você seja exatamente o tipo de líder com quem adoramos trabalhar.
+                    `;
+                }
+                
+                // TIMELINE TITLE - Seleção mútua
+                const timelineTitle = document.querySelector('.timeline-title');
+                if (timelineTitle) {
+                    timelineTitle.innerHTML = 'Processo de Seleção Mútua';
+                }
+                
+                const timelineSubtitle = document.querySelector('.timeline-subtitle');
+                if (timelineSubtitle) {
+                    timelineSubtitle.innerHTML = 'Nem todo líder está pronto para metodologias que operam décadas à frente • Taxa de compatibilidade: 9%';
+                }
+                
+                // BRIEFING REVELATION - O que realmente oferecemos
+                const briefingRevelation = document.querySelector('.briefing-revelation');
+                if (briefingRevelation) {
+                    briefingRevelation.innerHTML = `
+                        <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%); padding: 2rem; border-radius: 16px; border: 1px solid rgba(212, 175, 55, 0.2); margin: 3rem 0;">
+                            <div style="color: var(--gold-primary); font-weight: 600; margin-bottom: 1.5rem; font-size: 1.1rem;">
+                                Esta demonstração não é uma consultoria. É uma janela.
+                            </div>
+                            
+                            <div style="line-height: 1.8; color: var(--gray-platinum); margin-bottom: 2rem;">
+                                Uma janela para o que acontece quando você combina <span style="color: var(--gold-primary);">inteligência artificial proprietária</span> 
+                                com <span style="color: var(--gold-primary);">visão estratégica de décadas</span>. 
+                                O que você verá em 12 minutos são os <span style="color: var(--gold-primary); font-weight: 600;">primeiros indícios</span> 
+                                do que sua organização poderia se tornar.
+                            </div>
+                            
+                            <div style="border-left: 3px solid var(--gold-primary); padding-left: 1rem; margin: 1.5rem 0;">
+                                <div style="color: var(--gray-platinum); line-height: 1.6;">
+                                    <strong style="color: var(--gold-primary);">Você descobrirá:</strong><br>
+                                    • Onde exatamente sua organização perde potencial (mapeamento inicial)<br>
+                                    • Quais oportunidades seus concorrentes não conseguem ver (análise competitiva)<br>
+                                    • Por que algumas empresas operam em uma liga diferente (revelação de padrões)<br>
+                                    • Se sua visão está alinhada com metodologias de R$ 890.000+ (compatibilidade estratégica)
+                                </div>
+                            </div>
+                            
+                            <div style="background: rgba(224, 17, 95, 0.08); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--ruby); margin-top: 2rem;">
+                                <div style="color: var(--ruby); font-weight: 700; margin-bottom: 0.5rem;">Transparência Total:</div>
+                                <div style="color: var(--gray-platinum); line-height: 1.6;">
+                                    Se identificarmos potencial superior a <span style="color: var(--gold-primary); font-weight: 600;">R$ 2.3M em sua organização</span>, 
+                                    você será convidado para uma conversa sobre nossa metodologia completa. 
+                                    <span style="color: var(--gold-primary);">Nem todo líder está pronto para investimentos de R$ 890.000</span>. 
+                                    E isso é perfeitamente aceitável.
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // CTA REVELATION - Jobs-style selling
+                const ctaRevelation = document.querySelector('.cta-revelation');
+                if (ctaRevelation) {
+                    ctaRevelation.innerHTML = `
+                        <div style="margin-bottom: 1.5rem;">
+                            <span style="color: var(--ruby); font-weight: 700; font-size: 1.1rem;">
+                                Para líderes que pensam diferente:
+                            </span>
+                        </div>
+                        
+                        <div style="line-height: 1.7; color: var(--gray-platinum); margin-bottom: 2rem;">
+                            Esta demonstração utiliza <span style="color: var(--gold-primary); font-weight: 600;">3% da metodologia</span> 
+                            que já transformou <span style="color: var(--gold-primary);">R$ 73.2M em potencial oculto</span> 
+                            em resultados mensuráveis para 127 organizações brasileiras.<br><br>
+                            
+                            A partir de 2025, este nível de análise será <span style="color: var(--gold-primary);">exclusivo</span> 
+                            do nosso programa executivo completo. Não porque queremos ser exclusivos, 
+                            mas porque <span style="color: var(--gold-primary); font-weight: 600;">metodologias desta magnitude requerem parceiros, não clientes</span>.<br><br>
+                            
+                            Se você descobrir que sua organização tem potencial para recuperar 
+                            <span style="color: var(--gold-primary); font-weight: 600;">R$ 2.3M+ através desta simples demonstração</span>, 
+                            considere que nossa metodologia completa se pagou em menos de 30 dias para 
+                            <span style="color: var(--gold-primary);">89% dos líderes visionários</span> que escolhemos como parceiros.
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(0, 0, 0, 0.2) 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.15); text-align: center;">
+                            <div style="color: var(--gold-primary); font-weight: 600; margin-bottom: 0.5rem;">
+                                "Think Different" nunca foi apenas um slogan.
+                            </div>
+                            <div style="color: var(--gray-platinum); font-size: 0.95rem;">
+                                É o princípio que separa organizações convencionais de impérios duradouros.
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // CTA BUTTON - Jobs-style action
+                const ctaButton = document.querySelector('.cta-button span:last-child');
+                if (ctaButton) {
+                    ctaButton.innerHTML = 'Iniciar Demonstração de Capacidade';
+                }
+                
+                // CTA URGENCY - Scarcity com classe
+                const ctaUrgency = document.querySelector('.cta-urgency span:last-child');
+                if (ctaUrgency) {
+                    ctaUrgency.innerHTML = 'Capacidade para 3 organizações visionárias • Q3/2025';
+                }
+            }
+        }
+        
+        // Aplicar quando carregar
+        document.addEventListener('DOMContentLoaded', applyJobsStyleCopy);
+        window.addEventListener('resize', applyJobsStyleCopy);
+        
+        // Aplicar imediatamente também
+        applyJobsStyleCopy();
+    </script>
+</body>
+</html>

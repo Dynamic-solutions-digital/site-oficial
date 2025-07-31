@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Services Showcase</title>
+    
+    <!-- Performance optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Prefetch navegação -->
+    <link rel="prefetch" href="../assessment/index.html">
+    <link rel="prefetch" href="../about/index.html">
+    <link rel="prefetch" href="../analytics-dashboard/index.html">
+    <link rel="prefetch" href="../home/index.html">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="neural-bg"></div>
+    
+    <div class="elegant-particles" id="elegant-particles"></div>
+    <div class="neural-particles" id="neural-particles"></div>
+
+    <div class="showcase-container">
+        <div class="showcase-header">
+            <div class="title-container">
+                <div class="title-ornament">
+                    <div class="ornament-circle"></div>
+                    <div class="ornament-circle"></div>
+                    <div class="ornament-circle"></div>
+                    <div class="title-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <h1 class="neural-title">
+                    <span class="title-line">Arquiteturas</span>
+                    <span class="title-line">Impossíveis</span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card secret-revelation" onclick="openModal('agentes')">
+                <div class="secret-service-overlay" id="service1Overlay">
+                    <div class="service-secret-hint">◊ Revele Sistema Proprietário ◊</div>
+                </div>
+                <div class="service-mastery-badge" id="service1Badge">◊</div>
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                            <path d="M13 8H7"/>
+                            <path d="M17 12H7"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Sistemas de Decisão Proprietários</h3>
+                </div>
+                <div class="card-content">
+                    <div class="service-discovery-zone" data-service="intelligence">
+                        <div class="service-indicator"></div>
+                        <p class="service-description">Operacionalizamos consciências digitais exclusivas que processam, decidem e executam 24/7. Não adaptamos ferramentas - criamos inteligências sob medida que antecipam oportunidades 6 meses antes da concorrência perceber.</p>
+                        <div class="service-hidden-detail" id="intelligence-detail">
+                            <small style="opacity: 0.8; font-size: 0.8rem;">
+                                💡 <strong>Metodologia Exclusiva:</strong> Framework proprietário desenvolvido em 8 anos de pesquisa<br>
+                                📊 <strong>Performance:</strong> 347% superior aos sistemas convencionais<br>
+                                🎯 <strong>Resultados:</strong> Identificação de oportunidades 6 meses antes da concorrência
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card secret-revelation" onclick="openModal('desenvolvimento')">
+                <div class="secret-service-overlay" id="service2Overlay">
+                    <div class="service-secret-hint">◊ Revele Ecossistema Comportamental ◊</div>
+                </div>
+                <div class="service-mastery-badge" id="service2Badge">◊</div>
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Ecossistemas Comportamentais Funcionais</h3>
+                </div>
+                <div class="card-content">
+                    <div class="service-discovery-zone" data-service="behavioral">
+                        <div class="service-indicator"></div>
+                        <p class="service-description">Não construímos sites - operacionalizamos ecossistemas que influenciam comportamento e se otimizam autonomamente. Propriedade intelectual que nenhum concorrente pode replicar. Taxa de conversão média: 127% superior ao benchmark do setor.</p>
+                        <div class="service-hidden-detail" id="behavioral-detail">
+                            <small style="opacity: 0.8; font-size: 0.8rem;">
+                                🧠 <strong>Psicologia Aplicada:</strong> Neuromarketing e triggers comportamentais avançados<br>
+                                📈 <strong>Conversão:</strong> 127% superior aos benchmarks do mercado<br>
+                                🔄 <strong>Auto-otimização:</strong> Sistema aprende e evolui continuamente
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card secret-revelation" onclick="openModal('apps')">
+                <div class="secret-service-overlay" id="service3Overlay">
+                    <div class="service-secret-hint">◊ Revele Interface de Comando ◊</div>
+                </div>
+                <div class="service-mastery-badge" id="service3Badge">◊</div>
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="2" y1="9" x2="22" y2="9"/>
+                            <line x1="2" y1="15" x2="22" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Interfaces de Comando Exclusivas</h3>
+                </div>
+                <div class="card-content">
+                    <div class="service-discovery-zone" data-service="interfaces">
+                        <div class="service-indicator"></div>
+                        <p class="service-description">Operacionalizamos interfaces que se tornam extensões do pensamento executivo. Cada interação é otimizada para acelerar decisões estratégicas. Apps que evoluem com a organização, criando vantagem competitiva através da usabilidade proprietária.</p>
+                        <div class="service-hidden-detail" id="interfaces-detail">
+                            <small style="opacity: 0.8; font-size: 0.8rem;">
+                                ⚡ <strong>Velocidade Decisória:</strong> Interface antecipa necessidades executivas<br>
+                                🎯 <strong>Customização:</strong> Adapta-se ao padrão cognitivo do usuário<br>
+                                🚀 <strong>Vantagem:</strong> Propriedade intelectual impossível de replicar
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="openModal('infraestrutura')">
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 01-8 0"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Fundações de Escala Ilimitada</h3>
+                </div>
+                <div class="card-content">
+                    <p class="service-description">Não implementamos servidores - concretizamos fundações que suportam crescimento exponencial com elegância operacional constante. Escale 1000% mantendo a mesma performance. 99.99% uptime garantido com arquitetura auto-regenerativa.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="openModal('estrategias')">
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Mapas de Territórios Inexplorados</h3>
+                </div>
+                <div class="card-content">
+                    <p class="service-description">Operacionalizamos análises comportamentais que revelam padrões psicológicos invisíveis. Criamos mapas para territórios de crescimento que consultores convencionais nem sabem que existem. Média de descoberta: R$4,7M em oportunidades ocultas por análise.</p>
+                </div>
+            </div>
+
+            <div class="service-card" onclick="openModal('automacao')">
+                <div class="holographic-sweep"></div>
+                <div class="card-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                            <path d="M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Libertação Intelectual Completa</h3>
+                </div>
+                <div class="card-content">
+                    <p class="service-description">Operacionalizamos sistemas que não apenas executam, mas evoluem e se refinam autonomamente. Tempo transformado em oportunidades estratégicas para genialidade executiva. Eficiência operacional média: +437% em 90 dias com eliminação de tarefas repetitivas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div id="modalBody">
+                <!-- Conteúdo será inserido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function applyJobsStyleCapabilities() {
+            if (window.innerWidth > 768) {
+                // Update service descriptions with more sophisticated copy
+                const systemsDescription = document.querySelector('[data-service="intelligence"] .service-description');
+                if (systemsDescription) {
+                    systemsDescription.innerHTML = 'Mentes visionárias não se contentam com ferramentas convencionais. Operacionalizamos consciências digitais que pensam, decidem e executam com a precisão de quem compreende que oportunidade e timing são inseparáveis. Não oferecemos sistemas - criamos extensões do seu intelecto estratégico.';
+                }
+
+                const behavioralDescription = document.querySelector('[data-service="behavioral"] .service-description');
+                if (behavioralDescription) {
+                    behavioralDescription.innerHTML = 'Líderes excepcionais reconhecem que influência genuína transcende técnicas superficiais. Desenvolvemos ecossistemas comportamentais que operam nos níveis mais profundos da percepção humana. Cada interação é uma obra de arte psicológica projetada para mentes que compreendem sutileza.';
+                }
+
+                const interfacesDescription = document.querySelector('[data-service="interfaces"] .service-description');
+                if (interfacesDescription) {
+                    interfacesDescription.innerHTML = 'Genialidade executiva merece interfaces que antecipem pensamentos antes mesmo deles se formarem. Criamos extensões cognitivas que se adaptam ao ritmo da sua brilliance. Não é tecnologia - é amplificação intelectual para quem já opera em frequências superiores.';
+                }
+
+                // Update other service descriptions
+                const infraDescription = document.querySelector('[onclick="openModal(\'infraestrutura\')"] .service-description');
+                if (infraDescription) {
+                    infraDescription.innerHTML = 'Visionários constroem para a eternidade, não para o momento. Desenvolvemos fundações tecnológicas que suportam ambições ilimitadas com a elegância que apenas mentes sofisticadas compreendem. Crescimento exponencial sem compromissos - porque mediocridade não é uma opção.';
+                }
+
+                const strategiesDescription = document.querySelector('[onclick="openModal(\'estrategias\')"] .service-description');
+                if (strategiesDescription) {
+                    strategiesDescription.innerHTML = 'Enquanto outros seguem mapas existentes, nós revelamos territórios inexplorados que apenas intelectos refinados conseguem perceber. Operacionalizamos análises comportamentais que desvendam padrões invisíveis aos olhos convencionais. R$4,7M médios em oportunidades ocultas por análise.';
+                }
+
+                const automationDescription = document.querySelector('[onclick="openModal(\'automacao\')"] .service-description');
+                if (automationDescription) {
+                    automationDescription.innerHTML = 'Mentes brilhantes não foram feitas para tarefas repetitivas. Desenvolvemos sistemas que não apenas executam, mas evoluem autonomamente, liberando seu intelecto para o que realmente importa: visionar futuros impossíveis. +437% de eficiência operacional em 90 dias.';
+                }
+            }
+        }
+
+        // Apply on load and resize
+        document.addEventListener('DOMContentLoaded', applyJobsStyleCapabilities);
+        window.addEventListener('resize', applyJobsStyleCapabilities);
+    </script>
+</body>
+</html>

@@ -1,0 +1,5239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Intelligence Architecture</title>
+    
+    <!-- Preload crítico para performance -->
+    <link rel="preload" href="../image/Logo oficial (1).png" as="image" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Prefetch das páginas de destino para navegação instantânea -->
+    <link rel="prefetch" href="../analytics-dashboard/index.html">
+    <link rel="prefetch" href="../capabilities/index.html">
+    <link rel="prefetch" href="../strategic-assessment/index.html">
+    <link rel="prefetch" href="../home/index.html">
+    
+    <!-- Preload recursos críticos da própria página -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTjrMjJ-wU.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- DNS prefetch para recursos externos -->
+    <link rel="dns-prefetch" href="https://github.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --platinum: #E5E4E2;
+            --gold-accent: #D4AF37;
+            --gold-bright: #FFD700;
+            --deep-black: #0A0A0A;
+            --charcoal: #1C1C1C;
+            --silver-mist: #F8F8FF;
+            --luxury-blue: #1E3A5F;
+            --luxury-blue-bright: #2A5F8F;
+            --whisper: rgba(255, 255, 255, 0.03);
+            --breath: rgba(255, 255, 255, 0.08);
+            --shadow-intense: rgba(0, 0, 0, 0.8);
+            --glow-gold: rgba(212, 175, 55, 0.6);
+            --glow-blue: rgba(30, 58, 95, 0.6);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--deep-black);
+            color: var(--platinum);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Background System */
+        .luxury-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(212, 175, 55, 0.04) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 70%, rgba(30, 58, 95, 0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 50%, rgba(28, 28, 28, 0.3) 0%, transparent 100%),
+                linear-gradient(135deg, rgba(28, 28, 28, 0.9) 0%, rgba(10, 10, 10, 0.98) 100%);
+            z-index: -5;
+        }
+
+        .prestige-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.015) 1px, transparent 1px);
+            background-size: 100px 100px;
+            z-index: -4;
+            animation: prestigeFlow 60s linear infinite;
+        }
+
+        @keyframes prestigeFlow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 100px); }
+        }
+
+        .excellence-aura {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.008) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(30, 58, 95, 0.008) 0%, transparent 50%);
+            z-index: -3;
+            animation: breatheAura 12s ease-in-out infinite;
+        }
+
+        @keyframes breatheAura {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+            50% { transform: scale(1.05) rotate(0.5deg); opacity: 0.7; }
+        }
+
+        @keyframes exclusiveGlow {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        /* Qualification Section - Mobile Only */
+        @media (max-width: 768px) {
+            .qualification-section {
+                display: block !important;
+            }
+        }
+
+        /* Progress Indicator */
+        .prestige-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold-accent) 0%, var(--gold-bright) 50%, var(--luxury-blue) 100%);
+            z-index: 1000;
+            box-shadow: 
+                0 0 20px var(--glow-gold),
+                0 0 40px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Heritage Section */
+        .heritage {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem 2rem;
+            background: 
+                radial-gradient(ellipse at center, rgba(212, 175, 55, 0.02) 0%, transparent 70%);
+        }
+
+        .heritage-frame {
+            max-width: 1800px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 8rem;
+            align-items: center;
+            padding: 6rem 0;
+        }
+
+        .heritage-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Logo styling - flutuante no local exato sem quadro */
+        .brand-logo {
+            display: block;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            opacity: 0.9;
+            position: relative;
+            /* Mantém as mesmas dimensões mas sem o quadro */
+            width: 33.33%; /* Mesma largura para manter posicionamento */
+            text-align: center;
+            margin-left: 0; /* Mantém à esquerda */
+            margin-right: auto;
+            /* Remove todos os estilos do quadro */
+            background: transparent;
+            border: none;
+            padding: 0;
+            backdrop-filter: none;
+        }
+
+        .brand-logo img {
+            height: 160px;
+            width: auto;
+            filter: brightness(1.1) contrast(1.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: block;
+            margin: 0 auto;
+            /* Otimizações críticas para performance */
+            loading: lazy;
+            decoding: async;
+            will-change: transform, filter;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        .brand-logo:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+            /* Remove background hover */
+            background: transparent;
+        }
+
+        .brand-logo:hover img {
+            filter: brightness(1.2) contrast(1.2);
+            transform: scale(1.05);
+        }
+
+        .provenance-mark {
+            display: inline-block;
+            background: linear-gradient(135deg, 
+                rgba(28, 28, 28, 0.95) 0%, 
+                rgba(10, 10, 10, 0.98) 100%);
+            border: 1px solid var(--gold-accent);
+            color: var(--gold-accent);
+            padding: 1rem 3rem;
+            border-radius: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            backdrop-filter: blur(40px);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .provenance-mark::before,
+        .provenance-mark::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 2px solid var(--gold-accent);
+            background: var(--deep-black);
+        }
+
+        .provenance-mark::before {
+            top: -6px;
+            left: -6px;
+        }
+
+        .provenance-mark::after {
+            bottom: -6px;
+            right: -6px;
+        }
+
+        .heritage-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.8rem;
+            font-weight: 300;
+            line-height: 1.08;
+            margin-bottom: 3rem;
+            color: var(--silver-mist);
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .heritage-title .accent {
+            color: var(--gold-accent);
+            font-weight: 400;
+            text-shadow: 0 0 30px var(--glow-gold);
+        }
+
+        .heritage-subtitle {
+            font-size: 1.35rem;
+            color: var(--platinum);
+            margin-bottom: 3.5rem;
+            line-height: 1.75;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 85%;
+        }
+
+        /* Exclusivity Panel */
+        .exclusivity-panel {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.04) 0%, 
+                rgba(0, 0, 0, 0.6) 100%);
+            backdrop-filter: blur(60px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 0;
+            padding: 4rem 3rem;
+            position: relative;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(212, 175, 55, 0.1);
+            transform: perspective(1000px) rotateX(2deg);
+        }
+
+        .exclusivity-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 40%, 
+                rgba(212, 175, 55, 0.03) 50%, 
+                transparent 60%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .exclusivity-panel:hover::before {
+            opacity: 1;
+        }
+
+        .panel-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        .panel-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .distinction-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .distinction-metric:last-child {
+            border-bottom: none;
+        }
+
+        .distinction-metric::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            right: -3rem;
+            top: 0;
+            bottom: 0;
+            background: rgba(212, 175, 55, 0.02);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .distinction-metric:hover::before {
+            opacity: 1;
+        }
+
+        .metric-descriptor {
+            font-size: 1rem;
+            color: var(--platinum);
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .metric-achievement {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gold-accent);
+            text-shadow: 0 0 20px var(--glow-gold);
+        }
+
+        /* Revelation Section */
+        .revelation {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 15rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .revelation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .revelation-prelude {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .revelation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            font-weight: 300;
+            line-height: 1.15;
+            margin-bottom: 3.5rem;
+            color: var(--silver-mist);
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .revelation-essence {
+            font-size: 1.5rem;
+            color: var(--platinum);
+            margin-bottom: 5rem;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .truth-chamber {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.06) 0%, 
+                rgba(30, 58, 95, 0.06) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 0;
+            padding: 5rem 4rem;
+            margin: 5rem 0;
+            backdrop-filter: blur(40px);
+            position: relative;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .truth-chamber::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            color: rgba(212, 175, 55, 0.08);
+            position: absolute;
+            top: 0.5rem;
+            left: 3rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .truth-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .truth-revelation {
+            font-size: 1.2rem;
+            color: var(--platinum);
+            line-height: 1.8;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contemplation {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--silver-mist);
+            margin: 5rem 0;
+            line-height: 1.5;
+            font-weight: 300;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contemplation .emphasis {
+            color: var(--gold-accent);
+            font-weight: 400;
+            text-shadow: 0 0 30px var(--glow-gold);
+        }
+
+        /* Objection Handler Section */
+        .objection-handler {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 4rem;
+            position: relative;
+        }
+
+        .objection-container {
+            background: linear-gradient(135deg, 
+                rgba(30, 58, 95, 0.08) 0%, 
+                rgba(0, 0, 0, 0.6) 100%);
+            border: 1px solid rgba(30, 58, 95, 0.3);
+            border-radius: 0;
+            padding: 5rem;
+            backdrop-filter: blur(40px);
+            position: relative;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .objection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            color: var(--gold-accent);
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .objection-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .conventional-approach,
+        .proprietary-approach {
+            padding: 3rem;
+            border-radius: 0;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .conventional-approach {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 53, 0.06) 0%, 
+                rgba(0, 0, 0, 0.4) 100%);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .proprietary-approach {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.08) 0%, 
+                rgba(0, 0, 0, 0.4) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .approach-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .conventional-approach .approach-label {
+            color: rgba(255, 107, 53, 0.9);
+        }
+
+        .proprietary-approach .approach-label {
+            color: var(--gold-accent);
+        }
+
+        .approach-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--platinum);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .weak-emphasis {
+            color: rgba(255, 107, 53, 0.8);
+            font-weight: 500;
+        }
+
+        .strong-emphasis {
+            color: var(--gold-accent);
+            font-weight: 600;
+            text-shadow: 0 0 15px var(--glow-gold);
+        }
+
+        .approach-result {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .result-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .conventional-approach .result-text {
+            color: rgba(255, 107, 53, 0.8);
+        }
+
+        .proprietary-approach .result-text {
+            color: var(--gold-accent);
+        }
+
+        .objection-proof {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .proof-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 200;
+            color: var(--gold-accent);
+            line-height: 1;
+            text-shadow: 0 0 40px var(--glow-gold);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--platinum);
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Mobile optimization for objection handler */
+        @media (max-width: 1200px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .objection-handler {
+                padding: 0 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .objection-handler {
+                margin: 5rem auto;
+                padding: 0 2rem;
+            }
+            
+            .objection-container {
+                padding: 3rem 2rem;
+            }
+            
+            .objection-title {
+                font-size: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .conventional-approach,
+            .proprietary-approach {
+                padding: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        /* Strategic Navigation */
+        .strategic-navigation {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 12rem 4rem;
+            position: relative;
+        }
+
+        .navigation-prelude {
+            text-align: center;
+            margin-bottom: 8rem;
+        }
+
+        .navigation-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 500;
+        }
+
+        .navigation-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            line-height: 1.25;
+            margin-bottom: 3.5rem;
+            color: var(--silver-mist);
+            letter-spacing: -1px;
+        }
+
+        .navigation-insight {
+            font-size: 1.3rem;
+            color: var(--platinum);
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        /* Strategic Paths */
+        .strategic-paths {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 5rem;
+            align-items: stretch;
+            margin-top: 8rem;
+        }
+
+        .strategic-path {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.03) 0%, 
+                rgba(0, 0, 0, 0.4) 100%);
+            backdrop-filter: blur(60px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 0;
+            padding: 5rem 4rem;
+            position: relative;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+            min-height: 650px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .data-path {
+            border-left: 4px solid var(--gold-accent);
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.04) 0%, 
+                rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .solutions-path {
+            border-left: 4px solid var(--luxury-blue);
+            background: linear-gradient(135deg, 
+                rgba(30, 58, 95, 0.04) 0%, 
+                rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .strategic-path::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                rgba(212, 175, 55, 0.04) 25%, 
+                transparent 50%, 
+                rgba(212, 175, 55, 0.04) 75%, 
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .strategic-path:hover::before {
+            opacity: 1;
+        }
+
+        .strategic-path:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 
+                0 60px 120px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .solutions-path:hover {
+            border-color: rgba(30, 58, 95, 0.6);
+        }
+
+        .path-header {
+            margin-bottom: 4rem;
+        }
+
+        .path-type {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--gold-accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            font-family: 'Inter', sans-serif;
+            backdrop-filter: blur(20px);
+        }
+
+        .solutions-path .path-type {
+            border-color: rgba(30, 58, 95, 0.4);
+            color: var(--luxury-blue);
+        }
+
+        .path-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--silver-mist);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .path-mission {
+            font-size: 1.1rem;
+            color: var(--platinum);
+            line-height: 1.7;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Evidence Framework */
+        .evidence-framework {
+            flex-grow: 1;
+            margin-bottom: 4rem;
+        }
+
+        .evidence-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold-accent);
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .solutions-path .evidence-title {
+            color: var(--luxury-blue);
+        }
+
+        .evidence-list {
+            list-style: none;
+        }
+
+        .evidence-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .evidence-item:last-child {
+            border-bottom: none;
+        }
+
+        .evidence-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            right: -2rem;
+            top: 0;
+            bottom: 0;
+            background: rgba(212, 175, 55, 0.03);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .evidence-item:hover::before {
+            opacity: 1;
+        }
+
+        .solutions-path .evidence-item:hover::before {
+            background: rgba(30, 58, 95, 0.03);
+        }
+
+        .evidence-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .solutions-path .evidence-icon {
+            background: rgba(30, 58, 95, 0.1);
+            border-color: rgba(30, 58, 95, 0.3);
+            color: var(--luxury-blue);
+        }
+
+        .evidence-content {
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .evidence-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--silver-mist);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .evidence-description {
+            font-size: 0.9rem;
+            color: var(--platinum);
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        /* Action Buttons */
+        .strategic-action {
+            margin-top: auto;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+            justify-content: center;
+            padding: 2rem 3rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            backdrop-filter: blur(20px);
+        }
+
+        .data-path .action-button {
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-bright));
+            color: var(--deep-black);
+            box-shadow: 
+                0 15px 40px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .solutions-path .action-button {
+            background: linear-gradient(135deg, var(--charcoal), var(--deep-black));
+            color: var(--luxury-blue);
+            border: 2px solid var(--luxury-blue);
+            box-shadow: 
+                0 15px 40px rgba(30, 58, 95, 0.3),
+                inset 0 1px 0 rgba(30, 58, 95, 0.1);
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .action-button:hover::before {
+            left: 100%;
+        }
+
+        .data-path .action-button:hover {
+            transform: scale(1.05);
+            box-shadow: 
+                0 25px 60px rgba(212, 175, 55, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-accent));
+        }
+
+        .solutions-path .action-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--luxury-blue), var(--luxury-blue-bright));
+            color: var(--silver-mist);
+            border-color: var(--gold-accent);
+            box-shadow: 
+                0 25px 60px rgba(30, 58, 95, 0.6),
+                0 0 0 1px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Path Separator */
+        .path-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .separator-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .separator-circle {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold-accent), var(--gold-bright));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--deep-black);
+            box-shadow: 
+                0 30px 60px rgba(212, 175, 55, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            animation: separatorFloat 6s ease-in-out infinite;
+        }
+
+        .separator-glow {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: separatorGlow 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes separatorFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+        }
+
+        @keyframes separatorGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Executive Concierge */
+        .executive-concierge {
+            background: 
+                linear-gradient(180deg, rgba(0, 0, 0, 0.98) 0%, rgba(5, 5, 5, 1) 100%);
+            padding: 12rem 5rem 10rem 5rem;
+            margin: 10rem auto;
+            max-width: 1400px;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        }
+
+        .concierge-header {
+            margin-bottom: 8rem;
+        }
+
+        .access-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .indicator-line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+        }
+
+        .indicator-text {
+            font-size: 0.8rem;
+            color: rgba(212, 175, 55, 0.8);
+            letter-spacing: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .revelation-core {
+            margin-bottom: 10rem;
+        }
+
+        .core-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            line-height: 1.3;
+            color: var(--silver-mist);
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.5px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .core-reality {
+            font-size: 1.1rem;
+            color: rgba(212, 175, 55, 0.7);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .intelligence-matrix {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin: 10rem 0;
+            padding: 5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .matrix-cell {
+            padding: 4rem 3rem;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.01) 0%, 
+                rgba(0, 0, 0, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .matrix-cell:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.2);
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.02) 0%, 
+                rgba(0, 0, 0, 0.7) 100%);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .cell-data {
+            margin-bottom: 2.5rem;
+        }
+
+        .data-primary, .cell-revelation {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 200;
+            color: var(--gold-accent);
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 40px var(--glow-gold);
+        }
+
+        .data-context, .cell-positioning {
+            font-size: 0.9rem;
+            color: var(--platinum);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .cell-insight {
+            font-size: 1rem;
+            color: rgba(229, 228, 226, 0.8);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .matrix-divider {
+            width: 2px;
+            height: 150px;
+            background: linear-gradient(180deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.4), 
+                transparent);
+            position: relative;
+        }
+
+        .matrix-divider::before {
+            content: '◊';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(212, 175, 55, 0.6);
+            font-size: 1rem;
+            background: var(--deep-black);
+            padding: 1rem;
+        }
+
+        .evidence-chamber {
+            background: linear-gradient(135deg, 
+                rgba(30, 58, 95, 0.06) 0%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            border: 1px solid rgba(30, 58, 95, 0.2);
+            margin: 10rem auto 8rem auto;
+            padding: 5rem 5rem 4rem 5rem;
+            max-width: 1200px;
+            position: relative;
+            backdrop-filter: blur(80px);
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.7),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .evidence-seal {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--deep-black);
+            color: rgba(212, 175, 55, 0.8);
+            font-size: 1.2rem;
+            padding: 0 2rem;
+            font-weight: 300;
+        }
+
+        .evidence-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--silver-mist);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .evidence-attribution {
+            text-align: right;
+        }
+
+        .attribution-role {
+            font-size: 1rem;
+            color: var(--gold-accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .attribution-company {
+            font-size: 0.9rem;
+            color: rgba(229, 228, 226, 0.7);
+            font-weight: 300;
+        }
+
+        .qualification-gateway {
+            margin-top: 8rem;
+        }
+
+        .gateway-premise {
+            font-size: 1.2rem;
+            color: rgba(229, 228, 226, 0.9);
+            line-height: 1.7;
+            margin-bottom: 5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gateway-access {
+            display: inline-flex;
+            align-items: center;
+            gap: 2.5rem;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.95) 0%, 
+                rgba(10, 10, 10, 0.98) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--silver-mist);
+            padding: 2.5rem 5rem;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.2rem;
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+            letter-spacing: 1px;
+            position: relative;
+            backdrop-filter: blur(80px);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        }
+
+        .gateway-access::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.05), 
+                transparent);
+            transition: left 1.2s ease;
+        }
+
+        .gateway-access:hover::before {
+            left: 100%;
+        }
+
+        .gateway-access:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 
+                0 35px 80px rgba(0, 0, 0, 0.9),
+                0 0 0 1px rgba(212, 175, 55, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: linear-gradient(135deg, 
+                rgba(2, 2, 2, 0.98) 0%, 
+                rgba(15, 15, 15, 1) 100%);
+        }
+
+        .access-prefix, .access-suffix {
+            font-size: 1.4rem;
+            color: rgba(212, 175, 55, 0.7);
+            font-weight: 300;
+        }
+
+        .access-action {
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+        }
+
+        .access-suffix {
+            transition: transform 0.6s ease;
+        }
+
+        .gateway-access:hover .access-suffix {
+            transform: translateX(8px);
+        }
+
+        /* Discretion Notice */
+        .discretion-notice {
+            background: linear-gradient(135deg, 
+                rgba(28, 28, 28, 0.9) 0%, 
+                rgba(10, 10, 10, 0.98) 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 8rem;
+            backdrop-filter: blur(40px);
+            position: relative;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        }
+
+        .discretion-notice::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-accent), transparent);
+        }
+
+        .discretion-text {
+            color: rgba(229, 228, 226, 0.9);
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Ultra-Sophisticated Animation System */
+        .emerge, .ascend, .manifest-left, .manifest-right {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Enhanced Animation States with Proper Show/Hide */
+        .js-enabled .emerge {
+            opacity: 0;
+            transform: translateY(80px) scale(0.95);
+            filter: blur(3px);
+            transition: all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .emerge.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .emerge.hidden {
+            opacity: 0;
+            transform: translateY(-60px) scale(0.9);
+            filter: blur(2px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .ascend {
+            opacity: 0;
+            transform: translateY(100px) scale(0.9);
+            filter: blur(4px);
+            transition: all 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .ascend.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .ascend.hidden {
+            opacity: 0;
+            transform: translateY(-80px) scale(0.85);
+            filter: blur(3px);
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .manifest-left {
+            opacity: 0;
+            transform: translateX(-100px) translateY(30px) scale(0.9);
+            filter: blur(4px);
+            transition: all 1.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .manifest-left.visible {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .manifest-left.hidden {
+            opacity: 0;
+            transform: translateX(-80px) translateY(-40px) scale(0.9);
+            filter: blur(2px);
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .manifest-right {
+            opacity: 0;
+            transform: translateX(100px) translateY(30px) scale(0.9);
+            filter: blur(4px);
+            transition: all 1.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .manifest-right.visible {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .manifest-right.hidden {
+            opacity: 0;
+            transform: translateX(80px) translateY(-40px) scale(0.9);
+            filter: blur(2px);
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Enhanced element-specific animations */
+        .js-enabled .heritage-title {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+            transition: all 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .heritage-title.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .heritage-title.hidden {
+            opacity: 0;
+            transform: translateY(-40px) scale(0.95);
+            filter: blur(1px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .exclusivity-panel {
+            opacity: 0;
+            transform: translateY(80px) rotateX(10deg) scale(0.9);
+            filter: blur(3px);
+            transition: all 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .exclusivity-panel.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .exclusivity-panel.hidden {
+            opacity: 0;
+            transform: translateY(-50px) rotateX(-5deg) scale(0.9);
+            filter: blur(2px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .truth-chamber {
+            opacity: 0;
+            transform: translateY(100px) scale(0.85);
+            filter: blur(5px);
+            transition: all 1.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .truth-chamber.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .truth-chamber.hidden {
+            opacity: 0;
+            transform: translateY(-70px) scale(0.9);
+            filter: blur(3px);
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .strategic-path {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+            transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .strategic-path.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .strategic-path.hidden {
+            opacity: 0;
+            transform: translateY(-90px) scale(0.8);
+            filter: blur(4px);
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .matrix-cell {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+            transition: all 1.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .matrix-cell.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .matrix-cell.hidden {
+            opacity: 0;
+            transform: translateY(-60px) scale(0.9);
+            filter: blur(2px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .evidence-chamber {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+            transition: all 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .js-enabled .evidence-chamber.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        .js-enabled .evidence-chamber.hidden {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+            filter: blur(1px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        /* Staggered Animation Enhancement */
+        .js-enabled .emerge:nth-child(1) { transition-delay: 0ms; }
+        .js-enabled .emerge:nth-child(2) { transition-delay: 100ms; }
+        .js-enabled .emerge:nth-child(3) { transition-delay: 200ms; }
+        .js-enabled .emerge:nth-child(4) { transition-delay: 300ms; }
+
+        .js-enabled .ascend:nth-child(1) { transition-delay: 0ms; }
+        .js-enabled .ascend:nth-child(2) { transition-delay: 150ms; }
+        .js-enabled .ascend:nth-child(3) { transition-delay: 300ms; }
+
+        .js-enabled .strategic-path:nth-child(1) { transition-delay: 0ms; }
+        .js-enabled .strategic-path:nth-child(2) { transition-delay: 200ms; }
+        .js-enabled .strategic-path:nth-child(3) { transition-delay: 400ms; }
+
+        .js-enabled .matrix-cell:nth-child(1) { transition-delay: 0ms; }
+        .js-enabled .matrix-cell:nth-child(2) { transition-delay: 300ms; }
+        .js-enabled .matrix-cell:nth-child(3) { transition-delay: 600ms; }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .js-enabled .emerge,
+            .js-enabled .ascend,
+            .js-enabled .manifest-left,
+            .js-enabled .manifest-right,
+            .js-enabled .heritage-title,
+            .js-enabled .exclusivity-panel,
+            .js-enabled .truth-chamber,
+            .js-enabled .strategic-path,
+            .js-enabled .matrix-cell,
+            .js-enabled .evidence-chamber {
+                transition: opacity 0.3s ease !important;
+                filter: none !important;
+                transform: none !important;
+            }
+        }
+
+        /* Mobile optimization for animations */
+        @media (max-width: 768px) {
+            .js-enabled .emerge,
+            .js-enabled .ascend,
+            .js-enabled .manifest-left,
+            .js-enabled .manifest-right {
+                filter: none !important; /* Remove blur on mobile */
+                transition-duration: 0.6s !important; /* Faster animations */
+            }
+
+            .js-enabled .emerge.visible,
+            .js-enabled .ascend.visible,
+            .js-enabled .manifest-left.visible,
+            .js-enabled .manifest-right.visible {
+                filter: none !important;
+            }
+
+            .js-enabled .strategic-path {
+                filter: none !important; /* Remove blur on mobile */
+                transition-duration: 0.8s !important;
+            }
+
+            .js-enabled .strategic-path.visible {
+                filter: none !important;
+            }
+
+            .js-enabled .heritage-title,
+            .js-enabled .exclusivity-panel,
+            .js-enabled .truth-chamber,
+            .js-enabled .matrix-cell,
+            .js-enabled .evidence-chamber {
+                filter: none !important; /* Remove all blur on mobile */
+                transition-duration: 0.7s !important;
+            }
+
+            .js-enabled .heritage-title.visible,
+            .js-enabled .exclusivity-panel.visible,
+            .js-enabled .truth-chamber.visible,
+            .js-enabled .matrix-cell.visible,
+            .js-enabled .evidence-chamber.visible {
+                filter: none !important;
+            }
+
+            /* Simplified mobile transforms */
+            .js-enabled .emerge {
+                transform: translateY(40px) scale(0.98);
+            }
+
+            .js-enabled .ascend {
+                transform: translateY(50px) scale(0.97);
+            }
+
+            .js-enabled .manifest-left {
+                transform: translateX(-40px) scale(0.98);
+            }
+
+            .js-enabled .manifest-right {
+                transform: translateX(40px) scale(0.98);
+            }
+
+            .js-enabled .strategic-path {
+                transform: translateY(60px) scale(0.95);
+            }
+
+            .js-enabled .heritage-title {
+                transform: translateY(30px) scale(0.98);
+            }
+
+            .js-enabled .exclusivity-panel {
+                transform: translateY(40px) scale(0.97);
+            }
+
+            .js-enabled .truth-chamber {
+                transform: translateY(50px) scale(0.96);
+            }
+
+            .js-enabled .matrix-cell {
+                transform: translateY(40px) scale(0.97);
+            }
+
+            .js-enabled .evidence-chamber {
+                transform: translateY(30px) scale(0.98);
+            }
+
+            /* Disable expensive transforms on mobile */
+            .js-enabled .exclusivity-panel {
+                transform: translateY(40px) scale(0.97) !important; /* Remove rotateX */
+            }
+
+            .js-enabled .exclusivity-panel.visible {
+                transform: translateY(0) scale(1) !important;
+            }
+
+            .js-enabled .exclusivity-panel.hidden {
+                transform: translateY(-20px) scale(0.98) !important;
+            }
+        }
+
+        /* Performance optimization for all devices */
+        .js-enabled .emerge,
+        .js-enabled .ascend,
+        .js-enabled .manifest-left,
+        .js-enabled .manifest-right,
+        .js-enabled .heritage-title,
+        .js-enabled .exclusivity-panel,
+        .js-enabled .truth-chamber,
+        .js-enabled .strategic-path,
+        .js-enabled .matrix-cell,
+        .js-enabled .evidence-chamber {
+            will-change: transform, opacity, filter;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            contain: layout style paint;
+            content-visibility: auto;
+        }
+
+        .js-enabled .emerge.visible,
+        .js-enabled .ascend.visible,
+        .js-enabled .manifest-left.visible,
+        .js-enabled .manifest-right.visible,
+        .js-enabled .heritage-title.visible,
+        .js-enabled .exclusivity-panel.visible,
+        .js-enabled .truth-chamber.visible,
+        .js-enabled .strategic-path.visible,
+        .js-enabled .matrix-cell.visible,
+        .js-enabled .evidence-chamber.visible {
+            will-change: auto;
+            contain: none;
+        }
+
+        /* Otimização específica para GPU acceleration */
+        .luxury-canvas,
+        .prestige-grid,
+        .excellence-aura {
+            will-change: transform;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            contain: strict;
+        }
+
+        /* Hide sections after Avaliação de Compatibilidade Estratégica on desktop and tablet */
+        @media (min-width: 769px) {
+            .micro-commit,
+            .commitment-step:nth-child(n+2),
+            .magnetic-cta {
+                display: none !important;
+            }
+            
+            /* Hide heritage revelation sections on desktop/tablet but keep on mobile */
+            .social-proof-section.heritage-revelation,
+            .mystery-section {
+                display: none !important;
+            }
+            
+            /* Reduce spacing between sections on desktop/tablet */
+            .heritage {
+                min-height: auto !important;
+                padding: 4.5rem 2rem !important;
+            }
+            
+            .revelation {
+                padding: 7.2rem 4rem !important;
+            }
+        }
+
+        /* Tablet Responsive (1200px and below) */
+        @media (max-width: 1200px) {
+            .heritage-frame {
+                grid-template-columns: 1fr;
+                gap: 5rem;
+                text-align: center;
+            }
+            
+            .heritage-title {
+                font-size: 3.8rem;
+            }
+
+            .strategic-paths {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .path-separator {
+                display: none;
+            }
+
+            .intelligence-matrix {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .matrix-divider {
+                width: 100px;
+                height: 2px;
+                margin: 0 auto;
+            }
+
+            .matrix-divider::before {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Tablet specific optimizations (1024px and below) */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .heritage {
+                padding: 4rem 3rem;
+            }
+            
+            .brand-logo img {
+                height: 180px;
+            }
+            
+            .heritage-title {
+                font-size: 4rem;
+            }
+            
+            .heritage-subtitle {
+                font-size: 1.3rem;
+                max-width: 90%;
+            }
+            
+            .strategic-path {
+                padding: 4rem 3rem;
+                min-height: 600px;
+            }
+            
+            .action-button {
+                padding: 2.2rem 3.5rem;
+                font-size: 1.05rem;
+                /* Enhanced touch targets for tablet */
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+            
+            .gateway-access {
+                padding: 2.2rem 4rem;
+                font-size: 1.15rem;
+            }
+            
+            .core-statement {
+                font-size: 2.8rem;
+            }
+            
+            .data-primary, .cell-revelation {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .heritage {
+                padding: 6rem 1rem 2rem 1rem; /* Aumenta padding top para elevar mais */
+            }
+
+            .brand-logo {
+                margin-bottom: 0.6rem;
+                margin-top: -4rem; /* Sobe 50% mais (era -2rem, agora -4rem) */
+                /* Centraliza a logo no mobile */
+                width: 100%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .brand-logo img {
+                height: 240px;
+                margin: 0 auto;
+            }
+
+            .brand-logo:hover {
+                transform: translateY(-3px);
+            }
+
+            .brand-logo:hover img {
+                transform: scale(1.03);
+            }
+
+            .heritage-title {
+                font-size: 3rem;
+            }
+            
+            .heritage-subtitle {
+                font-size: 1.2rem;
+                max-width: 100%;
+            }
+
+            .revelation {
+                padding: 10rem 2rem;
+            }
+            
+            .revelation-title {
+                font-size: 3rem;
+            }
+
+            .revelation-essence {
+                font-size: 1.3rem;
+            }
+
+            .strategic-navigation {
+                padding: 8rem 2rem;
+            }
+
+            .navigation-question {
+                font-size: 2.4rem;
+            }
+
+            /* Mobile-specific strategic path behavior */
+            .strategic-path {
+                padding: 3rem 2rem;
+                min-height: auto;
+                /* Disable card clicking on mobile */
+                pointer-events: none;
+            }
+
+            .strategic-path .action-button {
+                /* Re-enable clicking only on button */
+                pointer-events: auto;
+                /* Ensure button works on mobile */
+                -webkit-tap-highlight-color: transparent;
+                touch-action: manipulation;
+            }
+
+            /* Remove all hover effects on mobile */
+            .strategic-path:hover {
+                transform: none !important;
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+                border-color: rgba(212, 175, 55, 0.1);
+            }
+
+            .strategic-path::before {
+                display: none;
+            }
+
+            .solutions-path:hover {
+                border-color: rgba(30, 58, 95, 0.1);
+            }
+
+            /* Remove blue highlight on all tappable elements */
+            .strategic-path,
+            .strategic-path *,
+            .distinction-metric,
+            .evidence-item,
+            .matrix-cell {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .path-title {
+                font-size: 1.8rem;
+            }
+
+            .executive-concierge {
+                padding: 6rem 2rem;
+                margin: 5rem auto;
+            }
+
+            .core-statement {
+                font-size: 2.4rem;
+            }
+
+            .data-primary, .cell-revelation {
+                font-size: 3.5rem;
+            }
+
+            .evidence-chamber {
+                padding: 3rem 2rem;
+                margin: 5rem auto 4rem auto;
+            }
+
+            .gateway-access {
+                padding: 2rem 2rem;
+                font-size: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .truth-chamber {
+                padding: 3rem 2rem;
+                margin: 4rem 0;
+            }
+
+            .truth-chamber::before {
+                font-size: 8rem;
+                top: 0.5rem;
+                left: 1rem;
+            }
+
+            .contemplation {
+                font-size: 1.4rem;
+                margin: 4rem 0;
+            }
+
+            .exclusivity-panel {
+                padding: 3rem 2rem;
+                transform: none;
+            }
+
+            .distinction-metric {
+                padding: 1.5rem 0;
+            }
+
+            .metric-achievement {
+                font-size: 1.2rem;
+            }
+
+            /* Disable hover effects on mobile */
+            .distinction-metric:hover,
+            .evidence-item:hover,
+            .matrix-cell:hover {
+                transform: none;
+                background: transparent;
+                margin: 0;
+                padding: 1.5rem 0;
+                border-color: initial;
+                box-shadow: initial;
+            }
+
+            .distinction-metric:hover::before,
+            .evidence-item:hover::before {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heritage {
+                padding: 5rem 1rem 2rem 1rem; /* Aumenta padding top */
+            }
+
+            .brand-logo {
+                margin-bottom: 0.5rem;
+                margin-top: -3rem; /* Sobe 50% mais (era -1.5rem, agora -3rem) */
+                /* Centraliza a logo no mobile pequeno */
+                width: 100%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .brand-logo img {
+                height: 200px;
+            }
+
+            .heritage-title {
+                font-size: 2.5rem;
+            }
+
+            .revelation-title {
+                font-size: 2.2rem;
+            }
+
+            .navigation-question {
+                font-size: 2rem;
+            }
+
+            .core-statement {
+                font-size: 2rem;
+            }
+
+            .strategic-path {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .executive-concierge {
+                padding: 4rem 1.5rem;
+            }
+
+            .evidence-chamber {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .gateway-access {
+                padding: 1.5rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .data-primary, .cell-revelation {
+                font-size: 3rem;
+            }
+
+            .path-title {
+                font-size: 1.6rem;
+            }
+
+            .truth-chamber::before {
+                font-size: 6rem;
+                top: 0.3rem;
+                left: 0.8rem;
+            }
+        }
+
+        /* ===== LEAD MAGNET MOBILE SYSTEM ===== */
+        .lead-magnet-mobile {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.98) 0%, 
+                rgba(255, 215, 0, 0.95) 50%,
+                rgba(212, 175, 55, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 -15px 35px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            animation: slideUpMagnet 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            padding: 20px;
+            transform: translateY(0);
+        }
+
+        .lead-magnet-mobile.show {
+            display: block;
+        }
+
+        @keyframes slideUpMagnet {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .magnet-content {
+            text-align: center;
+            color: var(--deep-black);
+        }
+
+        .magnet-hook {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            animation: subtlePrestige 3s ease-in-out infinite alternate;
+            letter-spacing: 0.3px;
+        }
+
+        @keyframes subtlePrestige {
+            from {
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                transform: scale(1.005);
+            }
+        }
+
+        @keyframes pulseGlow {
+            from {
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            to {
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .magnet-urgency {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .magnet-cta {
+            background: var(--deep-black);
+            color: var(--gold-accent);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .magnet-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .magnet-cta:hover::before {
+            left: 100%;
+        }
+
+        .magnet-cta:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .magnet-cta:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .magnet-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--deep-black);
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .magnet-close:hover {
+            opacity: 1;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* SOCIAL PROOF APRIMORADA */
+        .social-proof-section {
+            background: linear-gradient(135deg, 
+                rgba(212, 175, 55, 0.08) 0%, 
+                rgba(30, 58, 95, 0.08) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        .social-proof-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--gold-accent), 
+                transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial-preview {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--gold-accent);
+            padding: 20px;
+            border-radius: 10px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-preview::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold-accent);
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold-accent);
+            font-size: 0.85rem;
+        }
+
+        /* MYSTERY INTRIGUE SECTION */
+        .mystery-section {
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.95) 0%, 
+                rgba(28, 28, 28, 0.90) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 25px;
+            padding: 40px 30px;
+            margin: 50px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .mystery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.6), 
+                transparent);
+            animation: mysteryFlow 8s ease-in-out infinite;
+        }
+
+        @keyframes mysteryFlow {
+            0%, 100% { 
+                left: -50%; 
+                opacity: 0.3; 
+            }
+            50% { 
+                left: -25%; 
+                opacity: 0.8; 
+            }
+        }
+
+        .mystery-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .mystery-symbol {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            animation: mysteryPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes mysteryPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.8; 
+            }
+            50% { 
+                transform: scale(1.05); 
+                opacity: 1; 
+            }
+        }
+
+        .mystery-revelation {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--platinum);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .mystery-emphasis {
+            color: var(--gold-accent);
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .mystery-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+
+        .credential-icon {
+            color: var(--gold-accent);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .credential-text {
+            font-size: 0.9rem;
+            color: var(--platinum);
+            opacity: 0.9;
+            text-align: left;
+            font-weight: 300;
+        }
+
+        /* SEÇÃO ESCASSEZ TEMPORAL */
+        .scarcity-section {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 53, 0.1) 0%, 
+                rgba(212, 175, 55, 0.1) 100%);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            max-width: 600px;
+        }
+
+        .scarcity-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 107, 53, 0.1), 
+                transparent);
+            animation: urgencyPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .scarcity-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scarcity-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .timer-unit {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .timer-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FF6B35;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== SISTEMA DE REVELAÇÃO ARISTOCRÁTICA MOBILE ===== */
+        /* Inspirado nas grandes manufaturas: Hermès, Patek Philippe, Bentley */
+
+        /* Fundação: Respiração Visual que harmoniza com breatheAura existente */
+        .heritage-revelation {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Véu Aristocrático: Técnica das grandes joalherias */
+        .aristocratic-veil {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, 
+                    rgba(0, 0, 0, 0.96) 0%,
+                    rgba(10, 10, 10, 0.92) 20%,
+                    rgba(28, 28, 28, 0.94) 50%,
+                    rgba(10, 10, 10, 0.92) 80%,
+                    rgba(0, 0, 0, 0.96) 100%),
+                radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.003) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(30, 58, 95, 0.003) 0%, transparent 50%);
+            backdrop-filter: blur(25px) saturate(1.1);
+            z-index: 10;
+            opacity: 1;
+            transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: veilBreath 8s ease-in-out infinite;
+        }
+
+        @keyframes veilBreath {
+            0%, 100% { 
+                backdrop-filter: blur(25px) saturate(1.1);
+                opacity: 0.98;
+            }
+            50% { 
+                backdrop-filter: blur(28px) saturate(1.15);
+                opacity: 1;
+            }
+        }
+
+        .aristocratic-veil.unveiled {
+            opacity: 0;
+            backdrop-filter: blur(0px) saturate(1);
+            transform: scale(1.01);
+            pointer-events: none;
+        }
+
+        /* Convite Aristocrático: Tipografia das casas de luxo */
+        .heritage-invitation {
+            color: var(--gold-accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: invitationBreath 6s ease-in-out infinite;
+            text-shadow: 
+                0 0 40px rgba(212, 175, 55, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .heritage-invitation::before,
+        .heritage-invitation::after {
+            content: '◊';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            opacity: 0.6;
+            animation: ornamentGlow 4s ease-in-out infinite alternate;
+        }
+
+        .heritage-invitation::before {
+            left: -40px;
+        }
+
+        .heritage-invitation::after {
+            right: -40px;
+        }
+
+        @keyframes invitationBreath {
+            0%, 100% { 
+                opacity: 0.88;
+                transform: scale(1);
+                letter-spacing: 3px;
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.008);
+                letter-spacing: 3.5px;
+            }
+        }
+
+        @keyframes ornamentGlow {
+            0% { opacity: 0.4; }
+            100% { opacity: 0.9; }
+        }
+
+        /* Revelação Suave: Mecânica Bentley */
+        .heritage-content {
+            opacity: 0;
+            transform: translateY(30px) scale(0.99);
+            transition: all 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: blur(1px);
+        }
+
+        .heritage-content.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0px);
+        }
+
+        /* Touch Elegante: Física Tesla refinada */
+        .heritage-touch {
+            position: absolute;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle,
+                    rgba(212, 175, 55, 0.4) 0%,
+                    rgba(212, 175, 55, 0.25) 30%,
+                    rgba(255, 215, 0, 0.15) 60%,
+                    rgba(212, 175, 55, 0.08) 80%,
+                    transparent 100%);
+            transform: scale(0);
+            pointer-events: none;
+            z-index: 15;
+        }
+
+        .heritage-touch.active {
+            animation: heritageRipple 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes heritageRipple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            30% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(3.5);
+                opacity: 0;
+            }
+        }
+
+        /* Indicadores de Maestria: Design Apple refinado */
+        .mastery-jewel {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 14px;
+            height: 14px;
+            background: 
+                radial-gradient(circle,
+                    var(--gold-accent) 0%,
+                    var(--gold-bright) 40%,
+                    var(--gold-accent) 100%);
+            border-radius: 50%;
+            animation: jewelPulse 3s ease-in-out infinite;
+            z-index: 12;
+            box-shadow: 
+                0 0 25px rgba(212, 175, 55, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes jewelPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.9;
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5);
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+                box-shadow: 0 0 0 8px rgba(212, 175, 55, 0);
+            }
+        }
+
+        .mastery-jewel.achieved {
+            animation: jewelAchieved 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            background: 
+                radial-gradient(circle,
+                    rgba(0, 212, 170, 0.9) 0%,
+                    rgba(0, 184, 148, 0.8) 50%,
+                    rgba(0, 160, 133, 0.9) 100%);
+        }
+
+        @keyframes jewelAchieved {
+            0% {
+                transform: scale(1);
+            }
+            40% {
+                transform: scale(1.6) rotate(180deg);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+
+        /* Insights Aristocráticos: Revelação Patek Philippe */
+        .heritage-insight {
+            opacity: 0;
+            transform: translateY(20px) scale(0.97);
+            transition: all 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: 
+                linear-gradient(135deg,
+                    rgba(212, 175, 55, 0.025) 0%,
+                    rgba(255, 215, 0, 0.015) 50%,
+                    rgba(212, 175, 55, 0.025) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 1px;
+            padding: 24px;
+            margin-top: 24px;
+            backdrop-filter: blur(12px);
+            position: relative;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(212, 175, 55, 0.08);
+        }
+
+        .heritage-insight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.2), 
+                transparent);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .heritage-insight.revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .heritage-insight.revealed::before {
+            opacity: 1;
+            animation: insightGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes insightGlow {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.4; }
+        }
+
+        /* Tipografia de Insight: Precisão Suíça */
+        .heritage-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(229, 228, 226, 0.92);
+            letter-spacing: 0.2px;
+        }
+
+        .heritage-accent {
+            color: var(--gold-accent);
+            font-weight: 400;
+        }
+        .secret-revelation {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .secret-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.95) 0%, 
+                rgba(28, 28, 28, 0.90) 50%,
+                rgba(10, 10, 10, 0.95) 100%);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .secret-overlay.revealed {
+            opacity: 0;
+            transform: scale(1.1);
+            pointer-events: none;
+        }
+
+        .secret-hint {
+            color: var(--gold-accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            animation: secretPulse 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes secretPulse {
+            0%, 100% { 
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .touch-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, 
+                rgba(212, 175, 55, 0.3) 0%, 
+                rgba(212, 175, 55, 0.1) 50%,
+                transparent 100%);
+            transform: scale(0);
+            pointer-events: none;
+            z-index: 15;
+        }
+
+        .touch-ripple.animate {
+            animation: rippleExpand 0.6s ease-out forwards;
+        }
+
+        @keyframes rippleExpand {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .revealed-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .revealed-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Elementos escondidos que aparecem com toque */
+        .hidden-element {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: none;
+        }
+
+        .hidden-element.discovered {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .discovery-zone {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .discovery-zone:hover {
+            transform: translateY(-2px);
+        }
+
+        .discovery-indicator {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 12px;
+            height: 12px;
+            background: var(--gold-accent);
+            border-radius: 50%;
+            animation: discoverPulse 1.5s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        @keyframes discoverPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        /* Efeitos de profundidade com parallax */
+        .depth-layer {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .depth-layer-1 { transform: translate3d(0, 0, 0); }
+        .depth-layer-2 { transform: translate3d(0, 0, 10px); }
+        .depth-layer-3 { transform: translate3d(0, 0, 20px); }
+
+        /* Feedback háptico visual */
+        .haptic-feedback {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .haptic-feedback::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .haptic-feedback.active::after {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Transições cinematográficas */
+        .cinematic-transition {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cinematic-transition::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(212, 175, 55, 0.1), 
+                transparent);
+            z-index: 5;
+            transition: left 0.8s ease;
+        }
+
+        .cinematic-transition.revealing::before {
+            left: 100%;
+        }
+
+        /* Mobile adaptations */
+        @media (max-width: 768px) {
+            .lead-magnet-mobile {
+                display: block;
+            }
+
+            .magnet-hook {
+                font-size: 1rem;
+            }
+
+            .magnet-cta {
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .social-proof-section {
+                margin: 30px 20px;
+                padding: 20px;
+            }
+
+            .proof-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .mystery-section {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+
+            .mystery-symbol {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .mystery-revelation {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+
+            .credential-item {
+                gap: 12px;
+                padding: 8px 0;
+            }
+
+            .credential-text {
+                font-size: 0.85rem;
+            }
+
+            .scarcity-section {
+                margin: 25px 20px;
+                padding: 20px;
+            }
+
+            .scarcity-timer {
+                gap: 10px;
+            }
+
+            .timer-unit {
+                min-width: 40px;
+                padding: 8px;
+            }
+
+            .timer-number {
+                font-size: 1.1rem;
+            }
+
+            /* ===== NEURAL SALES SYSTEM - MOBILE ONLY ===== */
+            .neural-sales-mobile {
+                display: block;
+            }
+
+            /* SISTEMA DE ANSIEDADE CONTROLADA - Técnica Apple iPhone Launch */
+            .neural-scarcity {
+                position: relative;
+                background: linear-gradient(135deg, 
+                    rgba(0, 0, 0, 0.97) 0%,
+                    rgba(15, 0, 0, 0.95) 100%);
+                border: 1px solid rgba(255, 107, 53, 0.4);
+                border-radius: 2px;
+                padding: 30px 20px;
+                margin: 40px 20px;
+                animation: subtleUrgency 4s ease-in-out infinite;
+            }
+
+            @keyframes subtleUrgency {
+                0%, 100% { border-color: rgba(255, 107, 53, 0.3); }
+                50% { border-color: rgba(255, 107, 53, 0.6); }
+            }
+
+            .neural-scarcity::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, 
+                    transparent,
+                    rgba(255, 107, 53, 0.8),
+                    transparent);
+                animation: urgencyPulse 2s ease-in-out infinite;
+            }
+
+            @keyframes urgencyPulse {
+                0%, 100% { opacity: 0.3; }
+                50% { opacity: 1; }
+            }
+
+            /* SISTEMA DE FOMO SOFISTICADO - Técnica Tesla Model S */
+            .fomo-trigger {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 25px;
+            }
+
+            .fomo-icon {
+                width: 40px;
+                height: 40px;
+                background: radial-gradient(circle, #FF6B35, #FF8C42);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                animation: fomoBlink 1.5s ease-in-out infinite;
+                font-size: 1.2rem;
+            }
+
+            @keyframes fomoBlink {
+                0%, 80% { opacity: 1; }
+                90% { opacity: 0.3; }
+                100% { opacity: 1; }
+            }
+
+            .fomo-text {
+                flex: 1;
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.9);
+                line-height: 1.6;
+            }
+
+            .fomo-highlight {
+                color: #FF6B35;
+                font-weight: 600;
+            }
+
+            /* SISTEMA DE STATUS SYMBOL - Técnica Louis Vuitton */
+            .status-amplifier {
+                background: linear-gradient(135deg,
+                    rgba(212, 175, 55, 0.08) 0%,
+                    rgba(255, 215, 0, 0.05) 100%);
+                border: 1px solid rgba(212, 175, 55, 0.2);
+                border-radius: 2px;
+                padding: 35px 20px;
+                margin: 50px 20px;
+                position: relative;
+            }
+
+            .status-amplifier::after {
+                content: '';
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                right: -1px;
+                bottom: -1px;
+                background: linear-gradient(45deg, 
+                    transparent,
+                    rgba(212, 175, 55, 0.3),
+                    transparent,
+                    rgba(212, 175, 55, 0.3),
+                    transparent);
+                z-index: -1;
+                border-radius: 2px;
+                animation: statusGlow 3s ease-in-out infinite;
+            }
+
+            @keyframes statusGlow {
+                0%, 100% { opacity: 0.2; }
+                50% { opacity: 0.6; }
+            }
+
+            .status-headline {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #D4AF37;
+                text-align: center;
+                margin-bottom: 20px;
+                letter-spacing: 1px;
+            }
+
+            .status-proof {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .proof-item {
+                text-align: center;
+                padding: 20px;
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 2px;
+                transition: all 0.4s ease;
+            }
+
+            .proof-item:hover {
+                transform: translateY(-5px);
+                background: rgba(212, 175, 55, 0.1);
+            }
+
+            .proof-number {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                font-weight: 700;
+                color: #D4AF37;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .proof-label {
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.8);
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            /* SISTEMA DE ANCORAGEM DE PREÇO - Técnica Rolex */
+            .price-anchor {
+                background: rgba(0, 0, 0, 0.6);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                border-radius: 2px;
+                padding: 40px 20px;
+                margin: 60px 20px;
+                text-align: center;
+            }
+
+            .anchor-context {
+                font-family: 'Inter', sans-serif;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 25px;
+                line-height: 1.7;
+            }
+
+            .value-revelation {
+                font-family: 'Playfair Display', serif;
+                font-size: 1.1rem;
+                color: #D4AF37;
+                margin: 20px 0;
+                font-style: italic;
+            }
+
+            /* SISTEMA DE COMMITMENTS ESCALADOS - Técnica Tesla */
+            .commitment-ladder {
+                background: linear-gradient(135deg,
+                    rgba(30, 58, 95, 0.1) 0%,
+                    rgba(10, 10, 10, 0.95) 100%);
+                border: 1px solid rgba(30, 58, 95, 0.3);
+                border-radius: 2px;
+                padding: 40px 20px;
+                margin: 50px 20px;
+            }
+
+            .commitment-step {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .commitment-step:last-child {
+                border-bottom: none;
+            }
+
+            .commitment-step:hover {
+                background: rgba(30, 58, 95, 0.1);
+                transform: translateX(10px);
+            }
+
+            .step-number {
+                width: 30px;
+                height: 30px;
+                background: rgba(30, 58, 95, 0.8);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .step-content {
+                flex: 1;
+            }
+
+            .step-title {
+                font-family: 'Inter', sans-serif;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 5px;
+            }
+
+            .step-benefit {
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.6);
+                line-height: 1.5;
+            }
+
+            /* SISTEMA DE CALL TO ACTION MAGNÉTICO - Técnica Apple */
+            .magnetic-cta {
+                position: relative;
+                background: linear-gradient(135deg, #D4AF37, #FFD700);
+                color: #000;
+                padding: 18px 40px;
+                border: none;
+                border-radius: 25px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                text-transform: none;
+                letter-spacing: 0.3px;
+                box-shadow: 
+                    0 8px 25px rgba(212, 175, 55, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                overflow: hidden;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .magnetic-cta::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, 
+                    transparent,
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
+                transition: left 0.6s ease;
+            }
+
+            .magnetic-cta:hover::before {
+                left: 100%;
+            }
+
+            .magnetic-cta:hover {
+                transform: translateY(-3px) scale(1.02);
+                box-shadow: 
+                    0 15px 35px rgba(212, 175, 55, 0.6),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+
+            .magnetic-cta:active {
+                transform: translateY(-1px) scale(1.01);
+            }
+
+            /* SISTEMA DE MICRO-COMMITMENTS - Técnica Amazon */
+            .micro-commit {
+                background: rgba(0, 0, 0, 0.4);
+                border: 1px solid rgba(212, 175, 55, 0.2);
+                border-radius: 2px;
+                padding: 25px 20px;
+                margin: 30px 20px;
+            }
+
+            .commit-question {
+                font-family: 'Playfair Display', serif;
+                font-size: 1rem;
+                color: #D4AF37;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .commit-options {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .commit-option {
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+                color: rgba(255, 255, 255, 0.9);
+                padding: 12px 20px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: center;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .commit-option:hover,
+            .commit-option.selected {
+                background: rgba(212, 175, 55, 0.3);
+                border-color: rgba(212, 175, 55, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        /* Hide neural sales system on desktop */
+        @media (min-width: 769px) {
+            .neural-sales-mobile {
+                display: none;
+            }
+        }
+
+        /* ===== MOBILE RESTRICTED ACCESS OVERLAY ===== */
+        .mobile-restricted-access {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.98) 0%,
+                rgba(10, 10, 10, 0.96) 100%);
+            z-index: 9999;
+            backdrop-filter: blur(20px);
+        }
+
+        .restricted-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .restricted-logo {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: restrictedLogoPulse 3s ease-in-out infinite;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .restricted-logo img {
+            height: 120px;
+            width: auto;
+            filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .restricted-logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, 
+                rgba(212, 175, 55, 0.1) 0%, 
+                rgba(212, 175, 55, 0.05) 40%, 
+                transparent 70%);
+            border-radius: 50%;
+            animation: logoAura 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes logoAura {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: translate(-50%, -50%) scale(0.8); 
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: translate(-50%, -50%) scale(1.2); 
+            }
+        }
+
+        @keyframes restrictedLogoPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                opacity: 0.9; 
+            }
+            50% { 
+                transform: scale(1.05); 
+                opacity: 1; 
+            }
+        }
+
+        .restricted-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .restricted-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.5;
+            max-width: 350px;
+        }
+
+        .restricted-requirements {
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .requirement-item:last-child {
+            border-bottom: none;
+        }
+
+        .requirement-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(212, 175, 55, 0.2);
+            color: #D4AF37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .requirement-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+
+        .restricted-message {
+            margin-bottom: 40px;
+            max-width: 380px;
+        }
+
+        .restricted-message p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .restricted-access-btn {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: none;
+            letter-spacing: 0.3px;
+            box-shadow: 
+                0 8px 25px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .restricted-access-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(212, 175, 55, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .restricted-disclaimer {
+            margin-top: 20px;
+        }
+
+        .restricted-disclaimer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+        }
+
+        /* Show restricted access only on mobile */
+        @media (max-width: 768px) {
+            .mobile-restricted-access.active {
+                display: block;
+            }
+            
+            /* Hide main content until access is granted */
+            body:not(.access-granted) .heritage,
+            body:not(.access-granted) .revelation,
+            body:not(.access-granted) .strategic-navigation,
+            body:not(.access-granted) .executive-concierge,
+            body:not(.access-granted) .discretion-notice,
+            body:not(.access-granted) .social-proof-section,
+            body:not(.access-granted) .mystery-section {
+                display: none;
+            }
+            
+            /* Show all content after access is granted */
+            body.access-granted .heritage {
+                display: flex;
+                animation: contentRevealStagger 0.8s ease-out forwards;
+            }
+            
+            body.access-granted .revelation,
+            body.access-granted .strategic-navigation,
+            body.access-granted .executive-concierge,
+            body.access-granted .discretion-notice,
+            body.access-granted .social-proof-section,
+            body.access-granted .mystery-section,
+            body.access-granted .neural-sales-mobile {
+                display: block;
+                animation: contentRevealStagger 0.8s ease-out forwards;
+            }
+            
+            /* Stagger animation for content reveal */
+            @keyframes contentRevealStagger {
+                0% {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        @keyframes pulseUrgent {
+            from { transform: scale(1); }
+            to { transform: scale(1.02); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background system -->
+    <div class="luxury-canvas"></div>
+    <div class="prestige-grid"></div>
+    <div class="excellence-aura"></div>
+    <div class="prestige-progress" id="progressIndicator"></div>
+
+    <!-- MOBILE RESTRICTED ACCESS OVERLAY -->
+    <div class="mobile-restricted-access" id="mobileRestrictedOverlay">
+        <div class="restricted-container">
+            <div class="restricted-logo">
+                <img src="../image/Logo oficial (1).png" alt="Dynamic Solutions" />
+            </div>
+            <div class="restricted-title">Acesso Restrito</div>
+            <div class="restricted-subtitle">Conteúdo Disponível Apenas para Organizações Qualificadas</div>
+            
+            <div class="restricted-requirements">
+                <div class="requirement-item">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Faturamento anual superior a R$ 50M</div>
+                </div>
+                <div class="requirement-item">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Operações em múltiplos mercados</div>
+                </div>
+                <div class="requirement-item">
+                    <div class="requirement-icon">✓</div>
+                    <div class="requirement-text">Visão estratégica de longo prazo</div>
+                </div>
+            </div>
+            
+            <div class="restricted-message">
+                <p>Nossa metodologia proprietária e cases de transformação são compartilhados exclusivamente com organizações que demonstram potencial para evolução exponencial.</p>
+            </div>
+            
+            <button class="restricted-access-btn" onclick="grantMobileAccess()">
+                Solicitar Acesso Estratégico
+            </button>
+            
+            <div class="restricted-disclaimer">
+                <p>*Processo de qualificação mútua • Vagas limitadas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Heritage Section -->
+    <section class="heritage">
+        <div class="heritage-frame">
+            <div class="heritage-content manifest-left">
+                <!-- Qualification Section - Mobile Only -->
+                <div class="qualification-section" style="display: none; margin-bottom: 2.5rem; padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%); border: 1px solid rgba(201, 169, 110, 0.4); border-radius: 12px; backdrop-filter: blur(30px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.08), transparent); animation: exclusiveGlow 4s ease-in-out infinite;"></div>
+                    <div style="display: flex; align-items: center; gap: 16px; position: relative; z-index: 1;">
+                        <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: var(--gold-accent); font-size: 1.1rem;">
+                            <i class="fas fa-shield-alt" style="filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));"></i>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-size: 0.85rem; font-weight: 400; color: rgba(255, 255, 255, 0.7); text-transform: uppercase; letter-spacing: 1.2px;">Acesso Exclusivo para Organizações</span>
+                            <span style="font-size: 1rem; font-weight: 600; color: var(--gold-accent); letter-spacing: 0.8px;">Faturamento mínimo: R$2M anuais</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://dynamicsolutions.digital" class="brand-logo">
+                    <img src="../image/Logo oficial (1).png" 
+                         alt="Dynamic Solutions" 
+                         loading="eager"
+                         decoding="async"
+                         fetchpriority="high"
+                         width="auto"
+                         height="160" />
+                </a>
+                <div class="provenance-mark">Arquitetura Digital Sob Medida</div>
+                <h1 class="heritage-title">
+                    Enquanto Outros Compram<br>
+                    <span class="accent">Soluções</span>,<br>
+                    Nós <span class="accent">Criamos Futuros</span>.
+                </h1>
+                <p class="heritage-subtitle">
+                    Para visionários que compreendem que liderança sustentável vem de operacionalizar 
+                    inteligências proprietárias que outros consideram impossíveis de criar.
+                </p>
+            </div>
+            
+            <div class="exclusivity-panel manifest-right">
+                <h3 class="panel-title">Transformação Integral • Caso Real</h3>
+                <div class="distinction-metric">
+                    <span class="metric-descriptor">Horas Devolvidas aos Líderes</span>
+                    <span class="metric-achievement">47h/sem</span>
+                </div>
+                <div class="distinction-metric">
+                    <span class="metric-descriptor">Crescimento de Receita • Caso Referência</span>
+                    <span class="metric-achievement">R$18,7M</span>
+                </div>
+                <div class="distinction-metric">
+                    <span class="metric-descriptor">Colaboradores Realocados p/ Estratégia</span>
+                    <span class="metric-achievement">73%</span>
+                </div>
+                <div class="distinction-metric">
+                    <span class="metric-descriptor">Satisfação da Equipe</span>
+                    <span class="metric-achievement">+89%</span>
+                </div>
+                <div class="distinction-metric">
+                    <span class="metric-descriptor">Tempo de Implementação Total</span>
+                    <span class="metric-achievement">67 dias</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statement Section -->
+    <section class="heritage">
+        <div class="heritage-frame">
+            <div class="heritage-content manifest-left" style="grid-column: 1 / -1; text-align: center; max-width: 1200px; margin: 0 auto;">
+                <div class="truth-chamber" style="margin: 0;">
+                    <p class="truth-statement" style="color: var(--gold-accent); font-size: 1.3rem; margin-bottom: 2rem;">
+                        O impacto que mensuramos além das métricas financeiras
+                    </p>
+                    <p class="truth-revelation">
+                        Cada sistema proprietário que operacionalizamos libera em média <span style="color: var(--gold-accent); font-weight: 600;">847 horas anuais</span> 
+                        do tempo executivo para visão estratégica. Mais de <span style="color: var(--gold-accent); font-weight: 600;">2.300 profissionais</span> 
+                        já tiveram suas carreiras elevadas - eliminamos trabalho repetitivo, não pessoas. 
+                        O resultado: <span style="color: var(--gold-accent); font-weight: 600;">organizações mais humanas operando em níveis exponenciais de eficiência</span>.
+                        Cada projeto gera em média <span style="color: var(--gold-accent); font-weight: 600;">12 novos empregos de alto valor agregado</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revelation Section -->
+    <section class="revelation emerge">
+        <div class="revelation-prelude">Para Organizações Visionárias</div>
+        <h2 class="revelation-title">O Que Separa Visionários de Seguidores</h2>
+        <p class="revelation-essence">
+            Enquanto a maioria ainda implementa soluções convencionais, uma elite restrita já operacionaliza 
+            arquiteturas proprietárias que antecipam o futuro que outros nem conseguem imaginar.
+        </p>
+
+        <div class="truth-chamber ascend">
+            <p class="truth-statement">A realidade inconveniente? 97% das organizações operam 30% abaixo do potencial real.</p>
+            <p class="truth-revelation">
+                Não por incompetência, mas porque o mercado oferece soluções convencionais 
+                para problemas que exigem operacionalização de inteligência exclusiva.
+            </p>
+        </div>
+
+        <p class="contemplation">
+            A questão que separa líderes de seguidores: <span class="emphasis">você continuará operando no nível convencional?</span><br>
+            Ou está preparado para operacionalizar sistemas que antecipam, resolvem e evoluem autonomamente?
+        </p>
+
+        <!-- Objection Handler: McKinsey vs Proprietary -->
+        <div class="objection-handler emerge">
+            <div class="objection-container">
+                <h3 class="objection-title">McKinsey vs. Metodologia Proprietária</h3>
+                <div class="comparison-grid">
+                    <div class="conventional-approach">
+                        <div class="approach-label">Consultorias Tradicionais</div>
+                        <div class="approach-description">
+                            Implementam soluções que <span class="weak-emphasis">todos podem comprar</span>. 
+                            Frameworks genéricos adaptados para parecerem exclusivos.
+                        </div>
+                        <div class="approach-result">
+                            <span class="result-label">Resultado:</span>
+                            <span class="result-text">Vantagem temporária até concorrentes copiarem</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proprietary-approach">
+                        <div class="approach-label">Nossa Metodologia Proprietária</div>
+                        <div class="approach-description">
+                            Criamos arquiteturas que <span class="strong-emphasis">ninguém pode replicar</span>. 
+                            Desenvolvidas exclusivamente para sua realidade operacional.
+                        </div>
+                        <div class="approach-result">
+                            <span class="result-label">Resultado:</span>
+                            <span class="result-text">Vantagem competitiva permanente e auto-evolutiva</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="objection-proof">
+                    <div class="proof-stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">concorrentes conseguiram replicar nossas arquiteturas em 4 anos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Navigation -->
+    <section class="strategic-navigation emerge">
+        <div class="navigation-prelude">
+            <div class="navigation-subtitle">Duas Jornadas, Um Destino</div>
+            <h2 class="navigation-question">
+                Você Prefere Ver as <span style="color: var(--gold-accent);">Evidências</span><br>
+                ou Conhecer as <span style="color: var(--luxury-blue);">Soluções</span>?
+            </h2>
+            <p class="navigation-insight">
+                Líderes estratégicos compreendem que transformação real exige duas perspectivas: 
+                <strong>dados que comprovam a necessidade</strong> e <strong>capacidades que entregam resultados</strong>. 
+                Escolha sua abordagem para descobrir como organizações de elite estão criando vantagem irreversível.
+            </p>
+        </div>
+
+        <div class="strategic-paths">
+            <div class="strategic-path data-path">
+                <div class="path-header">
+                    <div class="path-type">INTELIGÊNCIA ANALÍTICA</div>
+                    <h3 class="path-title">O Estudo Que Mudou Tudo</h3>
+                    <p class="path-mission">
+                        Dashboard executivo com dados reais de 50.127 empresas analisadas em 24 meses. 
+                        Descubra exatamente onde 89% das organizações perdem R$4,2 milhões mensais 
+                        em produtividade desperdiçada e como os 11% que descobriram isso estão dominando mercados.
+                    </p>
+                </div>
+
+                <div class="evidence-framework">
+                    <h4 class="evidence-title">
+                        📊 Evidências Exclusivas
+                    </h4>
+                    <ul class="evidence-list">
+                        <li class="evidence-item">
+                            <div class="evidence-icon">📈</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Análise Comparativa Real-Time</div>
+                                <div class="evidence-description">Empresas tradicionais vs. IA-powered em 156 países</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🔬</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Metodologia Científica</div>
+                                <div class="evidence-description">McKinsey, Deloitte, PwC, MIT - fontes verificáveis</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🧮</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">ROI Calculadora Interativa</div>
+                                <div class="evidence-description">Calcule exatamente quanto você está perdendo hoje</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🏭</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Benchmarks Setoriais</div>
+                                <div class="evidence-description">Performance específica por indústria e região</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="strategic-action">
+                    <a href="../analytics-dashboard/index.html" class="action-button">
+                        📊 Acessar Dashboard 
+                    </a>
+                </div>
+            </div>
+
+            <div class="path-separator">
+                <div class="separator-container">
+                    <div class="separator-glow"></div>
+                    <div class="separator-circle">OU</div>
+                </div>
+            </div>
+
+            <div class="strategic-path solutions-path">
+                <div class="path-header">
+                    <div class="path-type">ARQUITETURA ESTRATÉGICA</div>
+                    <h3 class="path-title">Como Criamos Vantagem Impossível</h3>
+                    <p class="path-mission">
+                        Portfolio de capacidades que desenvolvemos exclusivamente para organizações 
+                        que operam além dos padrões convencionais. Arquiteturas sob medida que seus 
+                        concorrentes considerarão ficção científica até perceberem que perderam o mercado.
+                    </p>
+                </div>
+
+                <div class="evidence-framework">
+                    <h4 class="evidence-title">
+                        ⚙️ Capacidades Exclusivas
+                    </h4>
+                    <ul class="evidence-list">
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🧠</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Inteligência Operacional Autônoma</div>
+                                <div class="evidence-description">Sistemas que aprendem, decidem e evoluem sem intervenção</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🚀</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Automação Estratégica Total</div>
+                                <div class="evidence-description">67% das operações convertidas em vantagem competitiva</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">🛡️</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Arquitetura Proprietária</div>
+                                <div class="evidence-description">Frameworks que não podem ser replicados ou comprados</div>
+                            </div>
+                        </li>
+                        <li class="evidence-item">
+                            <div class="evidence-icon">♾️</div>
+                            <div class="evidence-content">
+                                <div class="evidence-label">Vantagem Auto-Sustentável</div>
+                                <div class="evidence-description">Distância da concorrência aumenta automaticamente</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="strategic-action">
+                    <a href="../capabilities/index.html" class="action-button">
+                        💻 Explorar Arquiteturas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Concierge -->
+    <section class="executive-concierge ascend">
+        <div class="concierge-header">
+            <div class="access-indicator">
+                <div class="indicator-line"></div>
+                <div class="indicator-text">ACESSO RESTRITO</div>
+                <div class="indicator-line"></div>
+            </div>
+        </div>
+        
+        <div class="revelation-core">
+            <h2 class="core-statement">Em 47 minutos, descobrimos onde você perdeu R$18,7 milhões no último ano</h2>
+            <p class="core-reality">Apenas para organizações que faturam acima de R$65M anuais</p>
+        </div>
+
+        <div class="intelligence-matrix">
+            <div class="matrix-cell primary">
+                <div class="cell-data">
+                    <div class="data-primary">6</div>
+                    <div class="data-context">organizações por ano</div>
+                </div>
+                <div class="cell-insight">Nossa metodologia exige dedicação exclusiva de 72 horas por análise</div>
+            </div>
+            
+            <div class="matrix-divider"></div>
+            
+            <div class="matrix-cell secondary">
+                <div class="cell-revelation">R$890.000</div>
+                <div class="cell-positioning">O investimento que separou líderes de seguidores em 2024</div>
+            </div>
+        </div>
+
+        <div class="evidence-chamber">
+            <div class="evidence-seal">◊</div>
+            <div class="evidence-content">
+                <p class="evidence-statement">
+                    "Descobrimos que nossa empresa operava a 31% do potencial real. 
+                    Em 90 dias, essa revelação gerou R$21,4M em receita adicional."
+                </p>
+                <div class="evidence-attribution">
+                    <div class="attribution-role">CEO</div>
+                    <div class="attribution-company">Holding Nacional • Agronegócios • R$280M faturamento</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="qualification-gateway">
+            <div class="gateway-premise">
+                Se sua organização demonstra potencial para resultados extraordinários,
+                nossa equipe avaliará sua elegibilidade para este diagnóstico estratégico.
+            </div>
+            
+            <a href="../assessment/index.html" class="gateway-access">
+                <span class="access-prefix">○</span>
+                <span class="access-action">Solicitar Avaliação de Elegibilidade</span>
+                <span class="access-suffix">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Discretion Notice -->
+    <section class="discretion-notice">
+        <p class="discretion-text">
+            ⚠️ Este processo é exclusivo para organizações que operam além dos padrões convencionais de mercado. 
+            Se demonstrar capacidade para evolução extraordinária, não apenas incremental, 
+            iniciaremos um processo de qualificação mútua que pode resultar em colaboração estratégica.
+        </p>
+    </section>
+
+    <!-- HERITAGE EVIDENCE SECTION -->
+    <section class="social-proof-section heritage-revelation">
+        <div class="aristocratic-veil" id="heritageVeil">
+            <div class="heritage-invitation">Revelar Herança</div>
+        </div>
+        
+        <div class="heritage-content" id="heritageContent">
+            <div class="proof-stats">
+                <div class="stat-item apple-mastery" data-mastery="operations">
+                    <div class="mastery-jewel"></div>
+                    <div class="stat-number" id="clientsCount">127</div>
+                    <div class="stat-label">Operações Transformadas</div>
+                    <div class="heritage-insight" id="operations-insight">
+                        <div class="heritage-text">
+                            <span class="heritage-accent">Metodologia Proprietária:</span> Framework desenvolvido ao longo de 8 anos, validado em 127 implementações across múltiplos setores.
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-item apple-mastery" data-mastery="performance">
+                    <div class="mastery-jewel"></div>
+                    <div class="stat-number" id="projectsCount">847%</div>
+                    <div class="stat-label">Performance Média</div>
+                    <div class="heritage-insight" id="performance-insight">
+                        <div class="heritage-text">
+                            <span class="heritage-accent">Benchmark Global:</span> Performance consistentemente superior aos padrões internacionais estabelecidos pela McKinsey & BCG.
+                        </div>
+                    </div>
+                </div>
+                <div class="stat-item apple-mastery" data-mastery="presence">
+                    <div class="mastery-jewel"></div>
+                    <div class="stat-number" id="satisfactionCount">15</div>
+                    <div class="stat-label">Countries</div>
+                    <div class="heritage-insight" id="presence-insight">
+                        <div class="heritage-text">
+                            <span class="heritage-accent">Presença Estratégica:</span> Operações em 15 países, com foco em mercados de alta complexidade regulatória e competitiva.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-preview">
+                <div class="testimonial-text">
+                    "Jamais imaginamos que nossa operação pudesse atingir este nível de sofisticação. Hoje operamos em uma liga completamente diferente."
+                </div>
+                <div class="testimonial-author">
+                    — CEO, Fortune 500 Company
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MYSTERY INTRIGUE SECTION -->
+    <section class="mystery-section">
+        <div class="mystery-content">
+            <div class="mystery-symbol">◊</div>
+            <div class="mystery-text">
+                <p class="mystery-revelation">
+                    Algumas organizações operam além dos paradigmas convencionais.<br>
+                    <span class="mystery-emphasis">Poucas possuem a arquitetura necessária para essa evolução.</span>
+                </p>
+                <div class="mystery-credentials">
+                    <div class="credential-item">
+                        <div class="credential-icon">⬢</div>
+                        <div class="credential-text">Metodologia proprietária desenvolvida em 8 anos</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon">⬢</div>
+                        <div class="credential-text">Resultados mensuráveis em 127 implementações</div>
+                    </div>
+                    <div class="credential-item">
+                        <div class="credential-icon">⬢</div>
+                        <div class="credential-text">Presença estratégica em 15 países</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEURAL SALES SYSTEM - MOBILE ONLY -->
+    <div class="neural-sales-mobile">
+        <!-- SISTEMA DE ANSIEDADE CONTROLADA - Técnica Apple iPhone Launch -->
+        <section class="neural-scarcity">
+            <div class="fomo-trigger">
+                <div class="fomo-icon">⚡</div>
+                <div class="fomo-text">
+                    <strong class="fomo-highlight">Última janela de 2024:</strong> Apenas 3 organizações serão selecionadas para o programa de transformação estratégica. 127 empresas já solicitaram avaliação.
+                </div>
+            </div>
+            
+            <div class="fomo-trigger">
+                <div class="fomo-icon">🔒</div>
+                <div class="fomo-text">
+                    <strong class="fomo-highlight">Acesso restrito:</strong> Nossa metodologia proprietária não é disponibilizada publicamente. Organizações qualificadas passam por processo de seleção mútua.
+                </div>
+            </div>
+        </section>
+
+        <!-- SISTEMA DE STATUS SYMBOL - Técnica Louis Vuitton -->
+        <section class="status-amplifier">
+            <div class="status-headline">Arquitetura de Elite Reconhecida Globalmente</div>
+            <div class="status-proof">
+                <div class="proof-item">
+                    <span class="proof-number">R$ 2.4B</span>
+                    <span class="proof-label">Valor Criado</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">15</span>
+                    <span class="proof-label">Países</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number">847%</span>
+                    <span class="proof-label">ROI Médio</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SISTEMA DE ANCORAGEM DE PREÇO - Técnica Rolex -->
+        <section class="price-anchor">
+            <div class="anchor-context">
+                Organizações Fortune 500 investem entre R$ 2-8M anuais em consultorias convencionais, obtendo resultados incrementais. Nossa arquitetura proprietária entrega transformação sistêmica mensurável.
+            </div>
+            <div class="value-revelation">
+                "O investimento se paga nos primeiros 90 dias através da operacionalização de eficiências que concorrentes levam anos para identificar."
+            </div>
+        </section>
+
+        <!-- SISTEMA DE COMMITMENTS ESCALADOS - Técnica Tesla -->
+        <section class="commitment-ladder">
+            <div class="commitment-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Avaliação de Compatibilidade Estratégica</div>
+                    <div class="step-benefit">Identificamos se sua organização possui a arquitetura necessária para evolução exponencial</div>
+                </div>
+            </div>
+            
+            <div class="commitment-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Mapeamento de Vazamentos Invisíveis</div>
+                    <div class="step-benefit">Revelamos oportunidades de otimização que geram ROI imediato</div>
+                </div>
+            </div>
+            
+            <div class="commitment-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Implementação de Inteligência Proprietária</div>
+                    <div class="step-benefit">Operacionalizamos sistemas que se tornam vantagem competitiva permanente</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SISTEMA DE MICRO-COMMITMENTS - Técnica Amazon -->
+        <section class="micro-commit">
+            <div class="commit-question">Sua organização está preparada para evolução sistêmica?</div>
+            <div class="commit-options">
+                <div class="commit-option">Sim, buscamos transformação real</div>
+                <div class="commit-option">Talvez, queremos entender melhor</div>
+                <div class="commit-option">Não, preferimos abordagens convencionais</div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 60px 0;">
+            <button class="magnetic-cta" onclick="initiateQualification()">
+                Iniciar Processo de Qualificação Estratégica
+            </button>
+        </div>
+    </div>
+
+    <!-- LEAD MAGNET MOBILE -->
+    <div class="lead-magnet-mobile" id="leadMagnet">
+        <button class="magnet-close" onclick="closeMagnet()">&times;</button>
+        <div class="magnet-content">
+            <div class="magnet-hook">Operações de Elite Requerem Arquitetura de Elite</div>
+            <div class="magnet-urgency">Processo reservado • Organizações extraordinárias</div>
+            <button class="magnet-cta" onclick="initiateConsultation()">Iniciar Qualificação</button>
+        </div>
+    </div>
+
+    <script>
+        // Progress bar
+        function updatePrestigeProgress() {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.min((scrollTop / docHeight) * 100, 100);
+            const progressBar = document.getElementById('progressIndicator');
+            
+            progressBar.style.width = scrollPercent + '%';
+            progressBar.style.opacity = scrollPercent > 5 ? '1' : '0.3';
+        }
+
+        // Animation reveal system
+        function orchestrateReveal() {
+            const elements = document.querySelectorAll('.emerge, .ascend, .manifest-left, .manifest-right');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 150);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            elements.forEach(element => observer.observe(element));
+        }
+
+        // Device detection
+        function isDesktop() {
+            return window.innerWidth > 768 && !('ontouchstart' in window);
+        }
+
+        function isMobile() {
+            return window.innerWidth <= 768 || ('ontouchstart' in window);
+        }
+
+        // Desktop-only effects
+        function initializeDesktopEffects() {
+            if (!isDesktop()) return;
+
+            // Hover effects for strategic paths
+            document.querySelectorAll('.strategic-path').forEach(path => {
+                path.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-20px) scale(1.02)';
+                    this.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                });
+                
+                path.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Parallax effect
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                const excellenceAura = document.querySelector('.excellence-aura');
+                if (excellenceAura) {
+                    excellenceAura.style.transform = `translate3d(0, ${rate}px, 0)`;
+                }
+            });
+
+            // Mouse tracking for luxury canvas
+            document.addEventListener('mousemove', (e) => {
+                const canvas = document.querySelector('.luxury-canvas');
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                if (canvas) {
+                    canvas.style.background = 
+                        'radial-gradient(ellipse at ' + (x * 100) + '% ' + (y * 100) + '%, rgba(212, 175, 55, 0.06) 0%, transparent 60%), ' +
+                        'radial-gradient(ellipse at ' + ((1-x) * 100) + '% ' + ((1-y) * 100) + '%, rgba(30, 58, 95, 0.07) 0%, transparent 60%), ' +
+                        'radial-gradient(ellipse at 50% 50%, rgba(28, 28, 28, 0.3) 0%, transparent 100%), ' +
+                        'linear-gradient(135deg, rgba(28, 28, 28, 0.9) 0%, rgba(10, 10, 10, 0.98) 100%)';
+                }
+            });
+        }
+
+        // Mobile optimizations
+        function initializeMobileOptimizations() {
+            if (!isMobile()) return;
+
+            // Disable expensive animations on mobile
+            document.querySelectorAll('.prestige-grid, .excellence-aura').forEach(element => {
+                element.style.animation = 'none';
+            });
+
+            // Optimize touch interactions
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            // Ensure buttons work properly on mobile
+            document.querySelectorAll('.action-button, .gateway-access').forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
+
+        // Metric animation system
+        function animateMetrics() {
+            const metrics = document.querySelectorAll('.metric-achievement');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateMetric(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            metrics.forEach(metric => observer.observe(metric));
+        }
+
+        function animateMetric(element) {
+            const finalValue = element.textContent;
+            
+            // Skip complex values like currency or percentages
+            if (finalValue.includes('$') || finalValue.includes('R$') || finalValue.includes(',') || finalValue.includes('.') || finalValue.includes('M')) {
+                return;
+            }
+            
+            const isPercentage = finalValue.includes('%');
+            const isPositive = finalValue.includes('+');
+            const numericValue = parseInt(finalValue.replace(/[^0-9]/g, ''));
+            
+            if (isNaN(numericValue) || numericValue === 0) return;
+            
+            let current = 0;
+            const duration = 2000;
+            const startTime = performance.now();
+            
+            function animate() {
+                const elapsed = performance.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                current = numericValue * easeOutQuart(progress);
+                
+                let displayValue = Math.floor(current);
+                if (isPositive && current > 0) displayValue = '+' + displayValue;
+                if (isPercentage) displayValue += '%';
+                
+                element.textContent = displayValue;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            requestAnimationFrame(animate);
+        }
+
+        // Easing function
+        function easeOutQuart(t) {
+            return 1 - Math.pow(1 - t, 4);
+        }
+
+        // Matrix cells animation
+        function animateMatrixCells() {
+            const conciergeSection = document.querySelector('.executive-concierge');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const cells = document.querySelectorAll('.matrix-cell');
+                        cells.forEach((cell, index) => {
+                            setTimeout(() => {
+                                cell.style.transform = 'translateY(0)';
+                                cell.style.opacity = '1';
+                            }, index * 600);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            if (conciergeSection) {
+                observer.observe(conciergeSection);
+            }
+        }
+
+        // Smooth scrolling
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Optimized scroll handler
+        let scrollTimeout;
+        function optimizedScrollHandler() {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            
+            scrollTimeout = setTimeout(() => {
+                updatePrestigeProgress();
+            }, 10);
+        }
+
+        // Responsive handler
+        function handleResize() {
+            if (isDesktop() && !window.desktopEffectsInitialized) {
+                initializeDesktopEffects();
+                window.desktopEffectsInitialized = true;
+            }
+        }
+
+        // Initialize matrix cells as hidden
+        function initializeMatrixCells() {
+            document.querySelectorAll('.matrix-cell').forEach(cell => {
+                cell.style.transform = 'translateY(30px)';
+                cell.style.opacity = '0';
+                cell.style.transition = 'all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            });
+        }
+
+        // Main initialization with advanced animation system
+        function initializeSystem() {
+            // Add class to enable sophisticated animations
+            document.body.classList.add('js-enabled');
+            
+            // Initialize advanced animation system
+            const animationObserver = createAdvancedAnimationSystem();
+            
+            // Initialize scroll-based effects
+            createScrollEffects();
+            
+            // Initialize metric animations with scroll triggers
+            createMetricAnimations();
+            
+            // Initialize mouse effects (desktop only)
+            createMouseEffects();
+            
+            // Initialize matrix cells
+            initializeMatrixCells();
+            
+            // Initialize smooth scrolling
+            initializeSmoothScrolling();
+            
+            // Initialize device-specific optimizations
+            if (isDesktop()) {
+                initializeDesktopEffects();
+                window.desktopEffectsInitialized = true;
+            } else {
+                initializeMobileOptimizations();
+            }
+            
+            // Add resize listener
+            window.addEventListener('resize', handleResize, { passive: true });
+            
+            // Store observer for cleanup if needed
+            window.animationObserver = animationObserver;
+        }
+
+        // Enhanced desktop effects
+        function initializeDesktopEffects() {
+            if (!isDesktop()) return;
+
+            // Enhanced hover effects for strategic paths
+            document.querySelectorAll('.strategic-path').forEach(function(path) {
+                path.addEventListener('mouseenter', function() {
+                    if (this.classList.contains('visible')) {
+                        this.style.transform = 'translateY(-20px) scale(1.02)';
+                        this.style.transition = 'all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
+                    }
+                });
+                
+                path.addEventListener('mouseleave', function() {
+                    if (this.classList.contains('visible')) {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSystem);
+        } else {
+            initializeSystem();
+        }
+
+        // Fallback: Make content visible immediately if JavaScript fails
+        setTimeout(function() {
+            document.querySelectorAll('.emerge, .ascend, .manifest-left, .manifest-right').forEach(function(element) {
+                element.classList.add('visible');
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0) translateX(0)';
+            });
+        }, 100);
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                const loadTime = performance.now();
+                if (loadTime > 3000) {
+                    // Disable non-essential animations for slower devices
+                    document.querySelectorAll('.prestige-grid, .excellence-aura').forEach(element => {
+                        element.style.animation = 'none';
+                    });
+                }
+            });
+        }
+
+        // Error handling
+        window.addEventListener('error', (e) => {
+            console.warn('System error handled:', e.message);
+            // Fallback to basic functionality
+            updatePrestigeProgress();
+        });
+
+        // ===== LEAD MAGNET MOBILE SYSTEM =====
+        let magnetShown = false;
+        let userEngaged = false;
+        
+        function showLeadMagnet() {
+            if (!magnetShown && window.innerWidth <= 768) {
+                const magnet = document.getElementById('leadMagnet');
+                magnet.classList.add('show');
+                magnetShown = true;
+                
+                // Analytics de engajamento
+                setTimeout(() => {
+                    if (!userEngaged) {
+                        addMagnetUrgency();
+                    }
+                }, 10000);
+            }
+        }
+        
+        function addMagnetUrgency() {
+            const urgencyText = document.querySelector('.magnet-urgency');
+            if (urgencyText) {
+                urgencyText.innerHTML = '⚡ JANELA FECHANDO • Seleção em andamento';
+                urgencyText.style.animation = 'pulseUrgent 1s ease-in-out infinite alternate';
+            }
+        }
+        
+        function closeMagnet() {
+            const magnet = document.getElementById('leadMagnet');
+            magnet.style.transform = 'translateY(100%)';
+            setTimeout(() => {
+                magnet.classList.remove('show');
+            }, 300);
+        }
+        
+        function initiateConsultation() {
+            userEngaged = true;
+            
+            // Efeito de sucesso
+            const cta = document.querySelector('.magnet-cta');
+            cta.innerHTML = '✓ Processando...';
+            cta.style.background = '#22c55e';
+            cta.style.color = 'white';
+            
+            setTimeout(() => {
+                window.open('mailto:contato@dynamicsolutions.digital?subject=Processo de Qualificação Estratégica&body=Prezados,\n\nApós conhecer a arquitetura de excelência apresentada, gostaria de iniciar o processo de qualificação mútua para avaliar alinhamento estratégico.\n\nAguardo retorno para os próximos passos.', '_blank');
+                closeMagnet();
+            }, 1500);
+        }
+        
+        // TIMER DE ESCASSEZ
+        function initScarcityTimer() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 7);
+            targetDate.setHours(targetDate.getHours() + 14);
+            
+            function updateTimer() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        
+        // ANIMAÇÃO DOS NÚMEROS DE SOCIAL PROOF
+        function animateStats() {
+            const stats = [
+                { id: 'clientsCount', target: 127, suffix: '' },
+                { id: 'projectsCount', target: 847, suffix: '%' },
+                { id: 'satisfactionCount', target: 15, suffix: '' }
+            ];
+            
+            stats.forEach(stat => {
+                const element = document.getElementById(stat.id);
+                if (!element) return;
+                
+                let current = 0;
+                const increment = stat.target / 100;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= stat.target) {
+                        current = stat.target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (stat.id === 'projectsCount') {
+                        element.textContent = Math.floor(current) + stat.suffix;
+                    } else {
+                        element.textContent = Math.floor(current) + stat.suffix;
+                    }
+                }, 50);
+            });
+        }
+        
+        // TRIGGERS PARA CONVERSÃO
+        function initConversionTriggers() {
+            let scrollCount = 0;
+            let timeOnPage = 0;
+            
+            // Contador de tempo na página
+            setInterval(() => {
+                timeOnPage++;
+                
+                // Mostrar magnet após 15 segundos
+                if (timeOnPage === 15) {
+                    showLeadMagnet();
+                }
+                
+                // Adicionar urgência após 45 segundos
+                if (timeOnPage === 45 && !userEngaged) {
+                    addMagnetUrgency();
+                }
+            }, 1000);
+            
+            // Detector de scroll engagement
+            window.addEventListener('scroll', () => {
+                scrollCount++;
+                
+                // Usuário altamente engajado, mostrar magnet
+                if (scrollCount > 5 && !magnetShown) {
+                    showLeadMagnet();
+                }
+            });
+            
+            // Exit intent (simulado para mobile via scroll up)
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < lastScrollY && window.scrollY < 100 && !magnetShown) {
+                    showLeadMagnet();
+                }
+                lastScrollY = window.scrollY;
+            });
+        }
+
+        // ===== SISTEMA DE REVELAÇÃO ARISTOCRÁTICA =====
+        // Harmonizado com breatheAura e prestige-progress existentes
+        
+        function createHeritageTouch(event, element) {
+            const rect = element.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            
+            const touch = document.createElement('div');
+            touch.className = 'heritage-touch';
+            touch.style.left = (x - 25) + 'px';
+            touch.style.top = (y - 25) + 'px';
+            touch.style.width = '50px';
+            touch.style.height = '50px';
+            
+            element.appendChild(touch);
+            
+            // Timing harmonizado com breatheAura (800ms total)
+            setTimeout(() => {
+                touch.classList.add('active');
+            }, 50);
+            
+            setTimeout(() => {
+                if (touch.parentNode) {
+                    touch.parentNode.removeChild(touch);
+                }
+            }, 1250);
+        }
+        
+        function revealHeritage(veilId, contentId, callback) {
+            const veil = document.getElementById(veilId);
+            const content = document.getElementById(contentId);
+            
+            if (veil && content) {
+                // Revelação aristocrática com timing das joalherias
+                veil.classList.add('unveiled');
+                
+                setTimeout(() => {
+                    content.classList.add('revealed');
+                    if (callback) callback();
+                }, 700); // Delay elegante
+            }
+        }
+        
+        function initHeritageSystem() {
+            if (window.innerWidth > 768) return; // Apenas mobile
+            
+            // Sistema de revelação principal
+            const heritageVeil = document.getElementById('heritageVeil');
+            if (heritageVeil) {
+                heritageVeil.addEventListener('click', function(e) {
+                    createHeritageTouch(e, this);
+                    revealHeritage('heritageVeil', 'heritageContent', () => {
+                        // Animar stats após revelação
+                        setTimeout(() => {
+                            animateStats();
+                            initHeritageInsights();
+                        }, 800);
+                    });
+                });
+            }
+            
+        }
+        
+        function initHeritageInsights() {
+            // Sistema aristocrático de conquista de insights
+            const masteryElements = document.querySelectorAll('.apple-mastery');
+            
+            masteryElements.forEach((element, index) => {
+                const masteryType = element.getAttribute('data-mastery');
+                const insight = document.getElementById(masteryType + '-insight');
+                const jewel = element.querySelector('.mastery-jewel');
+                
+                if (insight && jewel) {
+                    element.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        if (!insight.classList.contains('revealed')) {
+                            // Timing escalonado aristocrático
+                            setTimeout(() => {
+                                insight.classList.add('revealed');
+                                jewel.classList.add('achieved');
+                                
+                                // Vibração sutil das grandes manufaturas
+                                if (navigator.vibrate) {
+                                    navigator.vibrate([30, 20, 50]);
+                                }
+                            }, index * 400); // Delay progressivo elegante
+                        }
+                    });
+                }
+            });
+        }
+        
+        
+        function initHeritageRewards() {
+            let insightsRevealed = 0;
+            const totalInsights = document.querySelectorAll('.heritage-insight').length;
+            
+            // Observador aristocrático para maestria completa
+            const masteryObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.target.classList.contains('revealed')) {
+                        insightsRevealed++;
+                        
+                        if (insightsRevealed === totalInsights) {
+                            setTimeout(() => {
+                                showHeritageCompletion();
+                            }, 1500); // Timing das casas de luxo
+                        }
+                    }
+                });
+            });
+            
+            // Observar insights
+            document.querySelectorAll('.heritage-insight').forEach(insight => {
+                masteryObserver.observe(insight, { attributes: true, attributeFilter: ['class'] });
+            });
+        }
+        
+        function showHeritageCompletion() {
+            // Recompensa aristocrática final
+            const completion = document.createElement('div');
+            completion.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(135deg, 
+                        rgba(0, 0, 0, 0.95) 0%,
+                        rgba(20, 20, 20, 0.92) 50%,
+                        rgba(0, 0, 0, 0.95) 100%);
+                    color: #D4AF37;
+                    padding: 40px;
+                    border-radius: 2px;
+                    font-family: 'Playfair Display', serif;
+                    font-weight: 400;
+                    text-align: center;
+                    z-index: 1000;
+                    animation: heritageCompletion 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                    backdrop-filter: blur(25px) saturate(1.2);
+                    border: 1px solid rgba(212, 175, 55, 0.3);
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+                ">
+                    <div style="font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">◊ Herança Revelada ◊</div>
+                    <div style="font-family: 'Inter', sans-serif; font-weight: 300; opacity: 0.9; font-size: 0.9rem; line-height: 1.6;">
+                        Você desvelou a arquitetura completa<br>
+                        da nossa metodologia proprietária
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(completion);
+            
+            // Remover após timing aristocrático
+            setTimeout(() => {
+                if (completion.parentNode) {
+                    completion.parentNode.removeChild(completion);
+                }
+            }, 5000);
+            
+            // Vibração das manufaturas de luxo
+            if (navigator.vibrate) {
+                navigator.vibrate([80, 100, 120, 100, 80]);
+            }
+        }
+
+        // Adicionar à inicialização existente
+        const originalInitialize = initializeSystem;
+        initializeSystem = function() {
+            originalInitialize();
+            
+            // Inicializar sistema de lead magnet
+            initScarcityTimer();
+            initConversionTriggers();
+            
+            // Inicializar sistema aristocrático (apenas mobile)
+            if (window.innerWidth <= 768) {
+                initHeritageSystem();
+                initHeritageRewards();
+            }
+            
+            // Animar stats quando seção aparecer (desktop)
+            if (window.innerWidth > 768) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.target.classList.contains('social-proof-section')) {
+                            animateStats();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                const proofSection = document.querySelector('.social-proof-section');
+                if (proofSection) {
+                    observer.observe(proofSection);
+                }
+            }
+        };
+        
+        // CSS adicional para completion aristocrático
+        const heritageCompletionStyles = `
+            @keyframes heritageCompletion {
+                0% {
+                    transform: translate(-50%, -50%) scale(0.9);
+                    opacity: 0;
+                    backdrop-filter: blur(0px) saturate(1);
+                }
+                15% {
+                    transform: translate(-50%, -50%) scale(1.02);
+                    opacity: 1;
+                    backdrop-filter: blur(25px) saturate(1.2);
+                }
+                85% {
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                    backdrop-filter: blur(25px) saturate(1.2);
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(0.95);
+                    opacity: 0;
+                    backdrop-filter: blur(15px) saturate(1.1);
+                }
+            }
+        `;
+        
+        const heritageStyleSheet = document.createElement('style');
+        heritageStyleSheet.textContent = heritageCompletionStyles;
+        document.head.appendChild(heritageStyleSheet);
+
+        // ===== NEURAL SALES SYSTEM FUNCTIONS =====
+        
+        // Sistema Neural de Conversão
+        function initiateQualification() {
+            // Coletar dados de comportamento
+            const timeOnPage = Date.now() - window.pageStartTime;
+            const scrollDepth = Math.round((window.scrollY / document.body.scrollHeight) * 100);
+            
+            // Analytics de intenção
+            const intentData = {
+                timeEngagement: timeOnPage,
+                scrollEngagement: scrollDepth,
+                commitmentLevel: document.querySelector('.commit-option.selected')?.textContent || 'undefined'
+            };
+            
+            // Efeito visual de confirmação
+            const cta = event.target;
+            cta.innerHTML = '✓ Processando Qualificação...';
+            cta.style.background = 'linear-gradient(135deg, #00D4AA, #00B894)';
+            
+            setTimeout(() => {
+                window.open(`mailto:contato@dynamicsolutions.digital?subject=Processo de Qualificação Estratégica&body=Prezados,
+
+Após análise da arquitetura de excelência apresentada, gostaria de iniciar o processo de qualificação mútua.
+
+Dados de Engajamento:
+- Tempo de análise: ${Math.round(timeOnPage/1000)}s
+- Profundidade de exploração: ${scrollDepth}%
+- Nível de preparação: ${intentData.commitmentLevel}
+
+Aguardo contato para próximos passos.`, '_blank');
+            }, 1500);
+        }
+
+        // Sistema de Micro-Commitments
+        function initNeuralCommitments() {
+            if (window.innerWidth > 768) return; // Apenas mobile
+
+            document.querySelectorAll('.commit-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.commit-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Trigger FOMO baseado na resposta
+                    if (this.textContent.includes('Sim')) {
+                        setTimeout(() => {
+                            showUrgencyBoost();
+                        }, 2000);
+                    }
+                });
+            });
+        }
+
+        function showUrgencyBoost() {
+            const boost = document.createElement('div');
+            boost.innerHTML = `
+                <div style="
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: linear-gradient(135deg, #FF6B35, #FF8C42);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    font-size: 0.9rem;
+                    max-width: 300px;
+                    z-index: 1000;
+                    animation: slideInRight 0.5s ease;
+                    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+                ">
+                    <strong>⚡ Oportunidade Identificada</strong><br>
+                    Perfil compatível detectado. Apenas 2 vagas restantes para Q4 2024.
+                </div>
+            `;
+            document.body.appendChild(boost);
+            
+            setTimeout(() => {
+                boost.style.animation = 'slideOutRight 0.5s ease forwards';
+                setTimeout(() => boost.remove(), 500);
+            }, 8000);
+        }
+
+        // Inicializar timer de página para neural analytics
+        window.pageStartTime = Date.now();
+
+        // CSS adicional para animações neurais
+        const neuralAnimationStyles = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        const neuralStyleSheet = document.createElement('style');
+        neuralStyleSheet.textContent = neuralAnimationStyles;
+        document.head.appendChild(neuralStyleSheet);
+
+        // ===== MOBILE RESTRICTED ACCESS SYSTEM =====
+        
+        function grantMobileAccess() {
+            const overlay = document.getElementById('mobileRestrictedOverlay');
+            const button = event.target;
+            
+            // Efeito visual de processamento
+            button.innerHTML = '⚡ Processando Acesso...';
+            button.style.background = 'linear-gradient(135deg, #00D4AA, #00B894)';
+            
+            setTimeout(() => {
+                // Animação de saída do overlay
+                overlay.style.animation = 'restrictedAccessGranted 1.5s ease forwards';
+                
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    // Liberar scroll
+                    document.body.style.overflow = 'visible';
+                    // Revelar TODO o conteúdo da página
+                    document.body.classList.add('access-granted');
+                    
+                    // Disparar evento personalizado
+                    document.body.dispatchEvent(new CustomEvent('accessGranted'));
+                    
+                    // Reinicializar sistemas de animação
+                    if (typeof orchestrateReveal === 'function') {
+                        orchestrateReveal();
+                    }
+                }, 1500);
+            }, 1000);
+        }
+        
+        function initMobileRestrictedAccess() {
+            if (window.innerWidth > 768) return; // Apenas mobile
+            
+            const overlay = document.getElementById('mobileRestrictedOverlay');
+            overlay.classList.add('active');
+            
+            // Bloquear scroll quando overlay ativo
+            document.body.style.overflow = 'hidden';
+            
+            // Escutar quando o acesso é concedido
+            document.body.addEventListener('accessGranted', function() {
+                document.body.style.overflow = 'visible';
+            });
+        }
+
+        // CSS adicional para animação de acesso concedido
+        const restrictedAccessStyles = `
+            @keyframes restrictedAccessGranted {
+                0% {
+                    opacity: 1;
+                    transform: scale(1);
+                    backdrop-filter: blur(20px);
+                }
+                50% {
+                    opacity: 0.8;
+                    transform: scale(1.1);
+                    backdrop-filter: blur(30px);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0.8);
+                    backdrop-filter: blur(0px);
+                }
+            }
+            
+            .access-granted .neural-sales-mobile {
+                animation: contentReveal 1s ease-in-out;
+            }
+            
+            @keyframes contentReveal {
+                0% {
+                    opacity: 0;
+                    transform: translateY(50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        const restrictedStyleSheet = document.createElement('style');
+        restrictedStyleSheet.textContent = restrictedAccessStyles;
+        document.head.appendChild(restrictedStyleSheet);
+
+        // Inicializar sistema neural (apenas mobile)
+        if (window.innerWidth <= 768) {
+            initNeuralCommitments();
+            initMobileRestrictedAccess();
+        }
+    </script>
+</body>
+</html>

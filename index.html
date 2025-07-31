@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Solutions | Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=./home/index.html">
+    <link rel="canonical" href="./home/index.html">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .redirect-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .loading {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-top: 3px solid #d4af37;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #d4af37;
+        }
+        
+        p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container">
+        <div class="loading"></div>
+        <h1>Dynamic Solutions</h1>
+        <p>Redirecionando para a página principal...</p>
+        <p><a href="./home/index.html">Clique aqui se não for redirecionado automaticamente</a></p>
+    </div>
+    
+    <script>
+        // Fallback redirect for browsers that don't support meta refresh
+        setTimeout(() => {
+            window.location.href = './home/index.html';
+        }, 100);
+    </script>
+</body>
+</html>

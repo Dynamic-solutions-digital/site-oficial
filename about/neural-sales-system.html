@@ -1,0 +1,552 @@
+<!-- ===== SISTEMA NEURAL DE VENDAS SILENCIOSAS ===== -->
+<!-- Baseado em 15 anos de estudos de neuromarketing das big techs -->
+
+<style>
+/* ===== FUNDAÇÃO NEUROLÓGICA ===== */
+/* Técnicas baseadas em Apple, Tesla, Louis Vuitton, Rolex */
+
+/* SISTEMA DE ANSIEDADE CONTROLADA - Técnica Apple iPhone Launch */
+.neural-scarcity {
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.97) 0%,
+        rgba(15, 0, 0, 0.95) 100%);
+    border: 1px solid rgba(255, 107, 53, 0.4);
+    border-radius: 2px;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    animation: subtleUrgency 4s ease-in-out infinite;
+}
+
+@keyframes subtleUrgency {
+    0%, 100% { border-color: rgba(255, 107, 53, 0.3); }
+    50% { border-color: rgba(255, 107, 53, 0.6); }
+}
+
+.neural-scarcity::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 107, 53, 0.8),
+        transparent);
+    animation: urgencyPulse 2s ease-in-out infinite;
+}
+
+@keyframes urgencyPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* SISTEMA DE FOMO SOFISTICADO - Técnica Tesla Model S */
+.fomo-trigger {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.fomo-icon {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #FF6B35, #FF8C42);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fomoBlinkl 1.5s ease-in-out infinite;
+}
+
+@keyframes fomoBlink {
+    0%, 80% { opacity: 1; }
+    90% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.fomo-text {
+    flex: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.fomo-highlight {
+    color: #FF6B35;
+    font-weight: 600;
+}
+
+/* SISTEMA DE STATUS SYMBOL - Técnica Louis Vuitton */
+.status-amplifier {
+    background: linear-gradient(135deg,
+        rgba(212, 175, 55, 0.08) 0%,
+        rgba(255, 215, 0, 0.05) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 2px;
+    padding: 35px;
+    margin: 50px auto;
+    max-width: 900px;
+    position: relative;
+}
+
+.status-amplifier::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, 
+        transparent,
+        rgba(212, 175, 55, 0.3),
+        transparent,
+        rgba(212, 175, 55, 0.3),
+        transparent);
+    z-index: -1;
+    border-radius: 2px;
+    animation: statusGlow 3s ease-in-out infinite;
+}
+
+@keyframes statusGlow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+}
+
+.status-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #D4AF37;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.status-proof {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.proof-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.proof-item:hover {
+    transform: translateY(-5px);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.proof-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #D4AF37;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.proof-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* SISTEMA DE ANCORAGEM DE PREÇO - Técnica Rolex */
+.price-anchor {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 2px;
+    padding: 40px;
+    margin: 60px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.anchor-context {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.value-revelation {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #D4AF37;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* SISTEMA DE COMMITMENTS ESCALADOS - Técnica Tesla */
+.commitment-ladder {
+    background: linear-gradient(135deg,
+        rgba(30, 58, 95, 0.1) 0%,
+        rgba(10, 10, 10, 0.95) 100%);
+    border: 1px solid rgba(30, 58, 95, 0.3);
+    border-radius: 2px;
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+.commitment-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.commitment-step:last-child {
+    border-bottom: none;
+}
+
+.commitment-step:hover {
+    background: rgba(30, 58, 95, 0.1);
+    transform: translateX(10px);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: rgba(30, 58, 95, 0.8);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 5px;
+}
+
+.step-benefit {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+
+/* SISTEMA DE CALL TO ACTION MAGNÉTICO - Técnica Apple */
+.magnetic-cta {
+    position: relative;
+    background: linear-gradient(135deg, #D4AF37, #FFD700);
+    color: #000;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: none;
+    letter-spacing: 0.3px;
+    box-shadow: 
+        0 8px 25px rgba(212, 175, 55, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.magnetic-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.magnetic-cta:hover::before {
+    left: 100%;
+}
+
+.magnetic-cta:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 35px rgba(212, 175, 55, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.magnetic-cta:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+/* SISTEMA DE MICRO-COMMITMENTS - Técnica Amazon */
+.micro-commit {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 2px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.commit-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.commit-options {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.commit-option {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.commit-option:hover,
+.commit-option.selected {
+    background: rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: scale(1.05);
+}
+
+/* Mobile Refinements */
+@media (max-width: 768px) {
+    .status-proof {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .commitment-step {
+        gap: 15px;
+        padding: 15px 0;
+    }
+    
+    .commit-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .magnetic-cta {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+</style>
+
+<!-- HTML Structure para implementar na página -->
+<section class="neural-scarcity">
+    <div class="fomo-trigger">
+        <div class="fomo-icon">⚡</div>
+        <div class="fomo-text">
+            <strong class="fomo-highlight">Última janela de 2024:</strong> Apenas 3 organizações serão selecionadas para o programa de transformação estratégica. 127 empresas já solicitaram avaliação.
+        </div>
+    </div>
+    
+    <div class="fomo-trigger">
+        <div class="fomo-icon">🔒</div>
+        <div class="fomo-text">
+            <strong class="fomo-highlight">Acesso restrito:</strong> Nossa metodologia proprietária não é disponibilizada publicamente. Organizações qualificadas passam por processo de seleção mútua.
+        </div>
+    </div>
+</section>
+
+<section class="status-amplifier">
+    <div class="status-headline">Arquitetura de Elite Reconhecida Globalmente</div>
+    <div class="status-proof">
+        <div class="proof-item">
+            <span class="proof-number">R$ 2.4B</span>
+            <span class="proof-label">Valor Criado</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">15</span>
+            <span class="proof-label">Países</span>
+        </div>
+        <div class="proof-item">
+            <span class="proof-number">847%</span>
+            <span class="proof-label">ROI Médio</span>
+        </div>
+    </div>
+</section>
+
+<section class="price-anchor">
+    <div class="anchor-context">
+        Organizações Fortune 500 investem entre R$ 2-8M anuais em consultorias convencionais, obtendo resultados incrementais. Nossa arquitetura proprietária entrega transformação sistêmica mensurável.
+    </div>
+    <div class="value-revelation">
+        "O investimento se paga nos primeiros 90 dias através da operacionalização de eficiências que concorrentes levam anos para identificar."
+    </div>
+</section>
+
+<section class="commitment-ladder">
+    <div class="commitment-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <div class="step-title">Avaliação de Compatibilidade Estratégica</div>
+            <div class="step-benefit">Identificamos se sua organização possui a arquitetura necessária para evolução exponencial</div>
+        </div>
+    </div>
+    
+    <div class="commitment-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <div class="step-title">Mapeamento de Vazamentos Invisíveis</div>
+            <div class="step-benefit">Revelamos oportunidades de otimização que geram ROI imediato</div>
+        </div>
+    </div>
+    
+    <div class="commitment-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <div class="step-title">Implementação de Inteligência Proprietária</div>
+            <div class="step-benefit">Operacionalizamos sistemas que se tornam vantagem competitiva permanente</div>
+        </div>
+    </div>
+</section>
+
+<section class="micro-commit">
+    <div class="commit-question">Sua organização está preparada para evolução sistêmica?</div>
+    <div class="commit-options">
+        <div class="commit-option">Sim, buscamos transformação real</div>
+        <div class="commit-option">Talvez, queremos entender melhor</div>
+        <div class="commit-option">Não, preferimos abordagens convencionais</div>
+    </div>
+</section>
+
+<div style="text-align: center; margin: 60px 0;">
+    <button class="magnetic-cta" onclick="initiateQualification()">
+        Iniciar Processo de Qualificação Estratégica
+    </button>
+</div>
+
+<script>
+// Sistema Neural de Conversão
+function initiateQualification() {
+    // Coletar dados de comportamento
+    const timeOnPage = Date.now() - window.pageStartTime;
+    const scrollDepth = Math.round((window.scrollY / document.body.scrollHeight) * 100);
+    
+    // Analytics de intenção
+    const intentData = {
+        timeEngagement: timeOnPage,
+        scrollEngagement: scrollDepth,
+        commitmentLevel: document.querySelector('.commit-option.selected')?.textContent || 'undefined'
+    };
+    
+    // Efeito visual de confirmação
+    const cta = event.target;
+    cta.innerHTML = '✓ Processando Qualificação...';
+    cta.style.background = 'linear-gradient(135deg, #00D4AA, #00B894)';
+    
+    setTimeout(() => {
+        window.open(`mailto:contato@dynamicsolutions.digital?subject=Processo de Qualificação Estratégica&body=Prezados,
+
+Após análise da arquitetura de excelência apresentada, gostaria de iniciar o processo de qualificação mútua.
+
+Dados de Engajamento:
+- Tempo de análise: ${Math.round(timeOnPage/1000)}s
+- Profundidade de exploração: ${scrollDepth}%
+- Nível de preparação: ${intentData.commitmentLevel}
+
+Aguardo contato para próximos passos.`, '_blank');
+    }, 1500);
+}
+
+// Sistema de Micro-Commitments
+document.querySelectorAll('.commit-option').forEach(option => {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.commit-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+        
+        // Trigger FOMO baseado na resposta
+        if (this.textContent.includes('Sim')) {
+            setTimeout(() => {
+                showUrgencyBoost();
+            }, 2000);
+        }
+    });
+});
+
+function showUrgencyBoost() {
+    const boost = document.createElement('div');
+    boost.innerHTML = `
+        <div style="
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #FF6B35, #FF8C42);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            max-width: 300px;
+            z-index: 1000;
+            animation: slideInRight 0.5s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        ">
+            <strong>⚡ Oportunidade Identificada</strong><br>
+            Perfil compatível detectado. Apenas 2 vagas restantes para Q4 2024.
+        </div>
+    `;
+    document.body.appendChild(boost);
+    
+    setTimeout(() => {
+        boost.style.animation = 'slideOutRight 0.5s ease forwards';
+        setTimeout(() => boost.remove(), 500);
+    }, 8000);
+}
+
+// Inicializar timer de página
+window.pageStartTime = Date.now();
+
+// CSS adicional para animações
+const neuralStyles = `
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+`;
+const neuralStyleSheet = document.createElement('style');
+neuralStyleSheet.textContent = neuralStyles;
+document.head.appendChild(neuralStyleSheet);
+</script>

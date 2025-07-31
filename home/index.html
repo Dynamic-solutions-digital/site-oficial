@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamic Solutions - Excelência em serviços tecnológicos. Desenvolvemos sistemas de IA e automação sob medida para elevar sua operação a níveis de excelência e crescimento exponencial.">
+    <meta name="keywords" content="Dynamic Solutions, IA, automação, tecnologia, desenvolvimento, sistemas inteligentes">
+    <meta name="author" content="Dynamic Solutions">
+    
+    <title>Dynamic Solutions | Excelência em Serviços Tecnológicos</title>
+    
+    <!-- SPEED OPTIMIZATION: Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://dynamicsolutions.digital">
+    <link rel="dns-prefetch" href="https://github.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <!-- SPEED OPTIMIZATION: Preloads críticos -->
+    <link rel="preload" as="image" href="../image/Logo oficial (1).png" fetchpriority="high">
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/raleway/v29/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrcVIT9d0c8.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTjrMjJ-wU.woff2" type="font/woff2" crossorigin>
+    
+    <!-- SPEED OPTIMIZATION: Prefetch páginas destino -->
+    <link rel="prefetch" href="../about/index.html">
+    <link rel="prefetch" href="../capabilities/index.html">
+    <link rel="prefetch" href="../analytics-dashboard/index.html">
+    <link rel="prefetch" href="../assessment/index.html">
+    
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- EXTERNAL LIBRARIES - Otimizadas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" crossorigin defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" crossorigin defer></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" crossorigin defer></script>
+    
+    <!-- Google Fonts - Otimizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin>
+    
+    <style>
+        /* ===== RESET TOTAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Raleway', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== VARIÁVEIS ===== */
+        :root {
+            --primary-gold: #FFD700;
+            --primary-orange: #FF6B35;
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --backdrop-blur: blur(10px);
+            --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-large: 0 15px 40px rgba(255, 215, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(255, 215, 0, 0.5);
+            --transition-normal: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+            /* LUXURY para CTA mobile apenas */
+            --luxury-gold: #C9A96E;
+            --luxury-black: #0A0A0A;
+            --luxury-platinum: #E5E4E2;
+        }
+
+        /* ===== PARTÍCULAS: FUNDO ABSOLUTO ===== */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: all;
+        }
+
+        #particles-js canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: all;
+        }
+
+        /* ===== CONTEÚDO: CAMADA INTERMEDIÁRIA ===== */
+        .content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            gap: clamp(20px, 4vh, 40px);
+            pointer-events: none;
+            transform: translateY(-10vh); /* Ajuste para posição ideal */
+        }
+
+        .logo {
+            margin-bottom: clamp(10px, 2vh, 20px);
+            pointer-events: none;
+        }
+
+        .logo img {
+            width: clamp(180px, 25vw, 320px);
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            pointer-events: none;
+        }
+
+        .content-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(15px, 3vh, 25px);
+            pointer-events: none;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5.5vw, 4rem);
+            font-weight: 600;
+            line-height: 1.25;
+            margin: 0;
+            margin-bottom: clamp(15px, 3vh, 25px);
+            max-width: 90vw;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            pointer-events: none;
+        }
+
+        .innovation-text {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 3s ease-in-out infinite;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
+            line-height: 1.65;
+            margin: 0;
+            margin-bottom: clamp(25px, 4vh, 30px);
+            max-width: clamp(300px, 85vw, 850px);
+            text-align: center;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0.95;
+            pointer-events: none;
+        }
+
+        /* ===== ULTRA-SOPHISTICATED LUXURY CTA ===== */
+        .neural-cta-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            pointer-events: all;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.8));
+        }
+
+        .neural-cta {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 22px 48px;
+            min-width: 280px;
+            
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: 0.8px;
+            color: #0A0A0A;
+            
+            background: 
+                linear-gradient(135deg, #8B7355 0%, #D4C4A8 35%, #B8A082 65%, #8B7355 100%);
+            border: 3px solid transparent;
+            border-radius: 0;
+            
+            cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+            
+            box-shadow: 
+                0 0 0 1px rgba(139, 115, 85, 0.8),
+                0 8px 32px rgba(139, 115, 85, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* Geometric luxury corners */
+        .neural-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 0%, transparent 15%, #D4C4A8 15%, #D4C4A8 17%, transparent 17%),
+                linear-gradient(-45deg, transparent 0%, transparent 15%, #D4C4A8 15%, #D4C4A8 17%, transparent 17%),
+                linear-gradient(45deg, transparent 83%, #D4C4A8 83%, #D4C4A8 85%, transparent 85%),
+                linear-gradient(-45deg, transparent 83%, #D4C4A8 83%, #D4C4A8 85%, transparent 85%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Premium shimmer effect */
+        .neural-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+            transform: rotate(-45deg) translateX(-100%);
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Hover state - Premium transformation */
+        .neural-cta:hover {
+            transform: translateY(-4px) scale(1.02);
+            background: 
+                linear-gradient(135deg, #A08968 0%, #E8DCC6 35%, #D4C4A8 65%, #A08968 100%);
+            box-shadow: 
+                0 0 0 2px rgba(139, 115, 85, 1),
+                0 15px 45px rgba(139, 115, 85, 0.6),
+                0 25px 80px rgba(139, 115, 85, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .neural-cta:hover::before {
+            opacity: 1;
+        }
+
+        .neural-cta:hover::after {
+            transform: rotate(-45deg) translateX(100%);
+        }
+
+        /* Active state - Luxury press feedback */
+        .neural-cta:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: all 0.1s ease;
+            box-shadow: 
+                0 0 0 1px rgba(139, 115, 85, 0.9),
+                0 5px 20px rgba(139, 115, 85, 0.5),
+                inset 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sophisticated icon */
+        .neural-cta-icon {
+            position: relative;
+            font-size: 1.1rem;
+            color: #0A0A0A;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+        }
+
+        .neural-cta:hover .neural-cta-icon {
+            transform: scale(1.15) rotate(5deg);
+            color: #000000;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Premium typography */
+        .neural-cta-text {
+            font-weight: 600;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .neural-cta:hover .neural-cta-text {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            letter-spacing: 1px;
+        }
+
+        /* Exclusive luxury divider */
+        .cta-divider {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .neural-cta:hover .cta-divider {
+            opacity: 1;
+        }
+
+        /* Ultra-sophisticated particle system for CTA */
+        .cta-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .neural-cta:hover .cta-particles {
+            opacity: 1;
+        }
+
+        .cta-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Premium pulsing animation */
+        @keyframes luxuryPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 0 1px rgba(139, 115, 85, 0.8),
+                    0 8px 32px rgba(139, 115, 85, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 0 2px rgba(139, 115, 85, 1),
+                    0 12px 40px rgba(139, 115, 85, 0.6),
+                    0 0 25px rgba(139, 115, 85, 0.4),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .neural-cta {
+            animation: luxuryPulse 4s ease-in-out infinite;
+        }
+
+        /* Exclusive micro-interactions */
+        .neural-cta:hover {
+            animation: none;
+        }
+
+        /* Premium glow trail effect */
+        .neural-cta::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                conic-gradient(from 0deg, 
+                    transparent 0deg, 
+                    rgba(255, 255, 255, 0.2) 90deg, 
+                    rgba(255, 255, 255, 0.6) 180deg, 
+                    rgba(255, 255, 255, 0.2) 270deg, 
+                    transparent 360deg);
+            transform: rotate(-45deg) translateX(-100%);
+            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 50%;
+        }
+
+        .neural-cta:hover::after {
+            transform: rotate(315deg) translateX(100%);
+        }
+
+        /* Competitive Seed Section */
+        .competitive-seed {
+            margin-top: clamp(25px, 4vh, 35px);
+            padding: clamp(20px, 3vh, 30px) clamp(25px, 4vw, 40px);
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 53, 0.04) 0%, 
+                rgba(255, 215, 0, 0.04) 50%, 
+                rgba(255, 107, 53, 0.04) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 8px;
+            backdrop-filter: blur(20px);
+            max-width: clamp(320px, 90vw, 900px);
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .competitive-seed::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.08), transparent);
+            animation: seedGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes seedGlow {
+            0%, 100% { left: -100%; }
+            50% { left: 100%; }
+        }
+
+        .seed-text {
+            font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.92);
+            text-align: center;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emphasis-orange {
+            color: #FF6B35;
+            font-weight: 500;
+        }
+
+        .emphasis-gold {
+            color: #FFD700;
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Mobile optimization for competitive seed */
+        @media (max-width: 768px) {
+            .competitive-seed {
+                margin-top: 25px; /* Aumentado para dar mais espaço entre elementos */
+                padding: 20px 24px; /* Padding ligeiramente maior */
+                border-radius: 8px;
+                z-index: 10; /* Garante que fica acima de outros elementos */
+                position: relative;
+            }
+            
+            .seed-text {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+
+        /* Qualification Hint - Progressive Filtering */
+        .qualification-hint {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            transform: none;
+            z-index: 999998;
+            pointer-events: none;
+        }
+
+        .hint-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.95) 0%, 
+                rgba(20, 20, 20, 0.98) 100%);
+            border: 1px solid rgba(201, 169, 110, 0.4);
+            border-radius: 50px;
+            backdrop-filter: blur(30px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .hint-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--luxury-gold);
+            font-size: 0.85rem;
+        }
+
+        .hint-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .hint-label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hint-criteria {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--luxury-gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* Mobile qualification hint - OCULTAR NO MOBILE */
+        @media (max-width: 768px) {
+            .qualification-hint {
+                display: none !important; /* Oculta completamente no mobile */
+            }
+            
+            /* Remove mobile CTA backup já que não precisamos mais */
+            .mobile-cta-backup {
+                padding-top: 0;
+            }
+            
+            .mobile-cta-backup::before {
+                display: none;
+            }
+        }
+
+
+        /* ===== ANIMAÇÕES ===== */
+        @keyframes textGlow {
+            0%, 100% { 
+                filter: brightness(1);
+                text-shadow: var(--shadow-glow);
+            }
+            50% { 
+                filter: brightness(1.2);
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        /* ===== RESPONSIVIDADE ULTRA-PREMIUM ===== */
+        @media (max-width: 768px) {
+            .content {
+                transform: translateY(-4vh); /* Reduzido de -7vh para -4vh para dar mais espaço */
+            }
+            
+            .neural-cta-container {
+                bottom: 20px;
+                filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.9));
+            }
+            
+            .neural-cta {
+                padding: 20px 36px;
+                font-size: 0.9rem;
+                letter-spacing: 0.6px;
+                min-width: 240px;
+                gap: 14px;
+                
+                /* Enhanced mobile sophistication */
+                box-shadow: 
+                    0 0 0 1px rgba(201, 169, 110, 0.9),
+                    0 10px 35px rgba(201, 169, 110, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+            }
+            
+            .neural-cta:hover {
+                transform: translateY(-3px) scale(1.01);
+                box-shadow: 
+                    0 0 0 2px rgba(201, 169, 110, 1),
+                    0 12px 40px rgba(201, 169, 110, 0.7),
+                    0 20px 65px rgba(201, 169, 110, 0.35),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                    inset 0 -2px 0 rgba(0, 0, 0, 0.18);
+            }
+            
+            .neural-cta-icon {
+                font-size: 1rem;
+            }
+            
+            .neural-cta:hover .neural-cta-icon {
+                transform: scale(1.1) rotate(3deg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .neural-cta {
+                padding: 18px 30px;
+                font-size: 0.85rem;
+                min-width: 200px;
+                gap: 12px;
+            }
+            
+            .neural-cta-icon {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .content {
+                gap: 25px;
+            }
+            
+            .logo {
+                margin-bottom: -5px;
+            }
+            
+            .logo img {
+                width: 420px;
+                max-width: 420px;
+            }
+            
+            h1 {
+                font-size: 4.5rem;
+                letter-spacing: -0.02em;
+                line-height: 0.95;
+                white-space: nowrap;
+                margin-top: -8px;
+                margin-bottom: 0;
+            }
+            
+            .tagline {
+                font-size: 1.45rem;
+                max-width: 1100px;
+                line-height: 1.45;
+                margin-top: 12px;
+                margin-bottom: 0;
+                padding: 0 20px;
+                margin-left: 50px;
+            }
+            
+            .neural-cta {
+                padding: 26px 52px;
+                font-size: 1.1rem;
+                letter-spacing: 0.9px;
+                min-width: 320px;
+                gap: 18px;
+                
+                /* Desktop luxury enhancement */
+                box-shadow: 
+                    0 0 0 1px rgba(201, 169, 110, 0.8),
+                    0 12px 40px rgba(201, 169, 110, 0.4),
+                    0 25px 80px rgba(201, 169, 110, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            }
+            
+            .neural-cta:hover {
+                transform: translateY(-5px) scale(1.03);
+                box-shadow: 
+                    0 0 0 2px rgba(201, 169, 110, 1),
+                    0 18px 50px rgba(201, 169, 110, 0.6),
+                    0 30px 90px rgba(201, 169, 110, 0.3),
+                    0 45px 120px rgba(201, 169, 110, 0.15),
+                    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+                    inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- PARTÍCULAS: CAMADA 1 -->
+    <div id="particles-js"></div>
+
+    <!-- CONTEÚDO: CAMADA 2 -->
+    <main class="content">
+        <header class="logo">
+            <img src="../image/Logo oficial (1).png" 
+                 alt="Dynamic Solutions - Logo da empresa"
+                 loading="eager"
+                 fetchpriority="high">
+        </header>
+        
+        <section class="content-text">
+            <h1 data-aos="fade-up">
+                <span class="innovation-text">Sua Organização</span> Já Deveria Dominar Isso
+            </h1>
+            
+            <p class="tagline" data-aos="fade-up" data-aos-delay="200">
+                Enquanto seus concorrentes ainda dependem de ferramentas que qualquer um pode comprar, 
+                desenvolvemos inteligências proprietárias que apenas sua organização possui. 
+                O resultado? Vantagens competitivas impossíveis de replicar.
+            </p>
+            
+            <div class="competitive-seed" data-aos="fade-up" data-aos-delay="400">
+                <p class="seed-text">
+                    Enquanto <span class="emphasis-orange">97% dos CEOs investem R$2-8M anuais em ferramentas</span>, 
+                    <span class="emphasis-gold">3% operacionalizam inteligências proprietárias</span> 
+                    que tornam a concorrência irrelevante. A diferença? <span class="emphasis-gold">Crescimento de 340% vs 12% anual</span>.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- QUALIFICATION HINT: FILTRO PROGRESSIVO -->
+    <div class="qualification-hint" id="qualification-hint" data-aos="fade-up" data-aos-delay="600">
+        <div class="hint-container">
+            <div class="hint-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="hint-content">
+                <span class="hint-label">Exclusivo para organizações</span>
+                <span class="hint-criteria">Faturamento mínimo: R$2M anuais</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA PRINCIPAL ULTRA-SOPHISTICATED -->
+    <div class="neural-cta-container">
+        <a href="../about/index.html" class="neural-cta" id="luxuryCTA">
+            <div class="cta-divider"></div>
+            <i class="fas fa-gem neural-cta-icon"></i>
+            <span class="neural-cta-text">Acesso Exclusivo</span>
+            <div class="cta-particles" id="ctaParticles"></div>
+        </a>
+    </div>
+
+    <script>
+        /* ===== CONFIGURAÇÃO GLOBAL ===== */
+        const DynamicApp = {
+            state: {
+                isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768,
+                touchCount: 0,
+                lastResetTime: 0
+            },
+            config: {
+                resetTouchCount: 13,
+                resetCooldown: 1000
+            }
+        };
+
+        /* ===== SISTEMA DE SOM REMOVIDO ===== */
+        const SoundSystem = {
+            init() {},
+            play(soundName) {}
+        };
+
+        /* ===== SISTEMA DE PARTÍCULAS ===== */
+        const ParticleSystem = {
+            init() {
+                this.initializeParticles();
+                
+                // Mobile: Touch Events para Reset em 13 toques
+                if (DynamicApp.state.isMobile) {
+                    this.setupMobileReset();
+                }
+            },
+
+            initializeParticles() {
+                if (typeof particlesJS === 'undefined') {
+                    setTimeout(() => this.initializeParticles(), 100);
+                    return;
+                }
+
+                const config = {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#FFE55C" },
+                        shape: { type: "circle" },
+                        opacity: { 
+                            value: 0.6, 
+                            random: true, 
+                            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } 
+                        },
+                        size: { 
+                            value: 3, 
+                            random: true, 
+                            anim: { enable: true, speed: 2, size_min: 0.1, sync: false } 
+                        },
+                        line_linked: { 
+                            enable: true, 
+                            distance: 150, 
+                            color: "#FFE55C", 
+                            opacity: 0.4, 
+                            width: 1 
+                        },
+                        move: { 
+                            enable: true, 
+                            speed: 3, 
+                            direction: "none", 
+                            random: true, 
+                            straight: false, 
+                            out_mode: "out", 
+                            bounce: false, 
+                            attract: { enable: true, rotateX: 600, rotateY: 1200 } 
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: { 
+                            onhover: { enable: true, mode: "grab" }, 
+                            onclick: { enable: true, mode: "push" }, 
+                            resize: true 
+                        },
+                        modes: { 
+                            grab: { distance: 180, line_linked: { opacity: 0.8 } }, 
+                            push: { particles_nb: 6 } 
+                        }
+                    },
+                    retina_detect: true
+                };
+
+                particlesJS("particles-js", config);
+                console.log('✅ Partículas inicializadas');
+            },
+
+            setupMobileReset() {
+                const particlesContainer = document.getElementById('particles-js');
+                
+                particlesContainer.addEventListener('touchstart', (e) => {
+                    // Só conta se NÃO for no CTA
+                    if (!e.target.closest('.neural-cta-container')) {
+                        DynamicApp.state.touchCount++;
+                        this.checkReset();
+                    }
+                }, { passive: true });
+            },
+
+            checkReset() {
+                const now = Date.now();
+                
+                if (DynamicApp.state.touchCount >= DynamicApp.config.resetTouchCount &&
+                    now - DynamicApp.state.lastResetTime > DynamicApp.config.resetCooldown) {
+                    
+                    this.performReset();
+                    DynamicApp.state.touchCount = 0;
+                    DynamicApp.state.lastResetTime = now;
+                    console.log('🔄 Reset em 13 toques');
+                }
+            },
+
+            performReset() {
+                if (window.pJSDom && window.pJSDom[0]) {
+                    const pJS = window.pJSDom[0].pJS;
+                    pJS.particles.array.length = 0;
+                    
+                    for (let i = 0; i < 80; i++) {
+                        pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value);
+                    }
+                }
+            }
+        };
+
+        /* ===== ULTRA-SOPHISTICATED CTA SYSTEM ===== */
+        const LuxuryCTASystem = {
+            particles: [],
+            isHovering: false,
+            mousePosition: { x: 0, y: 0 },
+            
+            init() {
+                const cta = document.getElementById('luxuryCTA');
+                const particlesContainer = document.getElementById('ctaParticles');
+                
+                if (!cta || !particlesContainer) return;
+                
+                // Premium mouse tracking
+                cta.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+                cta.addEventListener('mouseenter', (e) => this.handleMouseEnter(e));
+                cta.addEventListener('mouseleave', (e) => this.handleMouseLeave(e));
+                cta.addEventListener('click', (e) => this.handleClick(e));
+                
+                // Sophisticated particle animation
+                this.startParticleSystem(particlesContainer);
+                
+                console.log('✅ Luxury CTA System initialized');
+            },
+            
+            handleMouseMove(e) {
+                const rect = e.currentTarget.getBoundingClientRect();
+                this.mousePosition.x = e.clientX - rect.left;
+                this.mousePosition.y = e.clientY - rect.top;
+                
+                // Premium magnetic effect
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const deltaX = (this.mousePosition.x - centerX) / centerX;
+                const deltaY = (this.mousePosition.y - centerY) / centerY;
+                
+                e.currentTarget.style.transform = `translateY(-4px) scale(1.02) rotateX(${deltaY * 2}deg) rotateY(${deltaX * 2}deg)`;
+            },
+            
+            handleMouseEnter(e) {
+                this.isHovering = true;
+                
+                // Luxury confetti burst
+                if (typeof confetti !== 'undefined') {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const centerX = (rect.left + rect.width / 2) / window.innerWidth;
+                    const centerY = (rect.top + rect.height / 2) / window.innerHeight;
+                    
+                    confetti({
+                        particleCount: 15,
+                        spread: 60,
+                        origin: { x: centerX, y: centerY },
+                        colors: ['#C9A96E', '#F4E4BC', '#E6D3A3'],
+                        scalar: 0.6,
+                        gravity: 0.3,
+                        drift: 0.1
+                    });
+                }
+                
+                // Haptic feedback simulation
+                this.triggerHapticFeedback('light');
+            },
+            
+            handleMouseLeave(e) {
+                this.isHovering = false;
+                e.currentTarget.style.transform = '';
+            },
+            
+            handleClick(e) {
+                e.preventDefault();
+                
+                // Ultra-premium click animation
+                const cta = e.currentTarget;
+                cta.style.transform = 'translateY(-1px) scale(0.98)';
+                
+                // Massive confetti celebration
+                if (typeof confetti !== 'undefined') {
+                    const colors = ['#C9A96E', '#F4E4BC', '#E6D3A3', '#B8860B'];
+                    
+                    // Multiple bursts for luxury effect
+                    setTimeout(() => confetti({ particleCount: 50, spread: 70, colors, origin: { y: 0.8 } }), 0);
+                    setTimeout(() => confetti({ particleCount: 30, spread: 90, colors, origin: { y: 0.7 } }), 150);
+                    setTimeout(() => confetti({ particleCount: 40, spread: 60, colors, origin: { y: 0.9 } }), 300);
+                }
+                
+                // Premium navigation with delay
+                setTimeout(() => {
+                    window.location.href = cta.href;
+                }, 800);
+                
+                this.triggerHapticFeedback('heavy');
+            },
+            
+            startParticleSystem(container) {
+                const createParticle = () => {
+                    if (!this.isHovering) return;
+                    
+                    const particle = document.createElement('div');
+                    particle.className = 'cta-particle';
+                    
+                    // Random positioning within CTA bounds
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    const scale = 0.3 + Math.random() * 0.7;
+                    const duration = 1 + Math.random() * 2;
+                    
+                    particle.style.cssText = `
+                        left: ${x}%;
+                        top: ${y}%;
+                        transform: scale(${scale});
+                        animation: floatUp ${duration}s ease-out forwards;
+                    `;
+                    
+                    container.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, duration * 1000);
+                };
+                
+                // Continuous particle generation
+                setInterval(createParticle, 200);
+                
+                // Add floating animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes floatUp {
+                        0% {
+                            opacity: 1;
+                            transform: scale(0.3) translateY(0);
+                        }
+                        100% {
+                            opacity: 0;
+                            transform: scale(1) translateY(-30px);
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            },
+            
+            triggerHapticFeedback(intensity) {
+                // Simulate haptic feedback for supported devices
+                if ('vibrate' in navigator) {
+                    const patterns = {
+                        light: [10],
+                        medium: [20, 10, 20],
+                        heavy: [30, 15, 30, 15, 30]
+                    };
+                    navigator.vibrate(patterns[intensity] || patterns.light);
+                }
+            }
+        };
+
+        /* ===== SISTEMA DE ANIMAÇÕES ===== */
+        const AnimationSystem = {
+            init() {
+                // Initialize Luxury CTA System
+                LuxuryCTASystem.init();
+                
+                // Logo Events
+                const logo = document.querySelector('.logo img');
+                if (logo) {
+                    logo.addEventListener('click', () => SoundSystem.play('cyber'));
+                    logo.addEventListener('touchstart', () => SoundSystem.play('hover'), { passive: true });
+                }
+                
+                console.log('✅ Animation System configurado');
+            }
+        };
+
+        /* ===== INICIALIZAÇÃO ===== */
+        const MainInitializer = {
+            init() {
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => this.start());
+                } else {
+                    this.start();
+                }
+            },
+            
+            start() {
+                try {
+                    // 1. Som
+                    SoundSystem.init();
+                    
+                    // 2. Partículas (imediato)
+                    ParticleSystem.init();
+                    
+                    // 3. AOS
+                    if (typeof AOS !== 'undefined') {
+                        AOS.init({ duration: 1000, once: true, offset: 100 });
+                    }
+                    
+                    // 4. Animações
+                    setTimeout(() => AnimationSystem.init(), 200);
+                    
+                    console.log('✅ Dynamic Solutions inicializado');
+                    
+                } catch (error) {
+                    console.error('❌ Erro na inicialização:', error);
+                }
+            }
+        };
+
+        // Inicialização automática
+        MainInitializer.init();
+
+        // Steve Jobs-style transformation for desktop/tablet
+        function applyJobsStyleHome() {
+            if (window.innerWidth > 768) {
+                const mainTitle = document.querySelector('h1');
+                if (mainTitle) {
+                    mainTitle.innerHTML = '<span class="innovation-text">Sua Organização</span> Já Deveria Estar Aqui';
+                }
+
+                const tagline = document.querySelector('.tagline');
+                if (tagline) {
+                    tagline.innerHTML = 'Líderes excepcionais não aceitam limitações impostas por soluções convencionais. Desenvolvemos capacidades proprietárias que elevam organizações a patamares inalcançáveis pela concorrência. Sua vantagem competitiva não deve estar disponível no mercado.';
+                }
+
+                const seedText = document.querySelector('.seed-text');
+                if (seedText) {
+                    seedText.innerHTML = 'Enquanto <span class="emphasis-orange">97% dos executivos compram ferramentas que todos têm acesso</span>, <span class="emphasis-gold">3% desenvolvem inteligências que ninguém mais possui</span> e multiplicam resultados exponencialmente.';
+                }
+            }
+        }
+
+        // Apply transformations on load and resize
+        document.addEventListener('DOMContentLoaded', applyJobsStyleHome);
+        window.addEventListener('resize', applyJobsStyleHome);
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dynamic Solutions",
+        "description": "Excelência em serviços tecnológicos com IA e automação",
+        "url": "https://dynamicsolutions.com",
+        "logo": "../image/Logo oficial (1).png"
+    }
+    </script>
+</body>
+</html>
