@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapeamento de Potencial Oculto • Dynamic Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --quantum-gold: #D4AF37;
+            --neural-black: #000000;
+            --matrix-gray: #1A1A1A;
+            --platinum: #E5E5E5;
+            --quantum-green: #00FF88;
+            --danger-red: #FF3366;
+            --warning-amber: #FFB800;
+            --gradient-quantum: linear-gradient(135deg, #000000 0%, #1A1A1A 50%, #000000 100%);
+            --glass-effect: rgba(255, 255, 255, 0.05);
+            --shadow-quantum: 0 25px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--neural-black);
+            color: var(--platinum);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Quantum Background System */
+        .quantum-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 255, 136, 0.02) 0%, transparent 50%),
+                var(--gradient-quantum);
+            z-index: -2;
+        }
+
+        /* Neural Grid */
+        .neural-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.1;
+            animation: gridPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.05; }
+        }
+
+        /* Main Container */
+        .assessment-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header Section */
+        .assessment-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .quantum-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 8px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--quantum-gold);
+        }
+
+        .quantum-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--quantum-green);
+            border-radius: 50%;
+            animation: quantumPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes quantumPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--quantum-gold), #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            color: rgba(229, 229, 229, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Progress System */
+        .progress-container {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--quantum-gold), var(--quantum-green));
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: rgba(229, 229, 229, 0.7);
+        }
+
+        /* Question Card System */
+        .question-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .question-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .question-card:hover::before {
+            opacity: 1;
+        }
+
+        .question-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: var(--quantum-gold);
+            color: var(--neural-black);
+            border-radius: 50%;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .question-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: var(--platinum);
+        }
+
+        .question-subtitle {
+            font-size: 1rem;
+            color: rgba(229, 229, 229, 0.7);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Answer Options */
+        .answer-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .answer-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .answer-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .answer-option:hover::before {
+            left: 100%;
+        }
+
+        .answer-option:hover {
+            border-color: var(--quantum-gold);
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px);
+        }
+
+        .answer-option.selected {
+            border-color: var(--quantum-green);
+            background: rgba(0, 255, 136, 0.1);
+            transform: scale(1.02);
+        }
+
+        .option-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .option-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--quantum-gold);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .answer-option.selected .option-icon {
+            background: var(--quantum-green);
+            color: var(--neural-black);
+        }
+
+        .option-text {
+            flex: 1;
+        }
+
+        .option-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--platinum);
+        }
+
+        .option-description {
+            font-size: 0.95rem;
+            color: rgba(229, 229, 229, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-button {
+            padding: 15px 30px;
+            border: 2px solid var(--quantum-gold);
+            background: transparent;
+            color: var(--quantum-gold);
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-button:not(:disabled):hover {
+            background: var(--quantum-gold);
+            color: var(--neural-black);
+            transform: translateY(-2px);
+        }
+
+        .nav-button.primary {
+            background: var(--quantum-gold);
+            color: var(--neural-black);
+        }
+
+        .nav-button.primary:hover {
+            background: var(--quantum-green);
+            border-color: var(--quantum-green);
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .results-section.active {
+            display: block;
+        }
+
+        .results-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--quantum-gold), var(--quantum-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .vulnerability-score {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 51, 102, 0.1);
+            border: 2px solid var(--danger-red);
+            border-radius: 20px;
+            padding: 20px 40px;
+            margin: 30px 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--danger-red);
+        }
+
+        .psychological-revelation {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .psychological-revelation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            animation: revelationGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes revelationGlow {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .revelation-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .revelation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--quantum-gold);
+        }
+
+        .revelation-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(229, 229, 229, 0.9);
+        }
+
+        .final-cta {
+            background: linear-gradient(135deg, var(--quantum-gold), var(--quantum-green));
+            border: none;
+            border-radius: 15px;
+            padding: 25px 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--neural-black);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+
+        .final-cta:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .final-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .assessment-container {
+                padding: 20px 15px;
+            }
+
+            .question-card {
+                padding: 25px 20px;
+            }
+
+            .answer-option {
+                padding: 15px 20px;
+            }
+
+            .option-content {
+                gap: 12px;
+            }
+
+            .option-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-button {
+                width: 100%;
+                padding: 18px;
+            }
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .loading-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-top: 3px solid var(--quantum-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.1rem;
+            color: var(--quantum-gold);
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Quantum Background -->
+    <div class="quantum-bg"></div>
+    <div class="neural-grid"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Processando Análise Neural...</div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="assessment-container">
+        <!-- Header -->
+        <header class="assessment-header">
+            <div class="quantum-indicator">
+                <div class="quantum-dot"></div>
+                <span>Sistema de Mapeamento Executivo</span>
+            </div>
+            <h1 class="main-title">Detecção de Vulnerabilidades Patrimoniais Ocultas</h1>
+            <p class="subtitle">
+                Protocolo proprietário de identificação de vazamentos operacionais que custam 
+                R$50.000+ mensais para organizações C-Level
+            </p>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-info">
+                <span id="currentStep">Questão 1 de 8</span>
+                <span id="completionRate">0% Completo</span>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div id="questionsContainer">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-button" id="prevButton" disabled onclick="previousQuestion()">
+                <i class="fas fa-arrow-left"></i> Anterior
+            </button>
+            <button class="nav-button primary" id="nextButton" disabled onclick="nextQuestion()">
+                Próxima <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="resultsSection">
+        <h2 class="results-title">Análise Concluída</h2>
+        <div class="vulnerability-score">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span>Vulnerabilidade Detectada: <span id="vulnerabilityLevel">Alta</span></span>
+        </div>
+
+        <div class="psychological-revelation">
+            <div class="revelation-content">
+                <h3 class="revelation-title">Revelação Estratégica</h3>
+                <p class="revelation-text" id="revelationText">
+                    <!-- Dynamic content based on answers -->
+                </p>
+            </div>
+        </div>
+
+        <button class="final-cta" onclick="proceedToConsultation()">
+            <span>Solicitar Intervenção Executiva Imediata</span>
+        </button>
+    </div>
+
+    <script>
+        // Quantum Assessment System
+        class QuantumAssessment {
+            constructor() {
+                this.currentQuestion = 0;
+                this.answers = {};
+                this.questions = this.initializeQuestions();
+                this.psychologicalProfile = {
+                    controlNeed: 0,
+                    statusAnxiety: 0,
+                    competitiveEgo: 0,
+                    lossAversion: 0,
+                    intellectualPride: 0
+                };
+                
+                this.init();
+            }
+
+            initializeQuestions() {
+                return [
+                    {
+                        number: 1,
+                        title: "Estrutura de Tomada de Decisão Estratégica",
+                        subtitle: "Como sua organização processa decisões que impactam mais de R$1M?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-crown",
+                                title: "Centralizada em mim exclusivamente",
+                                description: "Todas as decisões estratégicas passam pela minha aprovação final",
+                                profile: { controlNeed: 3, intellectualPride: 2 }
+                            },
+                            {
+                                id: "b", 
+                                icon: "fas fa-users-cog",
+                                title: "Comitê executivo restrito",
+                                description: "2-3 pessoas de confiança participam das decisões críticas",
+                                profile: { controlNeed: 2, statusAnxiety: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-network-wired",
+                                title: "Matriz de decisão distribuída",
+                                description: "Sistema estruturado com diferentes níveis de autonomia",
+                                profile: { intellectualPride: 2, competitiveEgo: 1 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-question-circle",
+                                title: "Não tenho certeza do processo atual",
+                                description: "Precisamos mapear melhor nossa estrutura decisória",
+                                profile: { statusAnxiety: 3, lossAversion: 2 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 2,
+                        title: "Identificação de Ameaças Competitivas",
+                        subtitle: "Qual sua maior preocupação sobre concorrentes nos próximos 18 meses?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-robot",
+                                title: "Automação que não temos",
+                                description: "Concorrentes implementando IA que pode nos deixar obsoletos",
+                                profile: { lossAversion: 3, statusAnxiety: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-rocket",
+                                title: "Velocidade de inovação",
+                                description: "Eles lançam produtos/serviços mais rápido que conseguimos acompanhar",
+                                profile: { competitiveEgo: 3, intellectualPride: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-shield-alt",
+                                title: "Vantagens proprietárias",
+                                description: "Possíveis tecnologias exclusivas que desconhecemos",
+                                profile: { lossAversion: 2, statusAnxiety: 3 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-eye-slash",
+                                title: "Ameaças invisíveis",
+                                description: "Não sabemos o que não sabemos sobre o que estão fazendo",
+                                profile: { statusAnxiety: 3, lossAversion: 3, intellectualPride: -1 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 3,
+                        title: "Maturidade de Inteligência Operacional",
+                        subtitle: "Qual seu nível de visibilidade sobre perdas operacionais ocultas?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-microscope",
+                                title: "Visibilidade total",
+                                description: "Sabemos exatamente onde cada centavo é perdido ou desperdiçado",
+                                profile: { intellectualPride: 3, controlNeed: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-chart-line",
+                                title: "Dashboards principais",
+                                description: "Temos KPIs robustos mas suspeito que há pontos cegos",
+                                profile: { intellectualPride: 1, lossAversion: 2 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-search",
+                                title: "Investigação ativa",
+                                description: "Estamos procurando ativamente por vazamentos que não vemos",
+                                profile: { lossAversion: 3, competitiveEgo: 1 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-blind",
+                                title: "Pontos cegos críticos",
+                                description: "Sei que existem perdas significativas que não conseguimos detectar",
+                                profile: { statusAnxiety: 3, lossAversion: 3, intellectualPride: -2 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 4,
+                        title: "Perfil de Risco-Oportunidade",
+                        subtitle: "Como você lida com investimentos em tecnologias não-comprovadas?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-rocket",
+                                title: "Early adopter agressivo",
+                                description: "Invisto primeiro, analiso depois - velocidade é tudo",
+                                profile: { competitiveEgo: 3, controlNeed: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-balance-scale",
+                                title: "Calculista estratégico",
+                                description: "Espero validação parcial, mas entro antes da concorrência",
+                                profile: { intellectualPride: 2, competitiveEgo: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-shield",
+                                title: "Conservador informado",
+                                description: "Prefiro tecnologias maduras com ROI comprovado",
+                                profile: { lossAversion: 2, controlNeed: 1 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-pause-circle",
+                                title: "Paralisia por análise",
+                                description: "Fico preso analisando até perder oportunidades",
+                                profile: { statusAnxiety: 3, lossAversion: 3, competitiveEgo: -1 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 5,
+                        title: "Arquitetura de Diferenciação",
+                        subtitle: "Qual sua estratégia para criar vantagens impossíveis de copiar?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-lock",
+                                title: "Propriedade intelectual proprietária",
+                                description: "Desenvolvemos internamente o que ninguém mais tem",
+                                profile: { intellectualPride: 3, controlNeed: 3 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-lightning",
+                                title: "Velocidade de execução",
+                                description: "Copiamos rápido e executamos melhor que os originais",
+                                profile: { competitiveEgo: 3, intellectualPride: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-handshake",
+                                title: "Parcerias exclusivas",
+                                description: "Relacionamentos que criam barreiras naturais à entrada",
+                                profile: { statusAnxiety: 1, controlNeed: 1 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-question",
+                                title: "Ainda não definimos",
+                                description: "Nossa diferenciação não está clara ou é facilmente copiável",
+                                profile: { statusAnxiety: 3, lossAversion: 2, intellectualPride: -2 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 6,
+                        title: "Capacidade de Absorção de Complexidade",
+                        subtitle: "Como sua organização lida com sistemas complexos e interconectados?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-brain",
+                                title: "Mestres da complexidade",
+                                description: "Quanto mais complexo, melhor navegamos - é nossa vantagem",
+                                profile: { intellectualPride: 3, competitiveEgo: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-cogs",
+                                title: "Simplificadores sistemáticos",
+                                description: "Quebramos complexidade em componentes gerenciáveis",
+                                profile: { controlNeed: 2, intellectualPride: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-exclamation-triangle",
+                                title: "Lutando com complexidade",
+                                description: "Sistemas complexos nos sobrecarregam e geram erros",
+                                profile: { statusAnxiety: 2, lossAversion: 2 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-dizzy",
+                                title: "Evitamos complexidade",
+                                description: "Preferimos soluções simples, mesmo que menos eficazes",
+                                profile: { lossAversion: 3, statusAnxiety: 2, intellectualPride: -2 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 7,
+                        title: "Matriz de Competência Interna vs Externa",
+                        subtitle: "Para desafios críticos, qual sua abordagem de desenvolvimento de capacidades?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-home",
+                                title: "100% desenvolvimento interno",
+                                description: "Nunca dependemos de terceiros para capacidades críticas",
+                                profile: { controlNeed: 3, intellectualPride: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-handshake",
+                                title: "Parcerias estratégicas seletivas",
+                                description: "Colaboramos com poucos parceiros de elite em áreas específicas",
+                                profile: { intellectualPride: 2, statusAnxiety: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-shopping-cart",
+                                title: "Comprar sempre que possível",
+                                description: "Preferimos adquirir capacidades prontas do mercado",
+                                profile: { lossAversion: 1, controlNeed: -1 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-question-circle",
+                                title: "Não temos critério claro",
+                                description: "Decidimos caso a caso sem uma estratégia definida",
+                                profile: { statusAnxiety: 2, lossAversion: 2, intellectualPride: -1 }
+                            }
+                        ]
+                    },
+                    {
+                        number: 8,
+                        title: "Inteligência Competitiva e Contraespionagem",
+                        subtitle: "Qual seu nível de proteção contra vazamento de vantagens estratégicas?",
+                        options: [
+                            {
+                                id: "a",
+                                icon: "fas fa-shield-alt",
+                                title: "Segurança militar",
+                                description: "Protocolos rigorosos, compartimentalização, auditoria constante",
+                                profile: { controlNeed: 3, intellectualPride: 2 }
+                            },
+                            {
+                                id: "b",
+                                icon: "fas fa-lock",
+                                title: "Segurança corporativa padrão",
+                                description: "NDAs, controles de acesso, políticas de confidencialidade",
+                                profile: { controlNeed: 1, statusAnxiety: 1 }
+                            },
+                            {
+                                id: "c",
+                                icon: "fas fa-unlock",
+                                title: "Segurança básica",
+                                description: "Confiamos principalmente na lealdade da equipe",
+                                profile: { lossAversion: 2, statusAnxiety: 2 }
+                            },
+                            {
+                                id: "d",
+                                icon: "fas fa-door-open",
+                                title: "Vulnerável a vazamentos",
+                                description: "Não temos proteções adequadas contra perda de informações críticas",
+                                profile: { statusAnxiety: 3, lossAversion: 3, intellectualPride: -2 }
+                            }
+                        ]
+                    }
+                ];
+            }
+
+            init() {
+                this.renderCurrentQuestion();
+                this.updateProgress();
+            }
+
+            renderCurrentQuestion() {
+                const container = document.getElementById('questionsContainer');
+                const question = this.questions[this.currentQuestion];
+                
+                container.innerHTML = `
+                    <div class="question-card active">
+                        <div class="question-number">${question.number}</div>
+                        <h2 class="question-title">${question.title}</h2>
+                        <p class="question-subtitle">${question.subtitle}</p>
+                        <div class="answer-options">
+                            ${question.options.map(option => `
+                                <div class="answer-option" data-option="${option.id}" onclick="selectAnswer('${option.id}')">
+                                    <div class="option-content">
+                                        <div class="option-icon">
+                                            <i class="${option.icon}"></i>
+                                        </div>
+                                        <div class="option-text">
+                                            <div class="option-title">${option.title}</div>
+                                            <div class="option-description">${option.description}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            selectAnswer(optionId) {
+                // Remove previous selection
+                document.querySelectorAll('.answer-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selection to clicked option
+                document.querySelector(`[data-option="${optionId}"]`).classList.add('selected');
+                
+                // Store answer
+                const question = this.questions[this.currentQuestion];
+                const selectedOption = question.options.find(opt => opt.id === optionId);
+                
+                this.answers[this.currentQuestion] = {
+                    questionId: this.currentQuestion,
+                    optionId: optionId,
+                    profile: selectedOption.profile
+                };
+
+                // Update psychological profile
+                Object.keys(selectedOption.profile).forEach(trait => {
+                    this.psychologicalProfile[trait] += selectedOption.profile[trait];
+                });
+
+                // Enable next button
+                document.getElementById('nextButton').disabled = false;
+            }
+
+            nextQuestion() {
+                if (this.currentQuestion < this.questions.length - 1) {
+                    this.currentQuestion++;
+                    this.renderCurrentQuestion();
+                    this.updateProgress();
+                    this.updateNavigation();
+                } else {
+                    this.showResults();
+                }
+            }
+
+            previousQuestion() {
+                if (this.currentQuestion > 0) {
+                    this.currentQuestion--;
+                    this.renderCurrentQuestion();
+                    this.updateProgress();
+                    this.updateNavigation();
+                    
+                    // Restore previous selection if exists
+                    if (this.answers[this.currentQuestion]) {
+                        const selectedOption = this.answers[this.currentQuestion].optionId;
+                        document.querySelector(`[data-option="${selectedOption}"]`).classList.add('selected');
+                        document.getElementById('nextButton').disabled = false;
+                    }
+                }
+            }
+
+            updateProgress() {
+                const progress = ((this.currentQuestion + 1) / this.questions.length) * 100;
+                document.getElementById('progressFill').style.width = `${progress}%`;
+                document.getElementById('currentStep').textContent = `Questão ${this.currentQuestion + 1} de ${this.questions.length}`;
+                document.getElementById('completionRate').textContent = `${Math.round(progress)}% Completo`;
+            }
+
+            updateNavigation() {
+                const prevButton = document.getElementById('prevButton');
+                const nextButton = document.getElementById('nextButton');
+                
+                prevButton.disabled = this.currentQuestion === 0;
+                nextButton.disabled = !this.answers[this.currentQuestion];
+                
+                if (this.currentQuestion === this.questions.length - 1) {
+                    nextButton.innerHTML = 'Processar Análise <i class="fas fa-brain"></i>';
+                } else {
+                    nextButton.innerHTML = 'Próxima <i class="fas fa-arrow-right"></i>';
+                }
+            }
+
+            showResults() {
+                // Show loading
+                document.getElementById('loadingOverlay').classList.add('active');
+                
+                setTimeout(() => {
+                    document.getElementById('loadingOverlay').classList.remove('active');
+                    document.querySelector('.assessment-container').style.display = 'none';
+                    document.getElementById('resultsSection').classList.add('active');
+                    
+                    this.generatePsychologicalRevelation();
+                }, 3000);
+            }
+
+            generatePsychologicalRevelation() {
+                const profile = this.psychologicalProfile;
+                
+                // Calculate vulnerability level
+                const totalVulnerability = profile.statusAnxiety + profile.lossAversion + Math.abs(profile.intellectualPride);
+                let vulnerabilityLevel = "Baixa";
+                let vulnerabilityColor = "#00FF88";
+                
+                if (totalVulnerability > 15) {
+                    vulnerabilityLevel = "Crítica";
+                    vulnerabilityColor = "#FF3366";
+                } else if (totalVulnerability > 10) {
+                    vulnerabilityLevel = "Alta";
+                    vulnerabilityColor = "#FFB800";
+                } else if (totalVulnerability > 5) {
+                    vulnerabilityLevel = "Média";
+                    vulnerabilityColor = "#FFB800";
+                }
+
+                document.getElementById('vulnerabilityLevel').textContent = vulnerabilityLevel;
+                document.querySelector('.vulnerability-score').style.borderColor = vulnerabilityColor;
+                document.querySelector('.vulnerability-score').style.color = vulnerabilityColor;
+
+                // Generate personalized psychological revelation
+                let revelation = this.generatePersonalizedRevelation(profile);
+                
+                document.getElementById('revelationText').innerHTML = revelation;
+            }
+
+            generatePersonalizedRevelation(profile) {
+                let revelation = "";
+
+                // Dominant trait analysis
+                const dominantTrait = Object.keys(profile).reduce((a, b) => 
+                    Math.abs(profile[a]) > Math.abs(profile[b]) ? a : b
+                );
+
+                switch(dominantTrait) {
+                    case 'controlNeed':
+                        if (profile.controlNeed > 8) {
+                            revelation = `Suas respostas revelam um <strong style="color: var(--quantum-gold);">padrão de necessidade extrema de controle</strong> que, paradoxalmente, está criando as vulnerabilidades que mais teme. <br><br>
+
+                            Executivos como você, que concentram decisões críticas, frequentemente criam <strong style="color: var(--danger-red);">pontos únicos de falha</strong> que custam R$50.000-200.000 mensais em oportunidades perdidas e ineficiências sistêmicas. <br><br>
+
+                            <em style="color: var(--quantum-gold);">A ironia cruel: sua necessidade de controlo está impedindo que veja exatamente onde está perdendo controle.</em>`;
+                        } else {
+                            revelation = `Sua abordagem de controle sugere <strong style="color: var(--quantum-gold);">maturidade executiva</strong>, mas nossas análises indicam que mesmo organizações bem estruturadas têm <strong style="color: var(--warning-amber);">vazamentos ocultos de R$30.000+ mensais</strong> em áreas que nunca foram verdadeiramente mapeadas.`;
+                        }
+                        break;
+
+                    case 'statusAnxiety':
+                        if (profile.statusAnxiety > 8) {
+                            revelation = `Suas respostas demonstram uma <strong style="color: var(--danger-red);">ansiedade competitiva intensa</strong> que está custando mais do que imagina. <br><br>
+
+                            Executivos com seu perfil frequentemente tomam decisões defensivas que consomem R$80.000-300.000 anuais em "seguros desnecessários" - investimentos que não geram retorno porque nascem do medo, não da estratégia. <br><br>
+
+                            <em style="color: var(--quantum-gold);">Sua maior vulnerabilidade não é a concorrência - é como sua percepção da concorrência está distorcendo suas decisões.</em>`;
+                        } else {
+                            revelation = `Seu nível de ansiedade competitiva está dentro de parâmetros saudáveis, mas isso pode indicar <strong style="color: var(--warning-amber);">uma confiança excessiva</strong> que mascara riscos invisíveis custando R$40.000+ mensais.`;
+                        }
+                        break;
+
+                    case 'lossAversion':
+                        if (profile.lossAversion > 8) {
+                            revelation = `Suas respostas revelam um <strong style="color: var(--danger-red);">padrão de aversão à perda extremamente alto</strong> que está criando exatamente o que você tenta evitar. <br><br>
+
+                            Executivos com seu perfil frequentemente "economizam" em áreas críticas, gerando perdas de R$100.000-500.000 anuais por não investir em capacidades que pagariam por si mesmas em 90 dias. <br><br>
+
+                            <em style="color: var(--quantum-gold);">A brutal realidade: seu medo de perder está garantindo que você perca mais do que qualquer investimento ousado custaria.</em>`;
+                        } else {
+                            revelation = `Sua relação com risco parece equilibrada, mas mesmo organizações "bem balanceadas" frequentemente têm <strong style="color: var(--warning-amber);">oportunidades de R$60.000+ mensais</strong> que permanecem invisíveis porque não são "perdas óbvias".`;
+                        }
+                        break;
+
+                    case 'intellectualPride':
+                        if (profile.intellectualPride > 8) {
+                            revelation = `Suas respostas sugerem <strong style="color: var(--quantum-gold);">alta confiança intelectual</strong> - uma força que pode estar criando sua maior vulnerabilidade. <br><br>
+
+                            Executivos brilhantes como você frequentemente têm os vazamentos mais caros (R$150.000+ mensais) porque assumem que "já sabem" onde estão todos os problemas. <br><br>
+
+                            <em style="color: var(--quantum-gold);">Sua inteligência é sua vantagem - mas também seu ponto cego. As perdas mais caras são sempre nas áreas que "dominamos".</em>`;
+                        } else if (profile.intellectualPride < -3) {
+                            revelation = `Suas respostas indicam <strong style="color: var(--danger-red);">baixa confiança em capacidades internas</strong> - um padrão que gera dependências custando R$200.000+ anuais em terceirizações desnecessárias e perda de controle estratégico. <br><br>
+
+                            <em style="color: var(--quantum-gold);">Você está pagando caro por capacidades que poderia desenvolver internamente por uma fração do custo.</em>`;
+                        } else {
+                            revelation = `Seu equilíbrio intelectual é saudável, mas isso pode mascarar <strong style="color: var(--warning-amber);">oportunidades de otimização</strong> que organizações similares deixam passar, custando R$45.000+ mensais.`;
+                        }
+                        break;
+
+                    case 'competitiveEgo':
+                        if (profile.competitiveEgo > 8) {
+                            revelation = `Suas respostas revelam um <strong style="color: var(--quantum-gold);">impulso competitivo intenso</strong> - uma força poderosa que pode estar sendo mal direcionada. <br><br>
+
+                            Executivos com seu perfil frequentemente "vencem batalhas e perdem guerras", investindo R$300.000+ anuais em competições táticas enquanto perdem oportunidades estratégicas de R$1M+. <br><br>
+
+                            <em style="color: var(--quantum-gold);">Sua necessidade de vencer está impedindo que veja os jogos realmente importantes.</em>`;
+                        } else {
+                            revelation = `Seu impulso competitivo parece controlado, mas isso pode indicar <strong style="color: var(--warning-amber);">passividade estratégica</strong> custando oportunidades de dominância que nunca retornarão.`;
+                        }
+                        break;
+                }
+
+                // Add universal psychological manipulation
+                revelation += `<br><br><strong style="color: var(--quantum-gold);">O que isto significa:</strong> <br>
+
+                Independente do seu perfil, organizações do seu nível têm invariavelmente <strong style="color: var(--danger-red);">perdas mensais de R$50.000-200.000</strong> em áreas que jamais foram adequadamente mapeadas. <br><br>
+
+                <em style="color: var(--quantum-gold);">A pergunta não é SE você tem essas perdas. A pergunta é: quando você vai parar de fingir que não tem?</em>`;
+
+                return revelation;
+            }
+        }
+
+        // Global Functions
+        function selectAnswer(optionId) {
+            window.assessment.selectAnswer(optionId);
+        }
+
+        function nextQuestion() {
+            window.assessment.nextQuestion();
+        }
+
+        function previousQuestion() {
+            window.assessment.previousQuestion();
+        }
+
+        function proceedToConsultation() {
+            // Show success message instead of redirect
+            alert('Análise completa! Nossa equipe entrará em contato para apresentrar as oportunidades identificadas.');
+            console.log('Assessment completed successfully - no redirect');
+        }
+
+        // Initialize Assessment
+        document.addEventListener('DOMContentLoaded', function() {
+            window.assessment = new QuantumAssessment();
+        });
+    </script>
+</body>
+</html>

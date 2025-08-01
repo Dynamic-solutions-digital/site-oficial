@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Acesso Restrito • Dynamic Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -948,6 +951,8 @@
             letter-spacing: clamp(1px, 0.5vw, 2px);
             animation: buttonFloat 8s ease-in-out infinite;
             transform-style: preserve-3d;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
         }
 
         @keyframes buttonFloat {
@@ -2096,10 +2101,9 @@
 
                 <div class="cta-architecture">
                     <div class="cta-framework"></div>
-                    <a href="https://wa.me/5532999735469?text=Olá!%20Vim%20da%20página%20de%20qualificação%20exclusiva.%20Minha%20empresa%20atende%20aos%20critérios%20estabelecidos%20(faturamento%20R%24%202M%2B%2C%20decisor%20final%2C%20orçamento%20adequado)%20e%20quero%20acessar%20a%20interface%20de%20qualificação%20avançada%20com%20a%20especialista%20digital.%20Preciso%20descobrir%20onde%20estamos%20perdendo%20produtividade%20e%20avaliar%20nossa%20elegibilidade%20para%20as%20arquiteturas%20de%20inteligência%20proprietárias." 
-                       class="cta-button" target="_blank" rel="noopener noreferrer">
+                    <a href="../strategic-assessment-new/index.html" class="cta-button" style="text-decoration: none; display: inline-flex; align-items: center;">
                         <span class="cta-icon">◊</span>
-                        <span>Solicitar Acesso ao Assessment Executivo</span>
+                        <span>Iniciar Demonstração de Capacidade</span>
                     </a>
                 </div>
 
@@ -2123,480 +2127,353 @@
     </main>
 
     <script>
-        // Sistema Ultra Avançado de Partículas com IA
-        class UltraParticleSystem {
+        // OPTIMIZED: Lightweight Particle System
+        class OptimizedParticleSystem {
             constructor() {
                 this.container = document.getElementById('premiumParticles');
-                this.particles = [];
-                this.particleTypes = [
-                    { class: 'particle-gold', count: 20, size: [1, 3], speed: [15, 25] },
-                    { class: 'particle-silver', count: 15, size: [1, 2], speed: [20, 30] },
-                    { class: 'particle-ruby', count: 8, size: [1, 2], speed: [25, 35] }
-                ];
+                this.isVisible = true;
+                this.animationId = null;
                 this.init();
             }
 
             init() {
-                this.createParticles();
-                this.startInteractiveEffects();
-                this.startPerformanceMonitoring();
-            }
-
-            createParticles() {
-                this.particleTypes.forEach(type => {
-                    for (let i = 0; i < type.count; i++) {
-                        const particle = this.createParticle(type);
-                        this.container.appendChild(particle);
-                        this.particles.push({
-                            element: particle,
-                            type: type,
-                            x: Math.random() * window.innerWidth,
-                            y: window.innerHeight + Math.random() * 100,
-                            speedX: (Math.random() - 0.5) * 2,
-                            speedY: -(Math.random() * (type.speed[1] - type.speed[0]) + type.speed[0]),
-                            rotation: Math.random() * 360,
-                            rotationSpeed: (Math.random() - 0.5) * 4,
-                            scale: Math.random() * 0.5 + 0.5,
-                            opacity: Math.random() * 0.6 + 0.2
-                        });
-                    }
-                });
-            }
-
-            createParticle(type) {
-                const particle = document.createElement('div');
-                particle.className = `premium-particle ${type.class}`;
-                
-                const size = Math.random() * (type.size[1] - type.size[0]) + type.size[0];
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.position = 'absolute';
-                particle.style.pointerEvents = 'none';
-                
-                return particle;
-            }
-
-            startInteractiveEffects() {
-                let mouseX = 0, mouseY = 0;
-                
-                document.addEventListener('mousemove', (e) => {
-                    mouseX = e.clientX;
-                    mouseY = e.clientY;
-                    
-                    this.particles.forEach(particle => {
-                        const dx = mouseX - particle.x;
-                        const dy = mouseY - particle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 150) {
-                            const force = (150 - distance) / 150;
-                            particle.speedX += (dx / distance) * force * 0.1;
-                            particle.speedY += (dy / distance) * force * 0.1;
-                        }
-                    });
-                });
-
-                // Animação ultra suave com requestAnimationFrame
-                const animate = () => {
-                    this.updateParticles();
-                    requestAnimationFrame(animate);
-                };
-                animate();
-            }
-
-            updateParticles() {
-                this.particles.forEach(particle => {
-                    particle.x += particle.speedX;
-                    particle.y += particle.speedY;
-                    particle.rotation += particle.rotationSpeed;
-
-                    // Reset se sair da tela
-                    if (particle.y < -50) {
-                        particle.y = window.innerHeight + 50;
-                        particle.x = Math.random() * window.innerWidth;
-                    }
-
-                    if (particle.x < -50) particle.x = window.innerWidth + 50;
-                    if (particle.x > window.innerWidth + 50) particle.x = -50;
-
-                    // Aplicar transformações
-                    particle.element.style.transform = `
-                        translateX(${particle.x}px) 
-                        translateY(${particle.y}px) 
-                        rotate(${particle.rotation}deg) 
-                        scale(${particle.scale})
-                    `;
-                    particle.element.style.opacity = particle.opacity;
-                });
-            }
-
-            startPerformanceMonitoring() {
-                // Reduz partículas se performance estiver baixa
-                let lastTime = performance.now();
-                const checkPerformance = () => {
-                    const currentTime = performance.now();
-                    const deltaTime = currentTime - lastTime;
-                    
-                    if (deltaTime > 20) { // < 50 FPS
-                        this.optimizeParticles();
-                    }
-                    
-                    lastTime = currentTime;
-                    setTimeout(checkPerformance, 1000);
-                };
-                checkPerformance();
-            }
-
-            optimizeParticles() {
-                if (this.particles.length > 20) {
-                    const particleToRemove = this.particles.pop();
-                    particleToRemove.element.remove();
+                // Check if user prefers reduced motion
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    this.container.style.display = 'none';
+                    return;
                 }
+
+                // Check device performance
+                const isLowPerformance = navigator.hardwareConcurrency < 4 || 
+                    navigator.connection?.effectiveType === 'slow-2g' ||
+                    navigator.connection?.effectiveType === '2g';
+
+                if (isLowPerformance) {
+                    this.container.style.display = 'none';
+                    return;
+                }
+
+                this.createLimitedParticles();
+                this.startOptimizedAnimation();
+                this.setupVisibilityControl();
+            }
+
+            createLimitedParticles() {
+                // Reduced particle count for performance
+                const particleCount = Math.min(6, Math.floor(window.innerWidth / 200));
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'premium-particle particle-gold';
+                    particle.style.cssText = `
+                        position: absolute;
+                        width: 2px;
+                        height: 2px;
+                        background: radial-gradient(circle, #D4AF37 0%, transparent 70%);
+                        pointer-events: none;
+                        will-change: transform;
+                        opacity: 0.6;
+                    `;
+                    
+                    this.container.appendChild(particle);
+                }
+            }
+
+            startOptimizedAnimation() {
+                let lastTime = 0;
+                const targetFPS = 30; // Reduced FPS for performance
+                const frameTime = 1000 / targetFPS;
+
+                const animate = (currentTime) => {
+                    if (!this.isVisible) {
+                        this.animationId = requestAnimationFrame(animate);
+                        return;
+                    }
+
+                    if (currentTime - lastTime >= frameTime) {
+                        this.updateParticlesOptimized();
+                        lastTime = currentTime;
+                    }
+
+                    this.animationId = requestAnimationFrame(animate);
+                };
+
+                this.animationId = requestAnimationFrame(animate);
+            }
+
+            updateParticlesOptimized() {
+                const particles = this.container.children;
+                const time = Date.now() * 0.001;
+
+                for (let i = 0; i < particles.length; i++) {
+                    const particle = particles[i];
+                    const offset = i * 100;
+                    
+                    const x = (Math.sin(time * 0.5 + offset) * 50) + window.innerWidth / 2;
+                    const y = (Math.cos(time * 0.3 + offset) * 30) + window.innerHeight / 2;
+                    
+                    particle.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                }
+            }
+
+            setupVisibilityControl() {
+                // Pause when tab is not visible
+                document.addEventListener('visibilitychange', () => {
+                    this.isVisible = !document.hidden;
+                    
+                    if (!this.isVisible && this.animationId) {
+                        // Keep RAF running but skip updates
+                    }
+                });
+
+                // Pause when page is not in focus
+                window.addEventListener('blur', () => this.isVisible = false);
+                window.addEventListener('focus', () => this.isVisible = true);
+            }
+
+            destroy() {
+                if (this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                }
+                this.container.innerHTML = '';
             }
         }
 
-        // Sistema de Animações Inteligentes
-        class IntelligentAnimationSystem {
+        // OPTIMIZED: Simple Animation System
+        class SimpleAnimationSystem {
             constructor() {
-                this.observedElements = new Map();
-                this.init();
-            }
-
-            init() {
-                this.setupIntersectionObserver();
-                this.setupAdvancedInteractions();
-                this.setupResponsiveAnimations();
-            }
-
-            setupIntersectionObserver() {
-                const options = {
-                    threshold: [0, 0.25, 0.5, 0.75, 1],
-                    rootMargin: '-10% 0px -10% 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        const element = entry.target;
-                        const ratio = entry.intersectionRatio;
-
-                        if (ratio > 0.5) {
-                            this.activateElement(element);
-                        } else {
-                            this.deactivateElement(element);
-                        }
-                    });
-                }, options);
-
-                // Observar elementos chave
-                document.querySelectorAll('.metric-exclusive, .timeline-node, .capability-node').forEach(el => {
-                    observer.observe(el);
-                });
-            }
-
-            activateElement(element) {
-                element.style.transform = 'translateY(0) scale(1)';
-                element.style.opacity = '1';
-                element.style.filter = 'blur(0)';
+                this.isEnabled = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                this.observedElements = new Set();
+                this.throttledMethods = new Map();
                 
-                if (element.classList.contains('metric-exclusive')) {
-                    this.animateCounter(element);
+                if (this.isEnabled) {
+                    this.init();
                 }
             }
 
-            deactivateElement(element) {
-                // Sutil fade out para elementos que saem da view
-                element.style.opacity = '0.7';
+            init() {
+                // Simple intersection observer with throttling
+                this.setupBasicObserver();
+                // Simplified hover effects only for desktop
+                if (window.innerWidth > 1024) {
+                    this.setupLightweightHovers();
+                }
             }
 
-            animateCounter(element) {
+            setupBasicObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !this.observedElements.has(entry.target)) {
+                            this.activateElementSimple(entry.target);
+                            this.observedElements.add(entry.target);
+                            observer.unobserve(entry.target); // One-time observation
+                        }
+                    });
+                }, {
+                    threshold: 0.3,
+                    rootMargin: '0px'
+                });
+
+                // Only observe critical elements
+                const criticalElements = document.querySelectorAll('.metric-exclusive, .cta-button');
+                criticalElements.forEach(el => observer.observe(el));
+            }
+
+            activateElementSimple(element) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+                
+                // Simple counter animation for metrics only
+                if (element.classList.contains('metric-exclusive')) {
+                    this.simpleCounterAnimation(element);
+                }
+            }
+
+            simpleCounterAnimation(element) {
                 const valueElement = element.querySelector('.metric-value-exclusive');
                 if (valueElement && !valueElement.dataset.animated) {
                     const text = valueElement.textContent;
-                    const numbers = text.match(/\d+/g);
+                    const match = text.match(/(\d+)/);
                     
-                    if (numbers) {
-                        const targetValue = parseInt(numbers[0]);
+                    if (match) {
+                        const targetValue = parseInt(match[1]);
                         let currentValue = 0;
-                        const increment = targetValue / 60; // 1 segundo a 60fps
+                        const steps = 20; // Reduced steps for performance
+                        const increment = targetValue / steps;
+                        let step = 0;
                         
                         const animate = () => {
-                            currentValue += increment;
-                            if (currentValue < targetValue) {
+                            if (step < steps) {
+                                currentValue += increment;
                                 valueElement.textContent = text.replace(/\d+/, Math.floor(currentValue));
-                                requestAnimationFrame(animate);
+                                step++;
+                                setTimeout(animate, 50); // Use setTimeout instead of RAF
                             } else {
                                 valueElement.textContent = text;
                                 valueElement.dataset.animated = 'true';
                             }
                         };
-                        animate();
+                        
+                        setTimeout(animate, 100); // Small delay
                     }
                 }
             }
 
-            setupAdvancedInteractions() {
-                // Hover 3D para cards
-                document.querySelectorAll('.metric-exclusive, .capability-node, .timeline-node').forEach(card => {
-                    card.addEventListener('mousemove', (e) => {
-                        const rect = card.getBoundingClientRect();
-                        const x = e.clientX - rect.left;
-                        const y = e.clientY - rect.top;
-                        
-                        const centerX = rect.width / 2;
-                        const centerY = rect.height / 2;
-                        
-                        const rotateX = (y - centerY) / centerY * 10;
-                        const rotateY = (centerX - x) / centerX * 10;
-                        
-                        card.style.transform = `
-                            perspective(1000px) 
-                            rotateX(${rotateX}deg) 
-                            rotateY(${rotateY}deg) 
-                            translateZ(20px)
-                            scale3d(1.05, 1.05, 1.05)
-                        `;
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale3d(1, 1, 1)';
-                    });
-                });
-
-                // Efeito magnético no CTA
+            setupLightweightHovers() {
+                // Throttled hover effects only for CTA button
                 const ctaButton = document.querySelector('.cta-button');
                 if (ctaButton) {
-                    ctaButton.addEventListener('mousemove', (e) => {
-                        const rect = ctaButton.getBoundingClientRect();
-                        const x = e.clientX - rect.left - rect.width / 2;
-                        const y = e.clientY - rect.top - rect.height / 2;
-                        
-                        const distance = Math.sqrt(x * x + y * y);
-                        const maxDistance = 100;
-                        
-                        if (distance < maxDistance) {
-                            const force = (maxDistance - distance) / maxDistance;
-                            ctaButton.style.transform = `
-                                translateX(${x * force * 0.1}px) 
-                                translateY(${y * force * 0.1}px) 
-                                scale(${1 + force * 0.05})
-                                rotateX(${-y * force * 0.1}deg)
-                                rotateY(${x * force * 0.1}deg)
-                            `;
-                        }
+                    let hoverTimeout;
+                    
+                    ctaButton.addEventListener('mouseenter', () => {
+                        clearTimeout(hoverTimeout);
+                        ctaButton.style.transform = 'translateY(-2px) scale(1.02)';
                     });
 
                     ctaButton.addEventListener('mouseleave', () => {
-                        ctaButton.style.transform = 'translateX(0) translateY(0) scale(1) rotateX(0) rotateY(0)';
+                        hoverTimeout = setTimeout(() => {
+                            ctaButton.style.transform = 'translateY(0) scale(1)';
+                        }, 100);
                     });
                 }
             }
 
-            setupResponsiveAnimations() {
-                // Ajusta animações baseado na performance do dispositivo
-                const isHighPerformance = window.navigator.hardwareConcurrency > 4;
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-                if (!isHighPerformance || prefersReducedMotion) {
-                    document.documentElement.style.setProperty('--animation-scale', '0.5');
-                    document.querySelectorAll('.premium-particle').forEach(p => {
-                        p.style.animationDuration = '40s';
-                    });
+            // Utility method to throttle functions
+            throttle(func, limit) {
+                if (!this.throttledMethods.has(func)) {
+                    let inThrottle;
+                    const throttled = (...args) => {
+                        if (!inThrottle) {
+                            func.apply(this, args);
+                            inThrottle = true;
+                            setTimeout(() => inThrottle = false, limit);
+                        }
+                    };
+                    this.throttledMethods.set(func, throttled);
                 }
+                return this.throttledMethods.get(func);
             }
         }
 
-        // Sistema de Otimização de Performance
-        class PerformanceOptimizer {
+        // OPTIMIZED: Minimal Performance Monitor
+        class MinimalPerformanceMonitor {
             constructor() {
                 this.isVisible = true;
                 this.init();
             }
 
             init() {
-                this.setupVisibilityAPI();
-                this.setupResourceOptimization();
-                this.setupLazyLoading();
+                this.setupVisibilityControl();
+                this.setupConnectionOptimization();
             }
 
-            setupVisibilityAPI() {
+            setupVisibilityControl() {
+                // Simple visibility control
                 document.addEventListener('visibilitychange', () => {
                     this.isVisible = !document.hidden;
                     
-                    if (!this.isVisible) {
-                        // Pausa animações quando tab não está visível
-                        document.querySelectorAll('.premium-particle').forEach(p => {
-                            p.style.animationPlayState = 'paused';
-                        });
-                    } else {
-                        document.querySelectorAll('.premium-particle').forEach(p => {
-                            p.style.animationPlayState = 'running';
-                        });
+                    // Simple pause/resume for particles
+                    const particleContainer = document.getElementById('premiumParticles');
+                    if (particleContainer) {
+                        particleContainer.style.display = this.isVisible ? 'block' : 'none';
                     }
-                });
+                }, { passive: true });
             }
 
-            setupResourceOptimization() {
-                // Otimiza baseado na conexão
+            setupConnectionOptimization() {
+                // Disable heavy effects on slow connections
                 if ('connection' in navigator) {
                     const connection = navigator.connection;
                     
-                    if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-                        document.querySelector('.premium-particles').style.display = 'none';
+                    if (connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g') {
+                        // Disable all animations for slow connections
+                        const style = document.createElement('style');
+                        style.textContent = `
+                            *, *::before, *::after {
+                                animation-duration: 0s !important;
+                                transition-duration: 0s !important;
+                            }
+                            .premium-particles { display: none !important; }
+                        `;
+                        document.head.appendChild(style);
                     }
                 }
             }
-
-            setupLazyLoading() {
-                // Carrega animações apenas quando necessário
-                const lazyElements = document.querySelectorAll('[data-lazy-animate]');
-                
-                const lazyObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate-loaded');
-                            lazyObserver.unobserve(entry.target);
-                        }
-                    });
-                });
-
-                lazyElements.forEach(el => lazyObserver.observe(el));
-            }
         }
 
-        // Inicialização do Sistema Completo
+        // OPTIMIZED: Fast Initialization
         document.addEventListener('DOMContentLoaded', () => {
-            // Verifica suporte a tecnologias modernas
-            const supportsModernFeatures = 
-                'IntersectionObserver' in window &&
-                'requestAnimationFrame' in window &&
-                CSS.supports('backdrop-filter', 'blur(10px)');
+            console.log('🚀 Assessment page loading...');
+            
+            try {
+                // Quick feature check
+                const hasBasicSupport = 'IntersectionObserver' in window;
+                
+                if (hasBasicSupport) {
+                    // Initialize only lightweight systems
+                    new OptimizedParticleSystem();
+                    new SimpleAnimationSystem();
+                    new MinimalPerformanceMonitor();
+                } else {
+                    // Minimal fallback
+                    document.body.classList.add('legacy-browser');
+                    console.log('Legacy browser detected - minimal features loaded');
+                }
 
-            if (supportsModernFeatures) {
-                new UltraParticleSystem();
-                new IntelligentAnimationSystem();
-                new PerformanceOptimizer();
-            } else {
-                // Fallback para navegadores mais antigos
-                document.body.classList.add('legacy-browser');
+                // Essential optimizations only
+                setupEssentialOptimizations();
+                
+                console.log('✅ Assessment page loaded successfully');
+                
+            } catch (error) {
+                console.error('❌ Error during initialization:', error);
+                // Ensure page still works without animations
+                document.body.classList.add('no-animations');
             }
-
-            // Otimizações adicionais
-            setupSmoothScrolling();
-            setupPreloadOptimization();
-            setupAccessibilityEnhancements();
         });
 
-        // Smooth Scrolling Inteligente
-        function setupSmoothScrolling() {
+        // OPTIMIZED: Essential optimizations only
+        function setupEssentialOptimizations() {
+            // Basic smooth scrolling
             document.documentElement.style.scrollBehavior = 'smooth';
             
-            // Otimiza scroll performance
-            let ticking = false;
-            
-            function updateScrollPosition() {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                
-                document.querySelector('.qualification-bg').style.transform = `translateY(${rate}px)`;
-                ticking = false;
-            }
-
-            document.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(updateScrollPosition);
-                    ticking = true;
-                }
-            }, { passive: true });
-        }
-
-        // Preload de Recursos Críticos
-        function setupPreloadOptimization() {
-            // Preload de fontes
-            const fontUrls = [
-                'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap',
-                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap'
-            ];
-
-            fontUrls.forEach(url => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'style';
-                link.href = url;
-                document.head.appendChild(link);
-            });
-        }
-
-        // Melhorias de Acessibilidade
-        function setupAccessibilityEnhancements() {
-            // Focus trap para elementos interativos
-            const focusableElements = document.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-            
-            focusableElements.forEach(element => {
-                element.addEventListener('focus', () => {
-                    element.style.outline = '2px solid var(--gold-primary)';
-                    element.style.outlineOffset = '4px';
-                });
-
-                element.addEventListener('blur', () => {
-                    element.style.outline = 'none';
-                });
-            });
-
-            // Navegação por teclado melhorada
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Tab') {
-                    document.body.classList.add('keyboard-navigation');
-                }
-            });
-
-            document.addEventListener('mousedown', () => {
-                document.body.classList.remove('keyboard-navigation');
-            });
-
-            // Redução de movimento se preferido
+            // Basic accessibility
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 const style = document.createElement('style');
-                style.innerHTML = `
+                style.textContent = `
                     *, *::before, *::after {
                         animation-duration: 0.01ms !important;
-                        animation-iteration-count: 1 !important;
                         transition-duration: 0.01ms !important;
                     }
                 `;
                 document.head.appendChild(style);
             }
-        }
 
-        // Sistema de Analytics Avançado
-        function trackAdvancedInteractions() {
-            // Track scroll depth
-            let maxScroll = 0;
-            document.addEventListener('scroll', () => {
-                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-                if (scrollPercent > maxScroll) {
-                    maxScroll = scrollPercent;
-                    if (maxScroll % 25 === 0) {
-                        console.log(`Scroll depth: ${maxScroll}%`);
-                    }
+            // Simple focus management
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
                 }
-            });
+            }, { passive: true });
 
-            // Track element visibility
-            const visibilityObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        console.log(`Element visible: ${entry.target.className}`);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            document.querySelectorAll('.metric-exclusive, .cta-button').forEach(el => {
-                visibilityObserver.observe(el);
-            });
+            document.addEventListener('mousedown', () => {
+                document.body.classList.remove('keyboard-navigation');
+            }, { passive: true });
         }
 
-        // Ativar analytics
-        trackAdvancedInteractions();
+        // Minimal analytics
+        function trackBasicInteractions() {
+            // Only track CTA button clicks
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', () => {
+                    console.log('CTA clicked - Assessment');
+                }, { passive: true });
+            }
+        }
+
+        // Initialize basic analytics
+        setTimeout(trackBasicInteractions, 1000);
         
         // REFORMULAÇÃO COMPLETA - VENDA INVISÍVEL ESTILO STEVE JOBS
         function applyJobsStyleCopy() {
@@ -2740,11 +2617,7 @@
                     `;
                 }
                 
-                // CTA BUTTON - Jobs-style action
-                const ctaButton = document.querySelector('.cta-button span:last-child');
-                if (ctaButton) {
-                    ctaButton.innerHTML = 'Iniciar Demonstração de Capacidade';
-                }
+                // CTA BUTTON - Jobs-style action - REMOVIDO PARA EVITAR CONFLITOS
                 
                 // CTA URGENCY - Scarcity com classe
                 const ctaUrgency = document.querySelector('.cta-urgency span:last-child');
@@ -2754,12 +2627,40 @@
             }
         }
         
-        // Aplicar quando carregar
-        document.addEventListener('DOMContentLoaded', applyJobsStyleCopy);
-        window.addEventListener('resize', applyJobsStyleCopy);
+        // Aplicar apenas uma vez com throttling
+        let copyApplied = false;
+        let resizeTimeout;
         
-        // Aplicar imediatamente também
-        applyJobsStyleCopy();
+        function safeApplyJobsStyleCopy() {
+            if (!copyApplied) {
+                try {
+                    applyJobsStyleCopy();
+                    copyApplied = true;
+                } catch (error) {
+                    console.error('Error applying copy:', error);
+                }
+            }
+        }
+        
+        // Aplicar quando carregar OU imediatamente se já carregou
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', safeApplyJobsStyleCopy);
+        } else {
+            safeApplyJobsStyleCopy();
+        }
+        
+        // Throttled resize apenas se necessário
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (copyApplied) {
+                    // Apenas reaplica se já foi aplicado antes
+                    applyJobsStyleCopy();
+                }
+            }, 250);
+        });
+        
+        // JavaScript otimizado para evitar travamentos
     </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+{
+  "name": "Dynamic Solutions - Metodologias Proprietárias de IA",
+  "short_name": "Dynamic Solutions",
+  "description": "Arquiteturas de inteligência proprietárias que recuperaram R$73M+ para organizações visionárias",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "image/Logo oficial.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "image/Logo oficial.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+dynamicsolutions",
+      "url": "/?handler=%s"
+    }
+  ]
+}
