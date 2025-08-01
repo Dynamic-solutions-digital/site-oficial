@@ -9,43 +9,62 @@
     
     <title>Dynamic Solutions | Excelência em Serviços Tecnológicos</title>
     
-    <!-- SPEED OPTIMIZATION: Preconnects -->
+    <!-- ULTRA SPEED: Critical Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://dynamicsolutions.digital">
     <link rel="dns-prefetch" href="https://github.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
     
-    <!-- SPEED OPTIMIZATION: Preloads críticos -->
+    <!-- ULTRA SPEED: Critical Resource Preloads -->
     <link rel="preload" as="image" href="https://github.com/Dynamic-solutions-digital/site-oficial/blob/main/image/Logo%20oficial.png?raw=true" fetchpriority="high">
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/raleway/v29/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrcVIT9d0c8.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDTjrMjJ-wU.woff2" type="font/woff2" crossorigin>
     
-    <!-- SPEED OPTIMIZATION: Prefetch páginas destino -->
+    <!-- ULTRA SPEED: Prefetch navegação crítica -->
     <link rel="prefetch" href="../about/index.html">
     <link rel="prefetch" href="../capabilities/index.html">
-    <link rel="prefetch" href="../analytics-dashboard/index.html">
-    <link rel="prefetch" href="../assessment/index.html">
     
-    <!-- Performance hints -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <!-- ULTRA SPEED: Critical CSS Inlined -->
+    <style>
+        /* Critical above-the-fold styles */
+        *{margin:0;padding:0;box-sizing:border-box}
+        html,body{height:100vh;overflow:hidden;font-family:'Raleway',sans-serif;background:#000;color:#fff;-webkit-font-smoothing:antialiased}
+        #particles-js{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:all}
+        .content{position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 20px;gap:clamp(20px,4vh,40px);pointer-events:none;transform:translateY(-10vh)}
+        .logo{margin-bottom:clamp(10px,2vh,20px);pointer-events:none}
+        .logo img{width:clamp(180px,25vw,320px);height:auto;max-width:100%;object-fit:contain;display:block;margin:0 auto;pointer-events:none}
+        h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5.5vw,4rem);font-weight:600;line-height:1.25;margin:0 0 clamp(15px,3vh,25px);max-width:90vw;text-shadow:0 2px 8px rgba(0,0,0,.3);color:#fff;letter-spacing:-.01em;pointer-events:none}
+    </style>
     
-    <!-- EXTERNAL LIBRARIES - Otimizadas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" crossorigin defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" crossorigin defer></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js" crossorigin defer></script>
+    <!-- ULTRA SPEED: Async External Libraries -->
+    <script>
+        // Async library loader for performance
+        const asyncLoad = (src, async = true, defer = true) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.async = async;
+            script.defer = defer;
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        };
+        
+        // Load non-critical libraries asynchronously
+        setTimeout(() => {
+            asyncLoad('https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js');
+            asyncLoad('https://unpkg.com/aos@2.3.1/dist/aos.js');
+            asyncLoad('https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js');
+        }, 100);
+    </script>
     
-    <!-- Google Fonts - Otimizadas -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- ULTRA SPEED: Optimized Font Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin>
+    <!-- ULTRA SPEED: Critical Icons Only -->
+    <style>
+        .fas.fa-gem:before{content:'\f3a5'}
+        @font-face{font-family:'Font Awesome 6 Free';src:url(data:application/font-woff2;base64,) format('woff2');font-weight:900}
+    </style>
     
     <style>
         /* ===== RESET TOTAL ===== */
@@ -84,7 +103,7 @@
             --luxury-platinum: #E5E4E2;
         }
 
-        /* ===== PARTÍCULAS: FUNDO ABSOLUTO ===== */
+        /* ===== PARTÍCULAS: OTIMIZADAS PARA PERFORMANCE ===== */
         #particles-js {
             position: fixed;
             top: 0;
@@ -93,6 +112,8 @@
             height: 100%;
             z-index: 1;
             pointer-events: all;
+            will-change: transform;
+            contain: layout style paint;
         }
 
         #particles-js canvas {
@@ -100,6 +121,8 @@
             width: 100% !important;
             height: 100% !important;
             pointer-events: all;
+            will-change: transform;
+            transform: translateZ(0);
         }
 
         /* ===== CONTEÚDO: CAMADA INTERMEDIÁRIA ===== */
@@ -788,56 +811,63 @@
                     return;
                 }
 
+                // ULTRA PERFORMANCE: Reduced particles, optimized config
+                const isMobile = window.innerWidth <= 768;
+                const isTablet = window.innerWidth <= 1024;
+                
                 const config = {
                     particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        number: { 
+                            value: isMobile ? 40 : isTablet ? 60 : 80, 
+                            density: { enable: true, value_area: 800 } 
+                        },
                         color: { value: "#FFE55C" },
                         shape: { type: "circle" },
                         opacity: { 
                             value: 0.6, 
                             random: true, 
-                            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } 
+                            anim: { enable: !isMobile, speed: 1, opacity_min: 0.1, sync: false } 
                         },
                         size: { 
                             value: 3, 
                             random: true, 
-                            anim: { enable: true, speed: 2, size_min: 0.1, sync: false } 
+                            anim: { enable: !isMobile, speed: 2, size_min: 0.1, sync: false } 
                         },
                         line_linked: { 
                             enable: true, 
-                            distance: 150, 
+                            distance: isMobile ? 120 : 150, 
                             color: "#FFE55C", 
                             opacity: 0.4, 
                             width: 1 
                         },
                         move: { 
                             enable: true, 
-                            speed: 3, 
+                            speed: isMobile ? 2 : 3, 
                             direction: "none", 
                             random: true, 
                             straight: false, 
                             out_mode: "out", 
                             bounce: false, 
-                            attract: { enable: true, rotateX: 600, rotateY: 1200 } 
+                            attract: { enable: !isMobile, rotateX: 600, rotateY: 1200 } 
                         }
                     },
                     interactivity: {
                         detect_on: "canvas",
                         events: { 
-                            onhover: { enable: true, mode: "grab" }, 
+                            onhover: { enable: !isMobile, mode: "grab" }, 
                             onclick: { enable: true, mode: "push" }, 
                             resize: true 
                         },
                         modes: { 
                             grab: { distance: 180, line_linked: { opacity: 0.8 } }, 
-                            push: { particles_nb: 6 } 
+                            push: { particles_nb: isMobile ? 3 : 6 } 
                         }
                     },
                     retina_detect: true
                 };
 
                 particlesJS("particles-js", config);
-                console.log('✅ Partículas inicializadas');
+                console.log('✅ Partículas inicializadas com otimização de performance');
             },
 
             setupMobileReset() {
@@ -1048,37 +1078,48 @@
             }
         };
 
-        /* ===== INICIALIZAÇÃO ===== */
+        /* ===== INICIALIZAÇÃO ULTRA-OTIMIZADA ===== */
         const MainInitializer = {
             init() {
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', () => this.start());
+                // Use requestIdleCallback for non-critical init
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(() => this.start(), { timeout: 2000 });
                 } else {
-                    this.start();
+                    setTimeout(() => this.start(), 0);
                 }
             },
             
             start() {
                 try {
-                    // 1. Som
-                    SoundSystem.init();
-                    
-                    // 2. Partículas (imediato)
+                    // 1. Critical: Particles first (visual priority)
                     ParticleSystem.init();
                     
-                    // 3. AOS
-                    if (typeof AOS !== 'undefined') {
-                        AOS.init({ duration: 1000, once: true, offset: 100 });
-                    }
+                    // 2. Non-critical: Defer other systems
+                    this.deferNonCritical();
                     
-                    // 4. Animações
-                    setTimeout(() => AnimationSystem.init(), 200);
-                    
-                    console.log('✅ Dynamic Solutions inicializado');
+                    console.log('✅ Dynamic Solutions inicializado (ultra-performance)');
                     
                 } catch (error) {
                     console.error('❌ Erro na inicialização:', error);
                 }
+            },
+            
+            deferNonCritical() {
+                // Defer non-critical systems
+                setTimeout(() => {
+                    SoundSystem.init();
+                    AnimationSystem.init();
+                    
+                    // AOS only when loaded
+                    if (typeof AOS !== 'undefined') {
+                        AOS.init({ 
+                            duration: 800, 
+                            once: true, 
+                            offset: 50,
+                            disable: window.innerWidth < 768 // Disable on mobile for performance
+                        });
+                    }
+                }, 300);
             }
         };
 
@@ -1105,9 +1146,15 @@
             }
         }
 
-        // Apply transformations on load and resize
+        // ULTRA PERFORMANCE: Optimized event handling
+        let resizeTimeout;
+        
+        // Apply transformations with debouncing
         document.addEventListener('DOMContentLoaded', applyJobsStyleHome);
-        window.addEventListener('resize', applyJobsStyleHome);
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(applyJobsStyleHome, 150);
+        }, { passive: true });
     </script>
     
     <script type="application/ld+json">

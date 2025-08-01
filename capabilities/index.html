@@ -208,9 +208,60 @@
 
     <script src="script.js"></script>
     <script>
-        function applyJobsStyleCapabilities() {
-            if (window.innerWidth > 768) {
-                // Update service descriptions with more sophisticated copy
+        // Ultra-sophisticated responsive content adaptation for capabilities
+        function applyUltraPremiumCapabilities() {
+            const screenWidth = window.innerWidth;
+            
+            // Desktop Premium (>1200px)
+            if (screenWidth > 1200) {
+                // Update title for desktop
+                const titleLines = document.querySelectorAll('.title-line');
+                if (titleLines.length >= 2) {
+                    titleLines[0].textContent = 'Arquiteturas';
+                    titleLines[1].textContent = 'Impossíveis';
+                }
+                
+                // Update service descriptions with ultra-sophisticated copy
+                const systemsDescription = document.querySelector('[data-service="intelligence"] .service-description');
+                if (systemsDescription) {
+                    systemsDescription.innerHTML = 'Mentes visionárias não se contentam com ferramentas convencionais disponíveis no mercado. Operacionalizamos consciências digitais proprietárias que pensam, decidem e executam com a precisão cirúrgica de quem compreende que oportunidade e timing são elementos inseparáveis do sucesso exponencial. Não oferecemos sistemas - criamos extensões neurais do seu intelecto estratégico.';
+                }
+
+                const behavioralDescription = document.querySelector('[data-service="behavioral"] .service-description');
+                if (behavioralDescription) {
+                    behavioralDescription.innerHTML = 'Líderes excepcionais reconhecem que influência genuína transcende técnicas superficiais e manipulações óbvias. Desenvolvemos ecossistemas comportamentais sofisticados que operam nos níveis mais profundos da percepção e cognição humana. Cada micro-interação é uma obra de arte psicológica meticulosamente projetada para mentes que compreendem a sutileza da persuasão aristocrata.';
+                }
+
+                const interfacesDescription = document.querySelector('[data-service="interfaces"] .service-description');
+                if (interfacesDescription) {
+                    interfacesDescription.innerHTML = 'Genialidade executiva merece interfaces que antecipem pensamentos estratégicos antes mesmo deles se cristalizarem em consciência. Criamos extensões cognitivas proprietárias que se adaptam organicamente ao ritmo único da sua brilliance intelectual. Não é meramente tecnologia - é amplificação neural para quem já opera naturalmente em frequências cognitivas superiores.';
+                }
+
+                // Update other service descriptions with premium copy
+                const infraDescription = document.querySelector('[onclick="openModal(\'infraestrutura\')"] .service-description');
+                if (infraDescription) {
+                    infraDescription.innerHTML = 'Visionários constroem para a eternidade e legados duradouros, nunca para a gratificação momentânea. Desenvolvemos fundações tecnológicas que suportam ambições verdadeiramente ilimitadas com a elegância operacional que apenas mentes sofisticadas conseguem verdadeiramente compreender e apreciar. Crescimento exponencial sem compromissos arquiteturais - porque mediocridade nunca foi uma opção aceitável.';
+                }
+
+                const strategiesDescription = document.querySelector('[onclick="openModal(\'estrategias\')"] .service-description');
+                if (strategiesDescription) {
+                    strategiesDescription.innerHTML = 'Enquanto consultores convencionais seguem mapas pré-existentes e metodologias padronizadas, nós revelamos territórios completamente inexplorados que apenas intelectos genuinamente refinados conseguem perceber e navegar. Operacionalizamos análises comportamentais proprietárias que desvendam padrões psicológicos completamente invisíveis aos métodos convencionais. Média documentada: R$4,7M em oportunidades ocultas por análise estratégica.';
+                }
+
+                const automationDescription = document.querySelector('[onclick="openModal(\'automacao\')"] .service-description');
+                if (automationDescription) {
+                    automationDescription.innerHTML = 'Mentes verdadeiramente brilhantes não foram concebidas pela natureza para desperdiçar potencial com tarefas repetitivas e operacionais. Desenvolvemos sistemas neurais que não apenas executam com perfeição, mas evoluem e se refinam autonomamente, liberando completamente seu intelecto superior para o que genuinamente importa: visionar e materializar futuros que outros consideram impossíveis. +437% de eficiência operacional documentada em 90 dias.';
+                }
+            }
+            // Tablet Premium (768px-1199px) 
+            else if (screenWidth >= 768 && screenWidth <= 1199) {
+                // Update title for tablet
+                const titleLines = document.querySelectorAll('.title-line');
+                if (titleLines.length >= 2) {
+                    titleLines[0].textContent = 'Sistemas';
+                    titleLines[1].textContent = 'Proprietários';
+                }
+                
                 const systemsDescription = document.querySelector('[data-service="intelligence"] .service-description');
                 if (systemsDescription) {
                     systemsDescription.innerHTML = 'Mentes visionárias não se contentam com ferramentas convencionais. Operacionalizamos consciências digitais que pensam, decidem e executam com a precisão de quem compreende que oportunidade e timing são inseparáveis. Não oferecemos sistemas - criamos extensões do seu intelecto estratégico.';
@@ -226,7 +277,6 @@
                     interfacesDescription.innerHTML = 'Genialidade executiva merece interfaces que antecipem pensamentos antes mesmo deles se formarem. Criamos extensões cognitivas que se adaptam ao ritmo da sua brilliance. Não é tecnologia - é amplificação intelectual para quem já opera em frequências superiores.';
                 }
 
-                // Update other service descriptions
                 const infraDescription = document.querySelector('[onclick="openModal(\'infraestrutura\')"] .service-description');
                 if (infraDescription) {
                     infraDescription.innerHTML = 'Visionários constroem para a eternidade, não para o momento. Desenvolvemos fundações tecnológicas que suportam ambições ilimitadas com a elegância que apenas mentes sofisticadas compreendem. Crescimento exponencial sem compromissos - porque mediocridade não é uma opção.';
@@ -242,11 +292,22 @@
                     automationDescription.innerHTML = 'Mentes brilhantes não foram feitas para tarefas repetitivas. Desenvolvemos sistemas que não apenas executam, mas evoluem autonomamente, liberando seu intelecto para o que realmente importa: visionar futuros impossíveis. +437% de eficiência operacional em 90 dias.';
                 }
             }
+            // Mobile mantém conteúdo original otimizado
         }
-
-        // Apply on load and resize
-        document.addEventListener('DOMContentLoaded', applyJobsStyleCapabilities);
-        window.addEventListener('resize', applyJobsStyleCapabilities);
+        
+        // Apply ultra-premium responsive transformations for capabilities
+        document.addEventListener('DOMContentLoaded', () => {
+            applyUltraPremiumCapabilities();
+        });
+        
+        // Debounced resize handler for optimal performance
+        let capabilitiesResizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(capabilitiesResizeTimeout);
+            capabilitiesResizeTimeout = setTimeout(() => {
+                applyUltraPremiumCapabilities();
+            }, 200);
+        });
     </script>
 </body>
 </html>
